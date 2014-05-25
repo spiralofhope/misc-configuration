@@ -9,9 +9,8 @@
 
 /*
   Make text in <pre> tags not wrap.
-  This is important for viewing code the way it is intended, which is commonly placed within <pre> tags.  Code freely-wrapped onto new lines is jarring.
+  Code is commonly placed within <pre> tags.  Code which wraps is jarring.
 */
 pre {
-  float:       left     !important;
-  white-space: pre-wrap !important;
+  white-space: nowrap   !important;
 }
