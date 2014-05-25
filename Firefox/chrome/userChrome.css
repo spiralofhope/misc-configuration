@@ -4,6 +4,8 @@
 
   A new Firefox profile no longer creates the `chrome` directory, with userChrome-example.css
   The directory and file have to be created.
+
+  Tested 2014-05-24 on Lubuntu 14.04 amd64, updated recently. Firefox 29.0, provided in the default repository.
 */
 
 
