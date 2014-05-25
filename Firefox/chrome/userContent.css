@@ -1,0 +1,17 @@
+/*
+  http://kb.mozillazine.org/UserChrome.css
+  http://kb.mozillazine.org/UserChrome-example.css
+
+  A new Firefox profile no longer creates the `chrome` directory, with userContent-example.css
+  The directory and file have to be created.
+*/
+
+
+/*
+  Make text in <pre> tags not wrap.
+  This is important for viewing code the way it is intended, which is commonly placed within <pre> tags.  Code freely-wrapped onto new lines is jarring.
+*/
+pre {
+  float:       left     !important;
+  white-space: pre-wrap !important;
+}
