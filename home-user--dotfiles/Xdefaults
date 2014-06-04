@@ -1,0 +1,34 @@
+! rxvt-unicode
+!   http://software.schmorp.de/pkg/rxvt-unicode
+!
+! Test changes with:
+!   \xrdb  -load ~/.Xdefaults ; \rxvt-unicode
+
+! What fucking idiot thought white would be a good default background colour?  This was a revolting first impression.
+URxvt*background:  #000000
+URxvt*foreground:  #FFFFFF
+URxvt*color0:      #000000
+
+! I think these are the defaults:
+!URxvt*color1:      red
+!URxvt*color2:      green
+!URxvt*color3:      yellow
+!URxvt*color4:      blue
+!URxvt*color5:      magenta
+!URxvt*color6:      cyan
+!URxvt*color7:      white
+!URxvt*color8:      grey
+!URxvt*color9:      red
+!URxvt*color10:     green
+!URxvt*color11:     yellow
+!URxvt*color12:     blue
+!URxvt*color13:     magenta
+!URxvt*color14:     cyan
+!URxvt*color15:     white
+
+! A lighter, legible blue.
+ URxvt*color12:     #6666ff
+
+! `xfontsel`  is a tool which may greatly aid in finding and tweaking the font.
+URxvt*font:         -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
+URxvt*boldFont:     -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
