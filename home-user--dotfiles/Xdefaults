@@ -36,9 +36,25 @@ URxvt*boldFont:     -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
 URxvt*scrollBar_right:  true
 URxvt*thickness:        13
 URxvt*scrollstyle:      plain
+
 URxvt*saveLines:        1000
 ! I would normally need to use another piece of software to do this, but it`s handy to have it done here.
 URxvt*pointerBlank:     true
+
+! previous word
+URxvt.keysym.C-Left:    \033[1;5D
+! next word
+URxvt.keysym.C-Right:   \033[1;5C
+
+! Paste text
+! Many thanks to catkin for doing the work.
+!   https://www.linuxquestions.org/questions/slackware-14/rxvt-unicode-hacking-800818/page2.html#post4013717
+!   https://www.linuxquestions.org/questions/slackware-14/rxvt-unicode-hacking-800818/page2.html#post4378868
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.matcher.button: 1
+URxvt.perl-ext-common: default,matcher,clipboard
+
 
 
 
