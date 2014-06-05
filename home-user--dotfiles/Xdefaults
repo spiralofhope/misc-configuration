@@ -33,6 +33,13 @@ URxvt*color12:     #6666ff
 URxvt*font:         -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
 URxvt*boldFont:     -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
 
+URxvt*scrollBar_right:  true
+URxvt*thickness:        13
+URxvt*scrollstyle:      plain
+URxvt*saveLines:        1000
+! I would normally need to use another piece of software to do this, but it`s handy to have it done here.
+URxvt*pointerBlank:     true
+
 
 
 ! aterm
@@ -62,6 +69,6 @@ URxvt*boldFont:     -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
 ! A lighter, legible blue.
 aterm*color12:     #6666ff
 
-# DOSEmu's vga font.
-# Note that aterm does not support unicode.
+! DOSEmu`s vga font.
+! Note that aterm does not support unicode.
 aterm*font:         vga
