@@ -5,11 +5,11 @@
 !   \xrdb  -load ~/.Xdefaults ; \rxvt-unicode
 
 ! What fucking idiot thought white would be a good default background colour?  This was a revolting first impression.
-URxvt*background:  #000000
-URxvt*foreground:  #FFFFFF
-URxvt*color0:      #000000
+URxvt*background:  black
+URxvt*foreground:  grey
 
 ! I think these are the defaults:
+!URxvt*color0:      black
 !URxvt*color1:      red
 !URxvt*color2:      green
 !URxvt*color3:      yellow
@@ -27,8 +27,41 @@ URxvt*color0:      #000000
 !URxvt*color15:     white
 
 ! A lighter, legible blue.
- URxvt*color12:     #6666ff
+URxvt*color12:     #6666ff
 
-! `xfontsel`  is a tool which may greatly aid in finding and tweaking the font.
+! `xfontsel`  is a tool which will greatly aid in finding and tweaking the font.
 URxvt*font:         -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
 URxvt*boldFont:     -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
+
+
+
+! aterm
+!   http://www.afterstep.org/aterm.php
+!
+! Test changes with:
+!   \xrdb  -load ~/.Xdefaults ; \aterm
+!aterm*background:  console_black
+!aterm*foreground:  console_white
+!aterm*color0:      console_black
+!aterm*color1:      console_bright_red
+!aterm*color2:      console_bright_green
+!aterm*color3:      console_bright_yellow
+!aterm*color4:      console_bright_blue
+!aterm*color5:      console_bright_magenta
+!aterm*color6:      console_bright_cyan
+!aterm*color7:      console_bright_white
+!aterm*color8:      console_bright_black
+!aterm*color9:      console_bright_red
+!aterm*color10:     console_bright_green
+!aterm*color11:     console_bright_yellow
+!aterm*color12:     console_bright_blue
+!aterm*color13:     console_bright_magenta
+!aterm*color14:     console_bright_cyan
+!aterm*color15:     console_bright_white
+
+! A lighter, legible blue.
+aterm*color12:     #6666ff
+
+# DOSEmu's vga font.
+# Note that aterm does not support unicode.
+aterm*font:         vga
