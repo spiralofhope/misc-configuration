@@ -70,3 +70,15 @@ tab[selected="true"]
 {
   cursor:  alias;
 }
+
+
+
+/*
+  http://midori-browser.org/faqs/
+  Scrolling on website xyz is very slow
+
+  Tested and works with http://meetup.com
+*/
+* {
+  -webkit-box-shadow: none !important;
+}
