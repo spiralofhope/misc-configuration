@@ -1,0 +1,84 @@
+/*
+  http://kb.mozillazine.org/UserContent.css
+  http://kb.mozillazine.org/UserContent-example.css
+
+  A new Firefox profile no longer creates the `chrome` directory, with userChrome-example.css
+  The directory and file have to be created.
+
+  Tested 2014-05-24 on Lubuntu 14.04 amd64, updated recently. Firefox 29.0, provided in the default repository.
+*/
+
+
+
+/*
+  Set the default namespace to XUL
+*/
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+
+
+/*
+  Move the sidebar to the right.
+  The default position (left) is bad.  English-language readers, begin reading on the right and our eyes are most comfortable there.  The reasoning that it's THING => RESULT (left => right) makes some sense, but it turns out to be uncomfortable as all hell in reality.  Our eye is constantly dragged to the left of the browser window into the sidebar every time we "carrage return" while reading text.
+*/
+#browser {
+  direction: rtl;
+}
+hbox#browser > vbox {
+  direction: ltr;
+}.
+
+
+
+/*
+  Highlight the currently-selected tab
+    Thanks to Andrei's comment:
+    http://mozillalinks.org/2007/03/highlight-the-active-tab-in-firefox/
+*/
+tab
+{
+  -moz-appearance:  none  !important;
+}
+
+tab[selected="true"]
+{
+  color:  red  !important;
+}
+
+
+
+/*
+  Show keyword input box when adding a bookmark
+    http://www.guidingtech.com/5941/add-keywords-bookmark-firefox-address-bar/
+*/
+#editBMPanel_locationRow,
+#editBMPanel_keywordRow
+{
+  visibility:       visible  !important;
+  -moz-box-align:   center  !important;
+}
+#editBMPanel_tagsSelector[collapsed="true"]
+{
+  display:   none  !important;
+}
+
+
+
+/* UNCONFIRMED - Change the cursor style for links which open in new window */
+:link[target="_blank"], :visited[target="_blank"],
+:link[target="_new"],   :visited[target="_new"]
+{
+  cursor:  alias;
+}
+
+
+
+/*
+  http://midori-browser.org/faqs/
+  Scrolling on website xyz is very slow
+
+  Tested and works with http://meetup.com
+*/
+* {
+  -webkit-box-shadow: none !important;
+}

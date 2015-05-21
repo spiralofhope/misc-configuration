@@ -1,0 +1,32 @@
+/*
+  http://kb.mozillazine.org/UserChrome.css
+  http://kb.mozillazine.org/UserChrome-example.css
+
+  A new Firefox profile no longer creates the `chrome` directory, with userContent-example.css
+  The directory and file have to be created.
+
+  Tested 2014-05-24 on Lubuntu 14.04 amd64, updated recently. Firefox 29.0, provided in the default repository.
+*/
+
+
+
+/*
+  Make text in <pre> tags wrap.
+
+  Note - Code is commonly placed within <pre> tags.  Code which wraps is jarring.
+*/
+pre {
+  white-space: pre-wrap !important;
+}
+
+/*
+  Make text in <pre> tags not wrap.
+  (default)
+
+  FIXME - This is actually quite annoying.  What needs to happen is the pre window needs to have a button to make it open in a popup, fuller-screen or wider.  This is the realm of an extension.
+*/
+/*
+pre {
+  white-space: nowrap   !important;
+}
+*/
