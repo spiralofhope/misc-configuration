@@ -35,6 +35,12 @@ hbox#browser > vbox {
     Thanks to Andrei's comment:
     http://mozillalinks.org/2007/03/highlight-the-active-tab-in-firefox/
 */
+/*
+  Not needed when using NASA Night Launch
+  https://addons.mozilla.org/firefox/addon/4908
+  0.6.20140217 (2014-02-17) works for Pale Moon.
+  https://addons.mozilla.org/firefox/downloads/file/244578/nasa_night_launch-0.6.20140217-fx.xpi
+
 tab
 {
   -moz-appearance:  none  !important;
@@ -44,6 +50,7 @@ tab[selected="true"]
 {
   color:  red  !important;
 }
+*/
 
 
 
