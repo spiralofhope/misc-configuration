@@ -2,8 +2,8 @@ Equalizer presets for Music on Console
 
   http://moc.daper.net/
 
-Thanks to (hiben)[http://moc.daper.net/comment/3973#comment-3973].
-Though his link is broken, I found the presets (on archive.org)[http://wayback.archive.org/web/20120621042346/http://www.informatik.uni-bremen.de/~hiben/moc/eqsets.tar.gz].  
+Thanks to [hiben](http://moc.daper.net/comment/3973#comment-3973).
+Though his link is broken, I found the presets [on archive.org](http://wayback.archive.org/web/20120621042346/http://www.informatik.uni-bremen.de/~hiben/moc/eqsets.tar.gz).  
 Thanking them goes without saying.  Archive.org is incredible.
 
 These files go in `~/.moc/eqsets/`
