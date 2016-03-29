@@ -2,7 +2,7 @@
 !   http://software.schmorp.de/pkg/rxvt-unicode
 !
 ! Test changes with:
-!   \xrdb  -load ~/.Xdefaults ; \rxvt-unicode
+!   \xrdb  -load ~/.Xresources ; \urxvt
 
 ! What fucking idiot thought white would be a good default background colour?  This was a revolting first impression.
 URxvt*background:  black
@@ -30,10 +30,10 @@ URxvt*foreground:  grey
 URxvt*color12:     #6666ff
 
 ! `xfontsel`  is a tool which will greatly aid in finding and tweaking the font.
-!URxvt*font:         -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
-!URxvt*boldFont:     -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
-URxvt*font:         -*-fixed-medium-*-*-*-14-*-*-*-*-*-*-*
-URxvt*boldFont:     -*-fixed-bold-*-*-*-14-*-*-*-*-*-*-*
+URxvt*font:         -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
+URxvt*boldFont:     -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
+!URxvt*font:         -*-fixed-medium-*-*-*-14-*-*-*-*-*-*-*
+!URxvt*boldFont:     -*-fixed-bold-*-*-*-14-*-*-*-*-*-*-*
 
 
 URxvt*scrollBar_right:  true
