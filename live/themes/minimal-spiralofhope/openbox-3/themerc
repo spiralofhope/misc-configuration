@@ -1,0 +1,109 @@
+# This file is  ~/.themes/minimal-spiralofhope/openbox-3/themerc
+# http://openbox.org/wiki/Help:Themes
+
+# Select this style with  `obconf`
+
+# You can edit this file, and then do  `openbox --reconfigure`  to load any changes.
+
+# I combine editing this file, with an entry in my  ~/.config/openbox/rc.xml  with:
+#    <keybind key="A-F5">
+#      <action name="Reconfigure"/>
+#    </keybind>
+# Now I can goof around and press alt-f5 to see things live.
+
+
+# This theme was designed to be as simplistic as possible.  It relies on as few options as possible and tries to be consistent.
+# It uses only a few colours, so customizing is as trivial as search-and-replacing these names:
+#   - white
+#   - black
+#   - grey
+#   - lightgrey
+#   - steelblue
+#   - lightsteelblue
+# menu.items.disabled.text.color  should be the only gotcha, if you want to change grey.
+
+
+# Note that the companion xbm files were taken from Openbox 3.5.2's Bear2 theme.
+
+
+# Window geometry
+border.width:  1
+padding.width:  1
+padding.height:  1
+window.client.padding.width:  0
+window.client.padding.height:  0
+
+
+# Active window
+window.active.border.color:  black
+window.active.client.color:  black
+
+
+# This is the 'footer' of every window.  A width of 0 turns it off.
+window.handle.width:   2
+
+window.active.handle.bg:                                                solid  flat
+window.active.handle.bg.color:                                          steelblue
+window.active.grip.bg:                                                  solid  flat
+window.active.grip.bg.color:                                            steelblue
+
+window.inactive.handle.bg:                                              solid  flat
+window.inactive.handle.bg.color:                                        grey
+window.inactive.grip.bg:                                                solid  flat
+window.inactive.grip.bg.color:                                          grey
+
+
+# The header of an active window
+window.label.text.justify:                                              center
+window.active.title.bg:                                                 solid  flat
+window.active.title.bg.color:                                           steelblue
+window.active.label.bg:                                                 parentrelative
+window.active.label.text.color:                                         white
+
+window.active.button.unpressed.image.color:                             white
+window.active.button.unpressed.bg:                                      solid  flat
+window.active.button.unpressed.bg.color:                                steelblue
+window.active.button.hover.bg:                                          solid  flat
+window.active.button.hover.bg.color:                                    lightsteelblue
+window.active.button.pressed.bg:                                        solid  flat
+window.active.button.pressed.bg.color:                                  lightsteelblue
+
+window.active.button.toggled.unpressed.bg:                              solid  flat
+window.active.button.toggled.unpressed.bg.color:                        steelblue
+window.active.button.toggled.hover.bg.color:                            lightsteelblue
+window.active.button.toggled.pressed.bg.color:                          lightsteelblue
+
+window.active.button.disabled.bg:                                       solid  flat
+window.active.button.disabled.bg.color:                                 lightsteelblue
+
+
+# The header of an inactive window
+window.inactive.title.bg:                                               solid  flat
+window.inactive.title.bg.color:                                         grey
+window.inactive.label.bg:                                               parentrelative
+window.inactive.label.text.color:                                       black
+
+window.inactive.button.unpressed.image.color:                           black
+window.inactive.button.unpressed.bg:                                    solid  flat
+window.inactive.button.unpressed.bg.color:                              grey
+window.inactive.button.hover.bg:                                        solid  flat
+window.inactive.button.hover.bg.color:                                  lightgrey
+
+window.inactive.button.toggled.unpressed.bg:                            solid  flat
+window.inactive.button.toggled.unpressed.bg.color:                      grey
+window.inactive.button.toggled.hover.bg.color:                          lightgrey
+
+window.inactive.button.disabled.bg:                                     solid  flat
+window.inactive.button.disabled.bg.color:                               lightgrey
+
+
+# Menus
+# Right-click on the root menu (the "desktop")
+# Right-click on a title bar
+menu.items.bg:                                                          solid  flat
+menu.items.bg.color:                                                    steelblue
+menu.items.disabled.text.color:                                         grey
+menu.items.text.color:                                                  black
+# In this context, "active" means "hover"
+menu.items.active.bg:                                                   solid  flat
+menu.items.active.bg.color:                                             lightsteelblue

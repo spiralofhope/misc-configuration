@@ -1,0 +1,204 @@
+# TODO:  I have no clue how to change Firefox.  I'm getting no information when I use `parasite`.
+#widget_class "GtkWindow.MozContainer*" style "firefox"
+
+
+
+# Color scheme contributed by Franco Gotusso based on Clearlooks-DarkCoffee by Chibi
+# and edited by bvc as Clearlooks-DarkCoffee2
+# spiralofhope found this as Clearlooks-DarkOrange and re-edited it as Clearlooks-DarkOrange-spiralofhope
+
+# FIXME:  When tabbing around, some things have a dotted line and others do not.  For example, edit boxes have both a dotted line and a bit of colour.  If I change GtkWidget::interior_focus to 1 then I can see the border clearly.
+
+
+# http://live.gnome.org/GnomeArt/Tutorials/GtkThemes#Colors
+# TODO:  http://live.gnome.org/GnomeArt/Tutorials/GtkThemes/SymbolicColors
+#        It doesn't actually work!
+#        gtk_color_scheme = "fg:#000;bg:#000;base:#fff;text:#000;selected_bg:#5598d7;selected_fg:#fff"
+
+# FIXME:  I'm editing this to fix the black-on-black for some text boxes, like editing a wikipedia article.
+# It is, however, impossible to get the text colour to not be black.  I don't get it.
+# I can change the background colour.
+# I can change the unselected text colour
+# But as soon as I click inside a text box, the text colour changes to black.  Fucking hell.
+
+
+style "default"
+{
+GtkMenuItem::selected_shadow_type = none
+GtkMenuBar::internal-padding      = 3
+GtkButton::default_border         = { 3, 3, 3, 3 }
+GtkButton::default_outside_border = { 3, 3, 3, 3 }
+GtkCheckButton::indicator_size    = 12      # Essentially a font size for checkboxes and radio buttons.
+
+GtkRange::trough_border           = 0
+GtkRange::slider_width            = 16
+GtkRange::stepper_size            = 16       # No idea.
+
+# I don't know how give sliders a box when you've selected them.  I only get a dotted line.
+GtkScale::trough_border           = 0
+
+GtkPaned::handle_size             = 16
+
+GtkScrollbar::min_slider_length   = 32
+
+GtkExpander::expander_size        = 16
+
+GtkTreeView::expander_size        = 16
+GtkTreeView::odd_row_color        = "#111"
+
+GtkWidget::focus_padding          = 3
+GtkWidget::interior_focus         = 0   # Influences the existence of the highlighting box around edit boxes.
+GtkWidget::cursor_color           = "#e26000"  # Your cursor colour.  Not respected by any programs I've used.
+GtkWidget::secondary_cursor_color = "#c04000"  # - no clue.
+
+xthickness = 0  # Influences the thickness of the highlighting box around edit boxes.
+ythickness = 0  # Influences the thickness of the highlighting box around edit boxes.
+
+#      orange = e26000
+# dark orange = c04000
+
+
+# NORMAL is the state the color should be used for. There are five states inside GTK. 
+fg[NORMAL]        = "grey"     # Main window text.  Things like the currently-selected tab's text, menu text.
+bg[NORMAL]        = "black"    # Background.
+text[NORMAL]      = "grey"     # Text boxes, text.  Things like checkmarks.  Unfortunately controls a whole lot of secondary text, like the colour of the current website in the location bar in Firefox.
+base[NORMAL]      = "#222"    # Text boxes, background.  Also the equivalent of an GtkWidget::even_row_color.  FIXME:  I'd like to have not-selected text boxes have a black background with a light border.  However, this will change all sorts of other unrelated things.
+
+# This state is used for buttons while the mouse is pressed. 
+fg[ACTIVE]        = "grey"     # Inactive widget text.  Things like the lxappearance text in the Page1 tab for "Radio Button" and "Check Button".  This is tied into too many things for me to change it.  TODO:  Perhaps there are other specific ways of having those other affected things not inherit the colours?  Not from what I can see.  =/
+bg[ACTIVE]        = "#e26000"  # Selected Widget.  Currently clicking down on something.
+text[ACTIVE]      = "black"     # For a thing which is "active" but the window is switched to something else.  Text colour.
+base[ACTIVE]      = "#e26000"  # For a thing which is "active" but the window is switched to something else.  Background colour.  Tab away from lxappearance and notice the background colour for the currently-selected theme on the left of it.
+
+## This state is used for example for selected text. 
+fg[SELECTED]      = "#000"  # The box that gets painted around things when you're tabbing through an area.  Also, for some stupid reason, the text colour of the progress text in Transmission (bittorrent).
+bg[SELECTED]      = "#e26000"  # All kinds of widgets, like the top line over a currently-selected tab, progress bars, highlighted rows.
+text[SELECTED]    = "#000"    # Click-drag to highlight text.  This is the text's foreground colour.
+base[SELECTED]    = "#e26000"  # Selected Text area item, and that bar over the tabs.
+
+# Prelight means mouse over effects. Usually the background will be slightly lighter. 
+fg[PRELIGHT]      = "#000"     # Highlighted widget text
+bg[PRELIGHT]      = "#e26000"  # Highlight Widget.  Like hovering a resizing widget, like firefox's bookmarks widening grip.
+text[PRELIGHT]    = "#000"     # Rare.  Things like hovering over a dropdown box and seeing its text.  e.g. in Transmission (bittorrent) when hovering over the dropdown box for "Show".
+base[PRELIGHT]    = "#e26000"  # Check and radio button background
+
+# Used for widgets that are insensitive and cannot be used at that point. 
+fg[INSENSITIVE]   = "darkgrey"    # Things like arrows on scrollbars, pointing in the direction where there is nowhere to go.  So scrolling up, and already at the top, then this is the arrow up.  The arrow down is under "GtkScrollbar", below.
+bg[INSENSITIVE]   = "#111"  # Inactive buttons.  Like the background colour for the above.
+text[INSENSITIVE] = "#c04000"  # Things like text for a paused torrent in Transmission.
+base[INSENSITIVE] = "#000"    # So far the only thing I've seen use this is some background colours in the text boxes when saving with Firefox/Scrapbook.  Or if an edit box is "greyed out", which I can reproduce with Geany: Edit > Preferences > Printing
+
+
+engine "clearlooks"
+{
+sunkenmenubar    	  = 0       # 0 = disable, 1 = enable
+menuitemstyle     	= 0       # 0 = flat, 1 = 3d-ish (button)
+listviewitemstyle 	= 0       # 0 = flat, 1 = 3d-ish (gradient)
+progressbarstyle  	= 1       # 0 = candy bar, 1 = flat
+}
+} # style "default"
+
+
+style "GtkButton" = "default"
+{
+bg[NORMAL]     = "#222"  # Button background colour.  Everyday buttons, not moused over or clicked on or "greyed out".
+}
+
+
+style "GtkNotebook" = "default"
+{
+bg[NORMAL]     = "#111"  # A peripheral background colour.
+bg[ACTIVE]     = "black"  # Inactive tabs.
+}
+
+
+# I have no clue how to change just the scrollbar colour and not the background area.
+style "GtkScrollbar" = "default"
+{
+bg[NORMAL]      = "#222"
+fg[INSENSITIVE] = "#000"
+bg[INSENSITIVE] = "#222"
+}
+
+
+# Sliders.
+style "GtkScale" = "default"
+{
+bg[NORMAL]      = "#333"
+# FIXME:  Change the grey square in the middle.
+}
+
+
+style "GtkEditable" = "default"
+{
+base[NORMAL]      = "green"
+}
+
+style "GtkTreeView" = "default"
+{
+base[NORMAL]    = "#000"
+# TODO:  I don't know how to make `parasite`'s regular text grey.
+}
+
+
+# Bottom toolbar.
+style "GtkToggleButton" = "default"
+{
+bg[NORMAL]      = "#111"
+bg[ACTIVE]      = "#333"
+}
+style "bottom_taskbar" = "default"
+{
+fg[ACTIVE]      = "white"
+}
+
+
+
+style "blue" = "default"
+{
+bg[NORMAL]      = "blue"
+fg[NORMAL]      = "blue"
+text[NORMAL]    = "blue"
+base[NORMAL]    = "blue"
+
+bg[ACTIVE]      = "blue"
+fg[ACTIVE]      = "blue"
+text[ACTIVE]    = "blue"
+base[ACTIVE]    = "blue"
+
+bg[INSENSITIVE]      = "blue"
+fg[INSENSITIVE]      = "blue"
+text[INSENSITIVE]    = "blue"
+base[INSENSITIVE]    = "blue"
+
+bg[SELECTED]      = "blue"
+fg[SELECTED]      = "blue"
+text[SELECTED]    = "blue"
+base[SELECTED]    = "blue"
+}
+
+
+# --
+# -- The actual magic.
+# --
+
+class "GtkWidget"       style "default"
+
+class "GtkScrollbar"    style "GtkScrollbar"
+class "GtkScale"        style "GtkScale"
+class "GtkButton"       style "GtkButton"
+class "GtkNotebook"     style "GtkNotebook"
+class "GtkTreeView"     style "GtkTreeView"
+class "GtkToggleButton"     style "GtkToggleButton"
+
+
+# --
+# -- Nesting
+# --
+
+widget_class "*.GtkToggleButton.GtkHBox.GtkLabel" style "bottom_taskbar"
+
+
+# I can't figure out how to change the background colour of a currently-active tab.
+#widget_class "*.GtkNotebook.GtkHBox.*.GtkLabel" style "tabs_over_GtkNotebook"
+
