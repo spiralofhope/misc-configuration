@@ -495,11 +495,10 @@ An example block.
     /mnt/1/linux-data/e/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow
                                                                         </command> </action> </keybind>
   <keybind key="C-A-W-l">                                               <action name="Execute"> <command>
-    <!-- 2016-04-09, on Slackware 14.1 -->
-    <!-- UNTESTED -->
+    <!-- 2016-04-19, on Slackware 14.1 -->
     \sh  -c "\
-      /mnt/1/linux-data/e/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow ;\
-      ` #  sudo  has been set up to not require a password.  See  /etc/sudoers  ` \
+      /mnt/1/linux-data/e/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow &amp; \
+      ` #  sudo  has been set up to not require a password.  See  /etc/sudoers ` \
       \sudo  /usr/sbin/pm-suspend \
     "
 <?ignore <!-- 2016-03-29, on Slackware 14.1
