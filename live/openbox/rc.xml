@@ -719,7 +719,7 @@ scrot \
   <finalactions> 	Focus, Raise, Unshade 	A list of actions to run on the window which the user finally selects using this action. 
 -->
 
-  <!-- FIXME -- Have the alt-tab "popup pager" appear on every monitor. -->
+  <!-- FIXME - Have the alt-tab "popup pager" appear on every monitor. -->
   <keybind key="A-Tab">     <action name="NextWindow"/>         </keybind>
   <keybind key="A-S-Tab">   <action name="PreviousWindow"/>     </keybind>
 
