@@ -694,6 +694,10 @@ scrot \
   <keybind key="S-W-Left">  <action name="SendToDesktopLeft">   <wrap>no</wrap> </action> </keybind>
   <keybind key="S-W-Right"> <action name="SendToDesktopRight">  <wrap>no</wrap> </action> </keybind>
 
+  <!-- With a second monitor, applications can be easily moved between them. -->
+  <keybind key="C-S-A-Left">  <action name="MoveResizeTo"> <monitor>2</monitor> </action> </keybind>
+  <keybind key="C-S-A-Right"> <action name="MoveResizeTo"> <monitor>1</monitor> </action> </keybind>
+
   <keybind key="A-F4">      <action name="Close"/>              </keybind>
   <keybind key="A-Escape">  <action name="Lower"/>
                             <action name="FocusToBottom"/>
