@@ -688,12 +688,12 @@ scrot \
   <keybind key="W-2">       <action name="Desktop">             <desktop>2</desktop> </action> </keybind>
   <keybind key="W-3">       <action name="Desktop">             <desktop>3</desktop> </action> </keybind>
   <keybind key="W-4">       <action name="Desktop">             <desktop>4</desktop> </action> </keybind>
-<!--
+
   <keybind key="W-Left">    <action name="DesktopLeft">         <wrap>no</wrap> </action> </keybind>
   <keybind key="W-Right">   <action name="DesktopRight">        <wrap>no</wrap> </action> </keybind>
   <keybind key="S-W-Left">  <action name="SendToDesktopLeft">   <wrap>no</wrap> </action> </keybind>
   <keybind key="S-W-Right"> <action name="SendToDesktopRight">  <wrap>no</wrap> </action> </keybind>
--->
+
   <keybind key="A-F4">      <action name="Close"/>              </keybind>
   <keybind key="A-Escape">  <action name="Lower"/>
                             <action name="FocusToBottom"/>
