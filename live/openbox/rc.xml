@@ -704,8 +704,26 @@ scrot \
                             <action name="Unfocus"/>            </keybind>
   <!-- BUG? - "space" needs to be lowercase. -->
   <keybind key="A-space">   <action name="ShowMenu">            <menu>client-menu</menu> </action> </keybind>
+
+<!--
+  NextWindow
+  Option 	        Default Value 	Description
+  <dialog> 	      list 	  Specifies the type of dialog to be shown on screen with icons for all the windows which can be focused. Choices are "list", "icons", or "none". If "none" is selected then no dialog will be shown.
+  <bar> 	        yes 	  A boolean (yes/no) which specifies if the focus indicator is shown which highlights the window that will be focused.
+  <raise> 	      no 	    A boolean (yes/no) which specifies if windows are temporarily raised to the front while cycling through them.
+  <allDesktops> 	no 	    A boolean (yes/no) which when enabled lets you cycle focus between windows on all desktops, instead of only on the current desktop.
+  <panels> 	      no 	    A boolean (yes/no) which when enabled lets you cycle focus to/between panel windows such as your taskbar. This can be combined with <desktop>.
+  <desktop> 	    no 	    A boolean (yes/no) which when enabled lets you cycle focus to the desktop window, if one exists (such as in GNOME or KDE). This can be combined with <panels>.
+  <linear> 	      no 	    A boolean (yes/no) which when enabled causes focus to cycle in a fixed ordering, rather than in the order which windows have been last focused.
+  <interactive> 	yes 	  A boolean (yes/no) which when disabled causes the action to immediately switch focus to the next target.
+  <finalactions> 	Focus, Raise, Unshade 	A list of actions to run on the window which the user finally selects using this action. 
+-->
+
+  <!-- FIXME -- Have the alt-tab "popup pager" appear on every monitor. -->
   <keybind key="A-Tab">     <action name="NextWindow"/>         </keybind>
   <keybind key="A-S-Tab">   <action name="PreviousWindow"/>     </keybind>
+
+
 <!--
   <keybind key="F11">
     <action name="ToggleFullscreen"/>
@@ -946,7 +964,6 @@ scrot \
   </application>
 
   <!-- Probably not necessary anymore, as it solved an old problem elsewhere.. -->
-<!--
   <application name="lxpanel">
     <decor>no</decor>
     <focus>yes</focus>
@@ -954,7 +971,6 @@ scrot \
     <layer>above</layer>
     <desktop>all</desktop>
   </application>
--->
 
 </applications>
 
