@@ -600,16 +600,16 @@ An example block.
       \ssfm
     -->
                                                                         </command> </action> </keybind>
-  <keybind key="C-A-f">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
+  <keybind key="C-A-e">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
+    /l/shell-random/git/live/sh/scripts/projects.sh
+                                                                        </command> </action> </keybind>
+  <keybind key="W-e">                                                   <action name="Execute"> <command>
 <!--
     \pcmanfm
     \pcmanfm-mod
     \Thunar
 -->
     \spacefm  --new-window  --no-saved-tabs
-                                                                        </command> </action> </keybind>
-  <keybind key="W-e">                                                   <action name="Execute"> <command>
-    /l/shell-random/git/live/sh/scripts/projects.sh
                                                                         </command> </action> </keybind>
   <keybind key="W-k">                                                   <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
 <!--
