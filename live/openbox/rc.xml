@@ -680,17 +680,23 @@ scrot \
                                                                          </command> </action> </keybind>
   <!-- Keybindings for desktops. -->
   <keybind key="W-d">       <action name="ToggleShowDesktop"/>  </keybind>
+
   <keybind key="S-W-1">     <action name="SendToDesktop">       <desktop>1</desktop> <follow>no</follow> </action> </keybind>
   <keybind key="S-W-2">     <action name="SendToDesktop">       <desktop>2</desktop> <follow>no</follow> </action> </keybind>
   <keybind key="S-W-3">     <action name="SendToDesktop">       <desktop>3</desktop> <follow>no</follow> </action> </keybind>
   <keybind key="S-W-4">     <action name="SendToDesktop">       <desktop>4</desktop> <follow>no</follow> </action> </keybind>
+
   <keybind key="W-1">       <action name="Desktop">             <desktop>1</desktop> </action> </keybind>
   <keybind key="W-2">       <action name="Desktop">             <desktop>2</desktop> </action> </keybind>
   <keybind key="W-3">       <action name="Desktop">             <desktop>3</desktop> </action> </keybind>
   <keybind key="W-4">       <action name="Desktop">             <desktop>4</desktop> </action> </keybind>
 
   <keybind key="W-Left">    <action name="DesktopLeft">         <wrap>no</wrap> </action> </keybind>
+  <keybind key="C-W-Left">  <action name="DesktopLeft">         <wrap>no</wrap> </action> </keybind>
+
   <keybind key="W-Right">   <action name="DesktopRight">        <wrap>no</wrap> </action> </keybind>
+  <keybind key="C-W-Right"> <action name="DesktopRight">        <wrap>no</wrap> </action> </keybind>
+
   <keybind key="S-W-Left">  <action name="SendToDesktopLeft">   <wrap>no</wrap> </action> </keybind>
   <keybind key="S-W-Right"> <action name="SendToDesktopRight">  <wrap>no</wrap> </action> </keybind>
 
