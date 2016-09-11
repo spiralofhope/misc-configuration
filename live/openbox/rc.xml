@@ -404,6 +404,9 @@ An example block.
   <keybind key="W-s">                                                   <action name="Execute"> <command>
     /l/shell-random/git/live/zsh/scripts/terminal.sh
                                                                         </command> </action> </keybind>
+  <keybind key="C-A-s">                                                 <action name="Execute"> <command>
+    /l/shell-random/git/live/zsh/scripts/terminal.sh
+                                                                        </command> </action> </keybind>
   <keybind key="W-S-s">                                                 <action name="Execute"> <command>
     /l/shell-random/git/live/zsh/scripts/terminal.sh  with_lines
                                                                         </command> </action> </keybind>
@@ -463,6 +466,9 @@ An example block.
                                                                         </command> </action> </keybind>
 --> ?>
   <keybind key="W-w">                                                   <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
+    /l/e/Pale\ Moon/go.sh  default
+                                                                        </command> </action> </keybind>
+  <keybind key="C-A-w">                                                   <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     /l/e/Pale\ Moon/go.sh  default
                                                                         </command> </action> </keybind>
   <keybind key="W-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
