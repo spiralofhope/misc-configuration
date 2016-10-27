@@ -89,3 +89,33 @@ tab[selected="true"]
 * {
   -webkit-box-shadow: none !important;
 }
+
+
+
+/*
+  Attempts to increase the size of the scroll bars..
+*/
+/*
+scrollbar[orient="vertical"] scrollbarbutton,
+scrollbar[orient="vertical"] slider {
+  width:  25px !important;
+  height: 25px !important;
+  -moz-appearance: none !important;
+}
+*/
+
+/*
+scrollbar[orient="vertical"], 
+scrollbar[orient="vertical"] thumb, 
+scrollbar[orient="vertical"] scrollbarbutton {
+  min-width: 35px !important;
+  -moz-appearance: none !important;
+}
+
+scrollbar[orient="horizontal"], 
+scrollbar[orient="horizontal"] thumb, 
+scrollbar[orient="horizontal"] scrollbarbutton {
+  min-height: 35px !important;
+  -moz-appearance: none !important;
+}
+*/
