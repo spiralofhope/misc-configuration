@@ -1,1 +1,1 @@
-/l/shell-random/git/live/dotfiles/home-user--dotfiles/go.sh
+/l/e/shell-random/git/live/dotfiles/home-user--dotfiles/go.sh

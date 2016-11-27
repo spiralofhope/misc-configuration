@@ -283,14 +283,14 @@ An example block.
       FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
     --> ?>
     <!-- rxvt-unicode (urxvt, urxvtc is the client) -->
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \urxvtc \
         -geometry 28x1 \
         +sb                   ` # Remove the scroll bar ` \
         -title synaptic \
         -e \sudo  \synaptic
 <?ignore <!-- lxterminal --
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \lxterminal \
         --geometry=28x1 \
         --title="synaptic" \
@@ -303,7 +303,7 @@ An example block.
       FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
     --> ?>
     <!-- rxvt-unicode (urxvt, urxvtc is the client) -->
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \urxvtc \
         -geometry 239x64 \
         +sb                   ` # Remove the scroll bar ` \
@@ -321,7 +321,7 @@ An example block.
     <!-- On a 1920x1080 screen, the vga font will fill everything but the default-height lxterminal with a size of 239x64+0+0 -->
     <!-- Tested and works 2016-03-26, on openbox 3.5.2, Slackware 14.1, xterm from X.Org 7.6.0(297) -->
 <?ignore <!--
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \xterm \
         -si \
         +vb \
@@ -338,7 +338,7 @@ An example block.
         -e \htop
 --> ?>
 <?ignore <!-- Tested and works 2016-03-26, on openbox 3.5.2, Slackware 14.1, xterm from X.Org 7.6.0(297) --
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \rxvt \
         -si \
         +vb \
@@ -376,20 +376,20 @@ An example block.
         -e \htop
 --> ?>
 <?ignore <!-- rxvt-unicode (urxvt, urxvtc is the client) --
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \urxvtc \
         -geometry 239x64 \
         +sb                   ` # Remove the scroll bar ` \
         -e \htop
 --> ?>
 <?ignore <!-- lxterminal, monospace 10 --
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \lxterminal \
         --geometry=239x59 \
         --command="\htop"
 --> ?>
 <?ignore <!-- WHAT THE FUCK evilvte, y u no work with geometreeeeeeeeeeeeeeeeeeeeeeeee --
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \evilvte \
         -g +239+59 \
         -e \htop
@@ -402,13 +402,13 @@ An example block.
 --> ?>
                                                                         </command> </action> </keybind>
   <keybind key="W-s">                                                   <action name="Execute"> <command>
-    /l/shell-random/git/live/zsh/scripts/terminal.sh
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh
                                                                         </command> </action> </keybind>
   <keybind key="C-A-s">                                                 <action name="Execute"> <command>
-    /l/shell-random/git/live/zsh/scripts/terminal.sh
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh
                                                                         </command> </action> </keybind>
   <keybind key="W-S-s">                                                 <action name="Execute"> <command>
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  with_lines
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  with_lines
                                                                         </command> </action> </keybind>
   <keybind key="W-m">                                                   <action name="Execute"> <command>
     <!-- TODO - make this magical with terminal.sh -->
@@ -418,12 +418,12 @@ An example block.
     <!-- TODO - make this magical with terminal.sh -->
     urxvt  -e  \mocp
 <?ignore <!--
-    /l/shell-random/git/live/zsh/scripts/terminal.sh \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh \
       with_lines \
       --geometry=160x25+0+0 \
       --execute="\alsamixer" 
 
-    /l/shell-random/git/live/zsh/scripts/terminal.sh \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh \
       with_lines \
       --geometry=+0+0 \
       --columns=191 \
@@ -442,7 +442,7 @@ An example block.
   <keybind key="W-b">                                                   <action name="Execute"> <command>
     <!-- I don't know how to pass a string with spaces to -T -->
 <?ignore <!--
-      /l/shell-random/git/live/zsh/scripts/terminal.sh \
+      /l/e/shell-random/git/live/zsh/scripts/terminal.sh \
         -geometry 103x70+0+0 \
         -T BitTornado \
         -e 'nice  -n 10  /usr/bin/perl  /x/btstatus.pl  /tmp/RAMDISK/bittornado.log'
@@ -453,14 +453,14 @@ An example block.
                                                                         </command> </action> </keybind>
 <?ignore <!--
   <keybind key="W-S-C-d">                                               <action name="Execute"> <command>
-    /l/shell-random/git/live/zsh/scripts/terminal.sh \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh \
       with_lines \
       --execute='/l/bin/diablo3.sh  nomumble'
                                                                         </command> </action> </keybind>
 --> ?>
 <?ignore <!--
   <keybind key="W-S-C-w">                                               <action name="Execute"> <command>
-    /l/shell-random/git/live/zsh/scripts/terminal.sh \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh \
       with_lines \
       --execute='/l/bin/world_of_warcraft_launcher.sh  nomumble'
                                                                         </command> </action> </keybind>
@@ -480,7 +480,7 @@ An example block.
   <keybind key="C-A-S-w">                                               <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     /l/e/Pale\ Moon/go.sh  _outbox
 <!--
-    /l/shell-random/git/dead/chromium_pick-profile.sh
+    /l/e/shell-random/git/dead/chromium_pick-profile.sh
     \chromium-browser
     \links -g
     \midori
@@ -493,17 +493,16 @@ An example block.
     \xkill
                                                                         </command> </action> </keybind>
   <keybind key="C-A-l">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    <!-- 2016-04-09, on Slackware 14.1 -->
-    /mnt/1/linux-data/e/shell-random/git/live/sh/scripts/screensaver-control.sh
+    /l/e/shell-random/git/live/sh/scripts/screensaver-control.sh
                                                                         </command> </action> </keybind>
   <keybind key="W-l">                                                   <action name="Execute"> <command>
-    <!-- 2016-04-09, on Slackware 14.1 -->
-    /mnt/1/linux-data/e/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow
+    /l/e/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow
                                                                         </command> </action> </keybind>
   <keybind key="C-A-W-l">                                               <action name="Execute"> <command>
     <!-- 2016-04-19, on Slackware 14.1 -->
+    <!-- 2016-11-26, on Devuan -->
     \sh  -c "\
-      /mnt/1/linux-data/e/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow &amp; \
+      /l/e/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow &amp; \
       ` #  sudo  has been set up to not require a password.  See  /etc/sudoers ` \
       \sudo  /usr/sbin/pm-suspend \
     "
@@ -529,7 +528,7 @@ An example block.
     --> ?>
 <?ignore <!-- 2016-03-26, on Lubuntu (version not recorded) --
          <!-- rxvt-unicode (urxvt, urxvtc is the client) --
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \urxvtc \
         -geometry 28x1 \
         +sb                   ` # Remove the scroll bar ` \
@@ -547,7 +546,7 @@ An example block.
         "
 --> ?>
 <?ignore <!-- lxterminal, previously --
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \lxterminal \
         --geometry=28x1 \
         --title="pm-suspend" \
@@ -564,7 +563,7 @@ An example block.
 
 <?ignore <!-- 2016-03-26, on Lubuntu (version not recorded) --
          <!-- rxvt-unicode (urxvt, urxvtc is the client) --  
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \urxvtc \
         -geometry 28x1 \
         +sb                   ` # Remove the scroll bar ` \
@@ -572,7 +571,7 @@ An example block.
         -e \sudo  \poweroff
 --> ?>
 <?ignore <!-- lxterminal --
-    /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \lxterminal \
         --geometry=28x1 \
         --title="poweroff" \
@@ -607,7 +606,7 @@ An example block.
     -->
                                                                         </command> </action> </keybind>
   <keybind key="C-A-e">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    /l/shell-random/git/live/sh/scripts/projects.sh
+    /l/e/shell-random/git/live/sh/scripts/projects.sh
                                                                         </command> </action> </keybind>
   <keybind key="W-e">                                                   <action name="Execute"> <command>
 <!--
@@ -630,7 +629,7 @@ An example block.
     \gksu
                                                                         </command> </action> </keybind>
   <keybind key="W-r">                                                   <action name="Execute"> <command>
-    /l/shell-random/git/live/run.sh
+    /l/e/shell-random/git/live/run.sh
                                                                         </command> </action> </keybind>
   <keybind key="C-A-S-r">                                               <action name="Execute"> <command>
     <!-- This MUST be exactly the same as another client if you wish to connect to that same session! -->
