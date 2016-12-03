@@ -974,6 +974,10 @@ scrot \
     </position>
   </application>
 
+  <application name="gpicview">
+    <fullscreen>true</fullscreen>
+  </application>
+
   <!-- Probably not necessary anymore, as it solved an old problem elsewhere.. -->
   <application name="lxpanel">
     <decor>no</decor>
