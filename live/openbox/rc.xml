@@ -499,13 +499,26 @@ An example block.
     /l/e/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow
                                                                         </command> </action> </keybind>
   <keybind key="C-A-W-l">                                               <action name="Execute"> <command>
-    <!-- 2016-04-19, on Slackware 14.1 -->
-    <!-- 2016-11-26, on Devuan -->
+    <?ignore <!--
+      FIXME - this is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
+      FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
+    --> ?>
+    <!-- 2016-12-07, on Devuan -->
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+      \urxvtc \
+        -geometry 28x1 \
+        +sb                   ` # Remove the scroll bar ` \
+        -title 'pm-suspend' \
+        -e  su  -c  '/usr/sbin/hibernate'
+<?ignore <!--
+    2016-04-19, on Slackware 14.1
+    2016-11-26, on Devuan
     \sh  -c "\
       /l/e/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow &amp; \
       ` #  sudo  has been set up to not require a password.  See  /etc/sudoers ` \
       \sudo  /usr/sbin/pm-suspend \
     "
+--> >?
 <?ignore <!-- 2016-03-29, on Slackware 14.1
     \sh  -c "\
       \xset  dpms 0 0 5 \
