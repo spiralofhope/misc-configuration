@@ -309,7 +309,7 @@ An example block.
         +sb                   ` # Remove the scroll bar ` \
         -e \weechat
                                                                         </command> </action> </keybind>
-  <keybind key="W-p">                                                   <action name="Execute"> <command>
+  <keybind key="C-S-Escape">                                            <action name="Execute"> <command>
     \urxvtc \
       -geometry 239x64 \
       -e \htop
