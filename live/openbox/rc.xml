@@ -627,7 +627,7 @@ An example block.
     \pcmanfm-mod
     \Thunar
 -->
-    \spacefm  --new-window  --no-saved-tabs
+    \spacefm  --new-window  --no-saved-tabs  /l/e/__
                                                                         </command> </action> </keybind>
   <keybind key="W-k">                                                   <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
 <!--
