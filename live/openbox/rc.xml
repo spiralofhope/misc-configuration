@@ -60,6 +60,12 @@ An example block.
       Active = where the active window is.
   -->
   <monitor>Mouse</monitor>
+  <!-- The monitor where Openbox should place popup dialogs such as the
+    focus cycling popup, or the desktop switch popup.  It can be an index
+    from 1, specifying a particular monitor.  Or it can be one of the
+    following: 'Mouse' - where the mouse is, or
+               'Active' - where the active window is -->
+  <primaryMonitor>Mouse</primaryMonitor>
 </placement>
 
 
@@ -282,6 +288,14 @@ An example block.
       FIXME - this is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
       FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
     --> ?>
+    <!-- Devuan -->
+    /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+      \urxvtc \
+        -geometry 28x1 \
+        +sb                   ` # Remove the scroll bar ` \
+        -title synaptic \
+        -e /bin/su  --command \synaptic&amp;  root
+<?ignore <!-- from old setup
     <!-- rxvt-unicode (urxvt, urxvtc is the client) -->
     /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \urxvtc \
@@ -289,6 +303,7 @@ An example block.
         +sb                   ` # Remove the scroll bar ` \
         -title synaptic \
         -e \sudo  \synaptic
+--> ?>
 <?ignore <!-- lxterminal --
     /l/e/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
       \lxterminal \
