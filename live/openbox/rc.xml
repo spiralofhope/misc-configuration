@@ -59,7 +59,7 @@ An example block.
       Mouse  = where the mouse is.
       Active = where the active window is.
   -->
-  <monitor>Mouse</monitor>
+    <monitor>Mouse</monitor>
   <!-- The monitor where Openbox should place popup dialogs such as the
     focus cycling popup, or the desktop switch popup.  It can be an index
     from 1, specifying a particular monitor.  Or it can be one of the
@@ -162,10 +162,10 @@ An example block.
 
 
 
-<dock>
-  <!-- Where to show the dock. -->
+<dock>  <!--  This is for "dockapps", some ancient tray-like concept. -->
+    <!-- Where to show the dock. -->
   <!-- TopLeft, Top, TopRight, Right, BottomRight, Bottom, BottomLeft, Left, Floating -->
-  <position>Bottom</position>
+  <position>TopLeft</position>
     <!-- When position is set to _Floating_, these two specify the pixel position of the dock. -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
@@ -759,8 +759,12 @@ scrot \
 -->
 
   <!-- FIXME - Have the alt-tab "popup pager" appear on every monitor. -->
+  <!--         This used to be the case, but was changed/removed in 3.4.9  -->
+  <!--         http://openbox.org/wiki/Openbox:Changelog#3.4.9 -->
   <keybind key="A-Tab">     <action name="NextWindow"/>         </keybind>
   <keybind key="A-S-Tab">   <action name="PreviousWindow"/>     </keybind>
+
+  <!-- FIXME - Have the alt-tab "popup pager" only display programs that exist on the current monitor. -->
 
 
 <!--
