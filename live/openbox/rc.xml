@@ -762,6 +762,9 @@ scrot \
   <!--         This used to be the case, but was changed/removed in 3.4.9  -->
   <!--         http://openbox.org/wiki/Openbox:Changelog#3.4.9 -->
   <keybind key="A-Tab">     <action name="NextWindow"/>         </keybind>
+<!--
+  <keybind key="A-Tab">     <action name="NextWindow">          <raise>yes</raise></action></keybind>
+-->
   <keybind key="A-S-Tab">   <action name="PreviousWindow"/>     </keybind>
 
   <!-- FIXME - Have the alt-tab "popup pager" only display programs that exist on the current monitor. -->
