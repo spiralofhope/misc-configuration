@@ -486,6 +486,9 @@ An example block.
   <keybind key="C-A-w">                                                   <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     /l/Pale\ Moon/go.sh  default
                                                                         </command> </action> </keybind>
+  <keybind key="C-A-c">                                                   <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
+    chromium
+                                                                        </command> </action> </keybind>
   <keybind key="W-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     /l/Pale\ Moon/go.sh  p
                                                                         </command> </action> </keybind>
