@@ -662,6 +662,9 @@ An example block.
   <keybind key="W-r">                                                   <action name="Execute"> <command>
     /l/shell-random/git/live/run.sh
                                                                         </command> </action> </keybind>
+  <keybind key="W-p">                                                   <action name="Execute"> <command>
+    /l/shell-random/git/live/sh/scripts/dual-monitors.sh
+                                                                        </command> </action> </keybind>
   <keybind key="C-A-S-r">                                               <action name="Execute"> <command>
     <!-- This MUST be exactly the same as another client if you wish to connect to that same session! -->
 <!-- FIXME: Have this ask for the IP, and automatically populate it with a decent guess. -->
