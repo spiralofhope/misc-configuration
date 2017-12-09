@@ -197,62 +197,97 @@ An example block.
   <!-- <chainQuitKey>C-g</chainQuitKey> -->
   <!-- Keybindings for applications. -->
   <!--
-    For a multimedia keyboard, you can find the names in /usr/share/X11/XKeysymDB
-    I could replace audacious2's key mapping helper plugin with some openbox hotkeys pretty easily.
+    Multimedia keyboard features (hotkeys, dials or whatever)
+    Instead of using a particular application's hotkeys or global hotkeys, you can program OpenBox to see the keys.
+    /usr/share/X11/XKeysymDB
+    https://cgit.freedesktop.org/xorg/proto/x11proto/tree/XF86keysym.h
+    If you get a new multimedia keyboard and want to map its keys more easily, then use `xev`:
+      - With your mouse over its window (not the terminal)
+      - Press your multimedia key
+      - You will see text like the following, which shows 'XF86Tools':
+        KeyRelease event, serial 47, synthetic NO, window 0x7600001,
+            root 0x2d5, subw 0x0, time 70249838, (243,115), root:(245,555),
+            state 0x10, keycode 179 (keysym 0x1008ff81, XF86Tools), same_screen YES,
+            XLookupString gives 0 bytes: 
+            XFilterEvent returns: False
   -->
-  <keybind key="XF86AudioRaiseVolume">                                  <action name="Execute"> <command>
-<!--
-    Warning:  pyvol has a noticeable delay..
-    python pvol.py -c 5
-    aumix -v+10
--->
-    \amixer -q sset Master 3%+
+  <!-- Logitech K310 -->
+  <keybind key="XF86HomePage ">                                         <action name="Execute"> <command>
+    \x-www-browser
                                                                         </command> </action> </keybind>
-  <keybind key="XF86AudioLowerVolume">                                  <action name="Execute"> <command>
-<!--
-    \python  pvol.py  -c  -5
-    \aumix  -v-10
--->
-    \amixer  -q  sset Master 3%-
+  <keybind key="XF86Search">                                            <action name="Execute"> <command>
+    \x-terminal-emulator
+                                                                        </command> </action> </keybind>
+  <keybind key="XF86Mail">                                              <action name="Execute"> <command>
+    \x-terminal-emulator
+                                                                        </command> </action> </keybind>
+  <keybind key="XF86Calculator">                                        <action name="Execute"> <command>
+    <!--
+    \galculator
+    \gnome-calc2
+    \kcalc
+    -->
+    \xcalc
+                                                                        </command> </action> </keybind>
+  <keybind key="XF86Tools">                                             <action name="Execute"> <command>
+    \x-terminal-emulator
+                                                                        </command> </action> </keybind>
+  <keybind key="XF86AudioPrev">                                         <action name="Execute"> <command>
+    \audacious  --rew
+                                                                        </command> </action> </keybind>
+  <!-- Play/Pause -->
+  <keybind key="XF86AudioPlay">                                         <action name="Execute"> <command>
+    \audacious  --play-pause
+                                                                        </command> </action> </keybind>
+  <keybind key="XF86AudioNext">                                         <action name="Execute"> <command>
+    \audacious  --fwd
                                                                         </command> </action> </keybind>
   <keybind key="XF86AudioMute">                                         <action name="Execute"> <command>
-<!--
+    <!--
     \python pvol.py -m
     2017-12-09 - BUG:  `aumix` cannot toggle sound from mute back up again.
     \amixer  -q  sset Master toggle
--->
+    -->
     \amixer -D pulse set Master 1+ toggle
                                                                         </command> </action> </keybind>
+  <keybind key="XF86AudioLowerVolume">                                  <action name="Execute"> <command>
+    <!--
+    \python  pvol.py  -c  -5
+    \aumix  -v-10
+    -->
+    \amixer  -q  sset Master 3%-
+                                                                        </command> </action> </keybind>
+  <keybind key="XF86AudioRaiseVolume">                                  <action name="Execute"> <command>
+    <!--
+    Warning:  pyvol has a noticeable delay..
+    python pvol.py -c 5
+    aumix -v+10
+    -->
+    \amixer -q sset Master 3%+
+                                                                        </command> </action> </keybind>
+  <keybind key="XF86Sleep">                                             <action name="Execute"> <command>
+    \x-terminal-emulator
+                                                                        </command> </action> </keybind>
+  <!-- /Logitech K310 -->
+<?ignore  <!-- My earlier Dell multimedia keyboard - FIXME - model number -->
   <keybind key="XF86AudioMedia">                                        <action name="Execute"> <command>
     \audacious
                                                                         </command> </action> </keybind>
   <keybind key="XF86WWW">                                               <action name="Execute"> <command>
-    \x-terminal-emulator
+    \x-www-browser
                                                                         </command> </action> </keybind>
   <keybind key="XF86Terminal">                                          <action name="Execute"> <command>
     \x-terminal-emulator
                                                                         </command> </action> </keybind>
-  <keybind key="XF86Calculator">                                        <action name="Execute"> <command>
-    \xcalc
-<!--
-    \galculator
-
-      <startupnotify>
-        <enabled>yes</enabled>
-        <name>Calculator</name>
-        <icon>gnome-calc2</icon>
-      </startupnotify>
-      <command>kcalc</command>
--->
-                                                                        </command> </action> </keybind>
   <keybind key="XF86MyComputer">                                        <action name="Execute"> <command>
-<!--
+    <!--
     \pcmanfm
     \pcmanfm-mod
     \Thunar
--->
+    -->
     \spacefm  --new-window  --no-saved-tabs
                                                                         </command> </action> </keybind>
+?>  <!-- /Dell -->
 <!--
   Obsoleted...
 -->
