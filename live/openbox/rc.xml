@@ -206,7 +206,6 @@ An example block.
     python pvol.py -c 5
     aumix -v+10
 -->
-    <!-- What in the fuck?  Volume twiddling is now no longer stereo.. it's lopsided -->
     \amixer -q sset Master 3%+
                                                                         </command> </action> </keybind>
   <keybind key="XF86AudioLowerVolume">                                  <action name="Execute"> <command>
@@ -219,12 +218,13 @@ An example block.
   <keybind key="XF86AudioMute">                                         <action name="Execute"> <command>
 <!--
     \python pvol.py -m
-    \aumix -M
--->
+    2017-12-09 - BUG:  `aumix` cannot toggle sound from mute back up again.
     \amixer  -q  sset Master toggle
+-->
+    \amixer -D pulse set Master 1+ toggle
                                                                         </command> </action> </keybind>
   <keybind key="XF86AudioMedia">                                        <action name="Execute"> <command>
-    \audacious2
+    \audacious
                                                                         </command> </action> </keybind>
   <keybind key="XF86WWW">                                               <action name="Execute"> <command>
     \x-terminal-emulator
