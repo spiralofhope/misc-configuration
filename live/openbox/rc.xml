@@ -367,7 +367,6 @@ An example block.
       FIXME - this is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
       FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
     --> ?>
-
     <!-- On a 1920x1080 screen, the vga font will fill everything but the default-height lxterminal with a size of 239x64+0+0 -->
     <!-- Tested and works 2016-03-26, on openbox 3.5.2, Slackware 14.1, xterm from X.Org 7.6.0(297) -->
 <?ignore <!--
@@ -472,7 +471,6 @@ An example block.
       with_lines \
       --geometry=160x25+0+0 \
       --execute="\alsamixer" 
-
     /l/shell-random/git/live/zsh/scripts/terminal.sh \
       with_lines \
       --geometry=+0+0 \
@@ -626,7 +624,6 @@ An example block.
     --> ?>
     <!-- 2016-03-28, on Slackware 14.1 -->
     \sudo  /usr/sbin/poweroff
-
 <?ignore <!-- 2016-03-26, on Lubuntu (version not recorded) --
          <!-- rxvt-unicode (urxvt, urxvtc is the client) --  
     /l/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
@@ -712,22 +709,17 @@ An example block.
     \sh  -c "\
       \urxvt  -title ' '  -geometry 14x5+0+0  -e \\
         \dialog  --no-shadow  --msgbox  'screenshot' 0 0 ;\\
-        \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/__ ; geeqie /l/__/$f' \\
+        \scrot  --select  'screenshot--%Y-%m-%d_%H:%M--$wx$h.png' --exec  '\mv  $f  /l/__ ; \gpicview /l/__/$f' \\
     "
-
 <?ignore <!--
     \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/__'
 sh -c "~/text.sh "this is a test" \
 scrot \
 "
-
-
     \urxvt  --geometry 40x2+1+1  -title 'Screenshot'  -e  ;\
       \echo  'Click to select a window' ;\
       \echo  'Drag a rectangle for an area' ;\
       \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/__'
-
-
     \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/__'
     \urxvt  --geometry 40x1+1+1 -e  \scrot  --count  --delay 5  --select  /l/__
 --> ?>
