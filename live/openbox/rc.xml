@@ -156,7 +156,10 @@ An example block.
 <margins>
   <top>0</top>        <!-- I tend to click here to switch to applications, so this is a bad idea. -->
   <bottom>0</bottom>  <!-- The taskbar is here. -->
+<!--  I used to keep a space on the left so I can right-click the desktop, but I've never needed that.
   <left>1</left>
+-->
+  <left>0</left>
   <right>0</right>    <!-- There is usually a scroll bar here. -->
 </margins>
 
@@ -362,7 +365,7 @@ An example block.
   <keybind key="C-S-Escape">                                            <action name="Execute"> <command>
     \urxvtc \
       -geometry 239x64 \
-      -e \htop
+      -e \htop --user=user
     <?ignore <!--
       FIXME - this is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
       FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
