@@ -712,7 +712,7 @@ An example block.
     \sh  -c "\
       \urxvt  -title ' '  -geometry 14x5+0+0  -e \\
         \dialog  --no-shadow  --msgbox  'screenshot' 0 0 ;\\
-        \scrot  --select  'screenshot--%Y-%m-%d_%H:%M--$wx$h.png' --exec  '\mv  $f  /l/__ ; \gpicview /l/__/$f' \\
+        \scrot  --select  'screenshot--%Y-%m-%d_%H:%M:%S--$wx$h.png' --exec  '\mv  $f  /l/__ ; \gpicview /l/__/$f' \\
     "
 <?ignore <!--
     \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/__'
