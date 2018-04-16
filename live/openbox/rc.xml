@@ -363,6 +363,10 @@ An example block.
         -e \weechat
                                                                         </command> </action> </keybind>
   <keybind key="C-S-Escape">                                            <action name="Execute"> <command>
+    <?ignore <!--
+      htop can hide things, but if you want to *force* it as a permissions thing, add something like this to your /etc/fstab:
+      proc  /proc  proc  defaults,noatime,nodiratime,hidepid=2  0  0
+    --> ?>
     \urxvtc \
       -geometry 239x64 \
       -e \htop --user=user
