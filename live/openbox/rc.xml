@@ -713,12 +713,21 @@ An example block.
     \rdesktop  192.168.0.13  -A  -N  -P  -r clipboard:PRIMARYCLIPBOARD  -u linaro  -z
                                                                         </command> </action> </keybind>
   <keybind key="Print">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
+    \urxvtc \
+      -e /l/shell-random/git/live/sh/scripts/screenshot.sh
+<?ignore <!--
     \sh  -c "\
-      \urxvt  -title ' '  -geometry 14x5+0+0  -e \\
+      \urxvt  -title 'screenshot'  -geometry 120x50+0+0  -e \\
         \dialog  --no-shadow  --msgbox  'screenshot' 0 0 ;\\
         \scrot  --select  'screenshot--%Y-%m-%d_%H:%M:%S--$wx$h.png' --exec  '\mv  $f  /l/__ ; \gpicview /l/__/$f' \\
     "
-<?ignore <!--
+
+    \sh  -c "\
+      \urxvt  -title 'screenshot'  -geometry 14x5+0+0  -e \\
+        \dialog  --no-shadow  --msgbox  'screenshot' 0 0 ;\\
+        \scrot  --select  'screenshot--%Y-%m-%d_%H:%M:%S--$wx$h.png' --exec  '\mv  $f  /l/__ ; \gpicview /l/__/$f' \\
+    "
+
     \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/__'
 sh -c "~/text.sh "this is a test" \
 scrot \
@@ -730,16 +739,20 @@ scrot \
     \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/__'
     \urxvt  --geometry 40x1+1+1 -e  \scrot  --count  --delay 5  --select  /l/__
 --> ?>
-<!--
+<?ignore <!--
     \mtpaint -s
     \ddm-screenshot
--->
+    \ksnapshot
+--> ?>
                                                                         </command> </action> </keybind>
 <!--
-  <keybind key="A-Print">                                               <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    \ksnapshot
+  <keybind key="Shift-Print">                                           <action name="Execute"> <command>
+                                                                        </command> </action> </keybind>
+  <keybind key="Alt-Print">                                             <action name="Execute"> <command>
                                                                         </command> </action> </keybind>
 -->
+
+
   <keybind key="C-Escape">                                              <action name="Execute"> <command>
     <!-- TODO:  Import the use of the Windows key for opening the menu?  It's located in the lubuntu default rc.xml (whatever it's been renamed to) -->
     \lxpanelctl menu
