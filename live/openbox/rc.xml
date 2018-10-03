@@ -520,29 +520,42 @@ An example block.
       --execute='/l/bin/world_of_warcraft_launcher.sh  nomumble'
                                                                         </command> </action> </keybind>
 --> ?>
-  <keybind key="W-w">                                                   <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    /l/Pale\ Moon/go.sh  default
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-w">                                                   <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    /l/Pale\ Moon/go.sh  default
-                                                                        </command> </action> </keybind>
   <keybind key="C-A-c">                                                   <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     chromium
                                                                         </command> </action> </keybind>
-  <keybind key="W-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    /l/Pale\ Moon/go.sh  p
-                                                                        </command> </action> </keybind>
-  <keybind key="A-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    /l/Pale\ Moon/go.sh  windows
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-S-w">                                               <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    /l/Pale\ Moon/go.sh  _outbox
-<!--
+  <keybind key="C-A-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
+<?ignore <!--
     /l/shell-random/git/dead/chromium_pick-profile.sh
     \chromium-browser
     \links -g
     \midori
--->
+--> ?>
+    \sh  -c "\
+      profile_name='default'
+      '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
+      '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
+    "
+                                                                        </command> </action> </keybind>
+  <keybind key="W-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
+    \sh  -c "\
+      profile_name='p'
+      '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
+      '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
+    "
+                                                                        </command> </action> </keybind>
+  <keybind key="A-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
+    \sh  -c "\
+      profile_name='windows'
+      '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
+      '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
+    "
+                                                                        </command> </action> </keybind>
+  <keybind key="C-A-S-w">                                               <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
+    \sh  -c "\
+      profile_name='_outbox'
+      '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
+      '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
+    "
                                                                         </command> </action> </keybind>
   <keybind key="C-A-e">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \claws-mail
@@ -699,7 +712,7 @@ An example block.
     \gksu
                                                                         </command> </action> </keybind>
   <keybind key="W-r">                                                   <action name="Execute"> <command>
-    /l/shell-random/git/live/run.sh
+    /l/shell-random/git/live/sh/scripts/run.sh
                                                                         </command> </action> </keybind>
   <keybind key="W-p">                                                   <action name="Execute"> <command>
     /l/shell-random/git/live/sh/scripts/dual-monitors.sh
