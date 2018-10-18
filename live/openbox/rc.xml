@@ -579,7 +579,7 @@ An example block.
       \urxvtc \
         -geometry 28x1 \
         +sb                   ` # Remove the scroll bar ` \
-        -title 'pm-suspend' \
+        -title 'hibernate' \
         -e  su  -c  '/usr/sbin/hibernate'
 <?ignore <!--
     2016-04-19, on Slackware 14.1
