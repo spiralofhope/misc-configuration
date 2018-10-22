@@ -531,28 +531,28 @@ An example block.
     \midori
 --> ?>
     \sh  -c "\
-      profile_name='default'
+      profile_name='default'  ;\
       '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
       '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
                                                                         </command> </action> </keybind>
   <keybind key="W-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \sh  -c "\
-      profile_name='p'
+      profile_name='p'  ;\
       '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
       '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
                                                                         </command> </action> </keybind>
   <keybind key="A-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \sh  -c "\
-      profile_name='windows'
+      profile_name='windows'  ;\
       '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
       '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
                                                                         </command> </action> </keybind>
   <keybind key="C-A-S-w">                                               <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \sh  -c "\
-      profile_name='_outbox'
+      profile_name='_outbox'  ;\
       '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
       '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
