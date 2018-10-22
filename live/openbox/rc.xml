@@ -668,25 +668,11 @@ An example block.
   <!--    [Execute] (Mod1-Control-F) {xtoolwait sfm & wmpid=$! && wait $wmpid && wmctrl -F -r "sfm #1" -e 1,0,0,800,1148 && wmctrl -F -r "sfm #0" -e 1,800,0,800,1148}  -->
   <keybind key="W-f">                                                   <action name="Execute"> <command>
 <!--
-      Works under Lubuntu 10.10+, 2012-06-09+
-      Works under Unity Linux 2011.0 alpha, 2011-07-23
-    \sh  -c "\
-      export LS_COLORS=\"no=00:fi=00:di=00;36:ln=00;35:pi=40;33:so=00;35:bd=40;33;01:cd=40;33;01:or=00;05;37;41:mi=00;05;37;41:ex=00;32:*.cmd=00;32:*.exe=00;32:*.com=00;32:*.btm=00;32:*.bat=00;32:*.sh=00;32:*.csh=00;32:*.tar=00;31:*.tgz=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.rar=00;31:*.zip=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.bz=00;31:*.tz=00;31:*.rpm=00;31:*.cpio=00;31:*.torrent=00;31:*.jpg=00;35:*~.jpg=00;33:*.gif=00;35:*.bmp=00;35:*.xbm=00;35:*.xpm=00;35:*.png=00;35:*.tif=00;35:*~.mp3=00;03:*~.ogg=00;03:*~.flv=00;03:*~.ape=00;03:*~.flv=00;03:*~.mpg=00;03:*~.wmv=00;03:*.part=00;03:\" ;\
-      \ssfm \\
-    "
-    -->
-<!--
     \pcmanfm
     \pcmanfm-mod
     \Thunar
 -->
     \spacefm  --new-window  --no-saved-tabs
-    <!--
-      I don't understand why /etc/DIR_COLORS is being ignored.  I'm not entirely sure how to import it either.
-      Working under Unity Linux 2010.1
-      \sh  -c "export LS_COLORS=\"$LS_COLORS:*.jpeg=00;35:*~.flv=00;03:*~.mpg=00;03:*~.avi=00;03:*~.wmv=00;03:*~.mp3=00;03:*~.jpg=00;03:*~.png=00;03:\";ssfm"
-      \ssfm
-    -->
                                                                         </command> </action> </keybind>
   <keybind key="C-A-e">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     /l/shell-random/git/live/sh/scripts/projects.sh
@@ -824,16 +810,14 @@ scrot \
   <finalactions> 	Focus, Raise, Unshade 	A list of actions to run on the window which the user finally selects using this action. 
 -->
 
-  <!-- FIXME - Have the alt-tab "popup pager" appear on every monitor. -->
-  <!--         This used to be the case, but was changed/removed in 3.4.9  -->
-  <!--         http://openbox.org/wiki/Openbox:Changelog#3.4.9 -->
-  <keybind key="A-Tab">     <action name="NextWindow"/>         </keybind>
+  <!-- The alt-tab "popup pager" no longer appears on every monitor. -->
+  <!-- It used to, but was changed/removed in 3.4.9  -->
+  <!--   http://openbox.org/wiki/Openbox:Changelog#3.4.9 -->
 <!--
-  <keybind key="A-Tab">     <action name="NextWindow">          <raise>yes</raise></action></keybind>
+  <keybind key="A-Tab">     <action name="NextWindow"/>         </keybind>
 -->
+  <keybind key="A-Tab">     <action name="NextWindow">          <raise>yes</raise></action></keybind>
   <keybind key="A-S-Tab">   <action name="PreviousWindow"/>     </keybind>
-
-  <!-- FIXME - Have the alt-tab "popup pager" only display programs that exist on the current monitor. -->
 
 
 <!--
