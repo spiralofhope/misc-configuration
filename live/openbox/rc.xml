@@ -457,9 +457,6 @@ An example block.
       --execute="\htop"
 --> ?>
                                                                         </command> </action> </keybind>
-  <keybind key="W-s">                                                   <action name="Execute"> <command>
-    /l/shell-random/git/live/zsh/scripts/terminal.sh
-                                                                        </command> </action> </keybind>
   <keybind key="C-A-s">                                                 <action name="Execute"> <command>
     /l/shell-random/git/live/zsh/scripts/terminal.sh
                                                                         </command> </action> </keybind>
@@ -532,29 +529,29 @@ An example block.
 --> ?>
     \sh  -c "\
       profile_name='default'  ;\
-      '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
-      '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
+      '/l/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
+      '/l/OS/bin/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
                                                                         </command> </action> </keybind>
   <keybind key="W-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \sh  -c "\
       profile_name='p'  ;\
-      '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
-      '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
+      '/l/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
+      '/l/OS/bin/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
                                                                         </command> </action> </keybind>
   <keybind key="A-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \sh  -c "\
       profile_name='windows'  ;\
-      '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
-      '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
+      '/l/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
+      '/l/OS/bin/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
                                                                         </command> </action> </keybind>
   <keybind key="C-A-S-w">                                               <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \sh  -c "\
       profile_name='_outbox'  ;\
-      '/l/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
-      '/l/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
+      '/l/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
+      '/l/OS/bin/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
                                                                         </command> </action> </keybind>
   <keybind key="C-A-e">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
@@ -754,11 +751,20 @@ scrot \
 
   <keybind key="C-Escape">                                              <action name="Execute"> <command>
     <!-- TODO:  Import the use of the Windows key for opening the menu?  It's located in the lubuntu default rc.xml (whatever it's been renamed to) -->
-    \lxpanelctl menu
+    <!--
+        \lxpanelctl menu
+    -->
                                                                         </command> </action> </keybind>
   <keybind key="W-x">                                                   <action name="Execute"> <command>
     <!-- Ugh, Windows 10 made me do this.  -->
-    \lxpanelctl menu
+    <!--
+        \lxpanelctl menu
+    -->
+    /l/shell-random/git/live/sh/scripts/run.sh
+                                                                        </command> </action> </keybind>
+  <keybind key="W-s">                                                   <action name="Execute"> <command>
+    <!-- Ugh, Windows 10 made me do this.  -->
+    /l/shell-random/git/live/sh/scripts/run.sh
                                                                         </command> </action> </keybind>
   <keybind key="C-A-Delete">                                            <action name="Execute"> <command>
     \lxtask
