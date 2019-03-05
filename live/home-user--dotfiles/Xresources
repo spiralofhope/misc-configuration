@@ -54,9 +54,9 @@ URxvt.keysym.C-Right:   \033[1;5C
 !   https://www.linuxquestions.org/questions/slackware-14/rxvt-unicode-hacking-800818/page2.html#post4013717
 !   https://www.linuxquestions.org/questions/slackware-14/rxvt-unicode-hacking-800818/page2.html#post4378868
 URxvt.iso14755: False
-#URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+!URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.matcher.button: 1
-#URxvt.perl-ext-common: default,matcher,clipboard
+!URxvt.perl-ext-common: default,matcher,clipboard
 
 
 
