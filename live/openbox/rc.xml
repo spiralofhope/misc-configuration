@@ -72,8 +72,12 @@ An example block.
 
 <theme>
   <name>minimal-spiralofhope</name>
+  <!--  2019-03-05 - Lubuntu 18.10
+  <name>Lubuntu Arc</name>
+  -->
   <titleLayout>NLDIMC</titleLayout>
-  <!--
+
+ <!--
     Available characters are NDSLIMC, each can occur at most once.
       N = window icon
       L = window label (AKA title).
@@ -250,23 +254,26 @@ An example block.
     \python pvol.py -m
     2017-12-09 - BUG:  `aumix` cannot toggle sound from mute back up again.
     \amixer  -q  sset Master toggle
+    Learn the channel name with `amixer scontrols`, but -D pulse seems to work..
     -->
-    \amixer -D pulse set Master 1+ toggle
+    \amixer -D pulse sset Master 1+ toggle
                                                                         </command> </action> </keybind>
   <keybind key="XF86AudioLowerVolume">                                  <action name="Execute"> <command>
     <!--
     \python  pvol.py  -c  -5
     \aumix  -v-10
-    -->
     \amixer  -q  sset Master 3%-
+    -->
+    \amixer  -D pulse  sset Master 3%-
                                                                         </command> </action> </keybind>
   <keybind key="XF86AudioRaiseVolume">                                  <action name="Execute"> <command>
     <!--
     Warning:  pyvol has a noticeable delay..
     python pvol.py -c 5
     aumix -v+10
-    -->
     \amixer -q sset Master 3%+
+    -->
+    \amixer  -D pulse  sset Master 3%+
                                                                         </command> </action> </keybind>
   <keybind key="XF86Sleep">                                             <action name="Execute"> <command>
     \x-terminal-emulator
@@ -535,21 +542,14 @@ An example block.
                                                                         </command> </action> </keybind>
   <keybind key="W-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \sh  -c "\
-      profile_name='p'  ;\
-      '/l/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
-      '/l/OS/bin/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
-    "
-                                                                        </command> </action> </keybind>
-  <keybind key="A-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    \sh  -c "\
-      profile_name='windows'  ;\
+      profile_name='writer'  ;\
       '/l/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
       '/l/OS/bin/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
                                                                         </command> </action> </keybind>
   <keybind key="C-A-S-w">                                               <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \sh  -c "\
-      profile_name='_outbox'  ;\
+      profile_name='writer'  ;\
       '/l/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
       '/l/OS/bin/Pale Moon/_installation/palemoon'  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
