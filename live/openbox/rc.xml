@@ -325,7 +325,10 @@ An example block.
       \waitpid  $! ;\
       \openbox  --reconfigure ;\
       \waitpid  $! ;\
+      \cp  rc.xml  ~/l/misc-configuration/git/live/openbox/rc.xml  ;\
+      \ln  --force  --symblic  ~/l/misc-configuration/git/live/openbox/rc.xml  ~/.config/openbox/rc.xml  ;\
       \xrefresh \\
+
     "
                                                                         </command> </action> </keybind>
   <keybind key="A-F6">                                                  <action name="Execute"> <command>
