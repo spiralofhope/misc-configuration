@@ -13,7 +13,7 @@ A double-dash ( -- ) can be done in an invalid XML tag like this, and it will be
 I like to also wrap things with the everyday <!-- comment --> tag so that it will look obviously-commented with syntax highlighting.
 ?>
 <?ignore <!--
-An example block.
+An example block which can have -- in it.
 --> ?>
 
 
@@ -310,23 +310,17 @@ An example block.
     </action>
   </keybind>
 -->
-  <keybind key="A-F5">
-    <action name="Reconfigure"/>
-  </keybind>
+  <keybind key="A-F5">  <action name="Reconfigure"/>  </keybind>
   <keybind key="A-S-F5">                                                <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \sh  -c "\
       \geany \\
         ~/.themes/minimal-spiralofhope/openbox-3/themerc \\
-        ~/.config/openbox/rc.xml ;\
+        ~/l/misc-configuration/git/live/openbox/rc.xml ;\
       \waitpid  $! ;\
-      \cp  --force \\
-        ~/.config/openbox/rc.xml \\
-        ~/.config/openbox/rc.xml-normal.xml ;\
+      \ln  --force  --symbolic  ~/l/misc-configuration/git/live/openbox/rc.xml  ~/.config/openbox/rc.xml  ;\
       \waitpid  $! ;\
       \openbox  --reconfigure ;\
       \waitpid  $! ;\
-      \cp  rc.xml  ~/l/misc-configuration/git/live/openbox/rc.xml  ;\
-      \ln  --force  --symbolic  ~/l/misc-configuration/git/live/openbox/rc.xml  ~/.config/openbox/rc.xml  ;\
       \xrefresh \\
 
     "
@@ -822,11 +816,11 @@ scrot \
   <!-- The alt-tab "popup pager" no longer appears on every monitor. -->
   <!-- It used to, but was changed/removed in 3.4.9  -->
   <!--   http://openbox.org/wiki/Openbox:Changelog#3.4.9 -->
-  <keybind key="A-Tab">     <action name="NextWindow"/>         </keybind>
-<!--
-  <keybind key="A-Tab">     <action name="NextWindow">          <raise>yes</raise></action></keybind>
--->
-  <keybind key="A-S-Tab">   <action name="PreviousWindow"/>     </keybind>
+  <!-- I see no way to have the alt-tab only display the current monitor's programs.  I researched for a long while, to no avail. -->
+  <keybind key="A-Tab">     <action name="NextWindow">      <allDesktops>no </allDesktops>  </action>  </keybind>
+  <keybind key="A-S-Tab">   <action name="PreviousWindow">  <allDesktops>no </allDesktops>  </action>  </keybind>
+  <keybind key="W-Tab">     <action name="NextWindow">      <allDesktops>yes</allDesktops>  </action>  </keybind>
+  <keybind key="W-S-Tab">   <action name="PreviousWindow">  <allDesktops>yes</allDesktops>  </action>  </keybind>
 
 
 <!--
@@ -1073,6 +1067,7 @@ scrot \
   </application>
 
   <!-- Probably not necessary anymore, as it solved an old problem elsewhere.. -->
+<!--
   <application name="lxpanel">
     <decor>no</decor>
     <focus>yes</focus>
@@ -1080,6 +1075,7 @@ scrot \
     <layer>above</layer>
     <desktop>all</desktop>
   </application>
+-->
 
 </applications>
 
