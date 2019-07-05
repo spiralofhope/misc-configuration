@@ -530,25 +530,32 @@ An example block which can have -- in it.
     \chromium-browser
     \links -g
     \midori
---> ?>
+
+
     \sh  -c "\
       profile_name='default'  ;\
       '/l/live/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
       palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
+--> ?>
+    \sh  -c "\
+      profile_name='default'  ;\
+      \rm  --force  ~'/.moonchild productions/pale moon/profiles/'"$profile_name"*/.parentlock  ;\
+      \palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
+    "
                                                                         </command> </action> </keybind>
   <keybind key="W-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \sh  -c "\
       profile_name='writer'  ;\
-      '/l/live/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
-      palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
+      \rm  --force  ~'/.moonchild productions/pale moon/profiles/'"$profile_name"*/.parentlock  ;\
+      \palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
                                                                         </command> </action> </keybind>
   <keybind key="C-A-S-w">                                               <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     \sh  -c "\
       profile_name='writer'  ;\
-      '/l/live/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
-      palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
+      \rm  --force  ~'/.moonchild productions/pale moon/profiles/'"$profile_name"*/.parentlock  ;\
+      \palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
     "
                                                                         </command> </action> </keybind>
   <keybind key="C-A-e">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
