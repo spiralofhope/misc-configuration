@@ -567,9 +567,11 @@ An example block which can have -- in it.
   <keybind key="C-A-l">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
     /l/live/OS/Linux/shell-random/git/live/sh/scripts/screensaver-control.sh
                                                                         </command> </action> </keybind>
+<!--
   <keybind key="W-l">                                                   <action name="Execute"> <command>
     /l/live/OS/Linux/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow
                                                                         </command> </action> </keybind>
+-->
   <keybind key="C-A-W-l">                                               <action name="Execute"> <command>
     <?ignore <!--
       FIXME - this is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
@@ -1061,16 +1063,20 @@ scrot \
     </position>
   </application>
 
+  <application name="gpicview">
+    <fullscreen>true</fullscreen>
+  </application>
+
+  <application name="geeqie">
+    <fullscreen>true</fullscreen>
+  </application>
+
   <application name="evilvte">
     <focus>yes</focus>
     <position force="yes">
       <x>0</x>
       <y>0</y>
     </position>
-  </application>
-
-  <application name="gpicview">
-    <fullscreen>true</fullscreen>
   </application>
 
   <!-- Probably not necessary anymore, as it solved an old problem elsewhere.. -->
