@@ -1098,6 +1098,14 @@ scrot \
     </position>
   </application>
 
+<!--
+This doesn't do anything!
+If an existing lxterminal window is already running and is somewhere behind a window, then trying to call additional lxterminal instances will not work..
+  <application name="lxterminal">
+    <focus>yes</focus>
+  </application>
+-->
+
   <!-- Probably not necessary anymore, as it solved an old problem elsewhere.. -->
 <!--
   <application name="lxpanel">
