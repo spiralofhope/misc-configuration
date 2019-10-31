@@ -315,9 +315,9 @@ An example block which can have -- in it.
     \sh  -c "\
       \geany \\
         ~/.themes/minimal-spiralofhope/openbox-3/themerc \\
-        ~/l/misc-configuration/git/live/openbox/rc.xml ;\
+        /l/live/OS/Linux/misc-configuration/git/live/openbox/rc.xml ;\
       \waitpid  $! ;\
-      \ln  --force  --symbolic  ~/l/misc-configuration/git/live/openbox/rc.xml  ~/.config/openbox/rc.xml  ;\
+      \ln  --force  --symbolic  /l/live/OS/Linux/misc-configuration/git/live/openbox/rc.xml  ~/.config/openbox/rc.xml  ;\
       \waitpid  $! ;\
       \openbox  --reconfigure ;\
       \waitpid  $! ;\
