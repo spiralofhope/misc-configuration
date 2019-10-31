@@ -1067,8 +1067,27 @@ scrot \
     <fullscreen>true</fullscreen>
   </application>
 
+<?ignore
+  <!--
+  If this is full screening on the wrong monitor, then:
+    -  comment this out
+    -  save this rc.xml
+    -  openbox --reconfigure
+    -  run geeqie
+    -  un-fullscreen
+    -  move it to the correct monitor
+    -  fullscreen it
+    -  quit it
+    -  undo the commenting in this rc.xml
+    -  save this rc.xml
+    -  openbox --reconfigure
+  -->
+?>
   <application name="geeqie">
     <fullscreen>true</fullscreen>
+    <!-- maybe this is the solution -->
+    <monitor>mouse</monitor>
+    <focus>yes</focus>
   </application>
 
   <application name="evilvte">
