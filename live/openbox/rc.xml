@@ -15,12 +15,12 @@
 <!-- http://openbox.org/wiki/Help:Actions -->
 <!-- The default configuration is online at:  http://git.icculus.org/?p=mikachu/openbox.git;a=blob_plain;f=data/rc.xml;hb=master -->
 <openbox_config xmlns="http://openbox.org/3.4/rc">
-  <!-- Note that to ignore things which have a double-hyphen, enclose them with an invalid XML tag, like so: -->
-  <?ignore A double-dash ( -- ) can be done in an invalid XML tag like this, and it will be ignored.
+<!-- Note that to ignore things which have a double-hyphen, enclose them with an invalid XML tag, like so: -->
+<?ignore A double-dash ( -- ) can be done in an invalid XML tag like this, and it will be ignored.
 
 I like to also wrap things with the everyday <!-- comment --> tag so that it will look obviously-commented with syntax highlighting.
 ?>
-  <?ignore <!--
+<?ignore <!--
 An example block which can have -- in it.
 --> ?>
 
