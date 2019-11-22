@@ -253,7 +253,10 @@ Now a double-dash ( -- ) can be used (and ignored).
     <keybind key="W-Tab">    <action name="NextWindow">      <allDesktops>yes</allDesktops>  </action>  </keybind>
     <keybind key="W-S-Tab">  <action name="PreviousWindow">  <allDesktops>yes</allDesktops>  </action>  </keybind>
 
-    <keybind key="F11">      <action name="ToggleFullscreen"/>  </keybind>
+    <keybind key="F11">        <action name="ToggleFullscreen"/>    </keybind>
+    <keybind key="A-Return">   <action name="ToggleMaximize"/>      </keybind>
+    <keybind key="W-Return">   <action name="ToggleMaximizeVert"/>  </keybind>
+    <keybind key="W-S-Return"> <action name="ToggleMaximizeHorz"/>  </keybind>
 
     <keybind key="W-KP_1">   <action name="MoveResizeTo">  <x>     1</x>  <y>    -1</y>  </action>  </keybind>
     <keybind key="W-KP_2">   <action name="MoveResizeTo">                 <y>    -1</y>  </action>  </keybind>
