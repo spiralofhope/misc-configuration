@@ -1,83 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?ignore <!--
+- FIXME - my forcing terminals (e.g. directly using lxterminal is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
+- FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
+- On a 1920x1080 screen, the font "vga"          for \lxterminal is --geometry=239x64+0+0
+- On a 1920x1080 screen, the font "monospace 10" for \lxterminal is --geometry=239x59
+--> ?>
+
+
+
 <!-- Also /etc/xdg/openbox/rc.xml -->
 <!-- http://openbox.org/wiki/Help:Configuration -->
 <!-- http://openbox.org/wiki/Help:Bindings -->
 <!-- http://openbox.org/wiki/Help:Actions -->
 <!-- The default configuration is online at:  http://git.icculus.org/?p=mikachu/openbox.git;a=blob_plain;f=data/rc.xml;hb=master -->
-
 <openbox_config xmlns="http://openbox.org/3.4/rc">
-<!-- Note that to ignore things which have a double-hyphen, enclose them with an invalid XML tag, like so: -->
-<?ignore
-A double-dash ( -- ) can be done in an invalid XML tag like this, and it will be ignored.
+  <!-- Note that to ignore things which have a double-hyphen, enclose them with an invalid XML tag, like so: -->
+  <?ignore A double-dash ( -- ) can be done in an invalid XML tag like this, and it will be ignored.
 
 I like to also wrap things with the everyday <!-- comment --> tag so that it will look obviously-commented with syntax highlighting.
 ?>
-<?ignore <!--
+  <?ignore <!--
 An example block which can have -- in it.
 --> ?>
 
 
 
-<resistance>
-  <!-- Resistance (in pixels) between two windows, before they can overlap. -->
-  <strength>10</strength>
-  <!-- Resistance (in pixels) between the window and the screen edge, before overlap. -->
-  <screen_edge_strength>20</screen_edge_strength>
-</resistance>
+  <resistance>
+    <!-- Resistance (in pixels) between two windows, before they can overlap. -->
+    <strength>10</strength>
+    <!-- Resistance (in pixels) between the window and the screen edge, before overlap. -->
+    <screen_edge_strength>20</screen_edge_strength>
+  </resistance>
 
 
 
-<focus>
-  <!-- Always try to focus new windows when they appear.  Other rules do apply. -->
-  <focusNew>yes</focusNew>
-  <!-- Move focus to a window when you move the mouse into it. -->
-  <followMouse>no</followMouse>
-<?ignore <!--
+  <focus>
+    <!-- Always try to focus new windows when they appear.  Other rules do apply. -->
+    <focusNew>yes</focusNew>
+    <!-- Move focus to a window when you move the mouse into it. -->
+    <followMouse>no</followMouse>
     <!-- When followMouse is enabled, the mouse must be inside the window for this many milliseconds (1000 = 1 sec) before moving focus to it. -->
-    <focusDelay>200</focusDelay>
-    <!-- When followMouse is enabled, yes=focus the last used window when changing desktops, no=the one under the mouse pointer. -->
-    <focusLast>yes</focusLast>
-    <!-- When followMouse is enabled?  Move the focus under the mouse, even when the mouse is not moving. -->
-    <underMouse>no</underMouse>
+    <focusDelay>0</focusDelay>
     <!-- When followMouse is enabled, and a window is given focus by moving the mouse into it, also raise the window. -->
     <raiseOnFocus>no</raiseOnFocus>
---> ?>
-</focus>
+    <!-- When followMouse is enabled, yes=focus the last used window when changing desktops, no=the one under the mouse pointer. -->
+    <focusLast>yes</focusLast>
+    <!-- When followMouse is enabled, move the focus under the mouse, even when the mouse is not moving. -->
+    <underMouse>no</underMouse>
+  </focus>
 
 
 
-<placement>
-  <!--
-    New window placement.
+  <placement>
+    <!--
+      New window placement.
       Smart      = Placed automatically.
       UnderMouse = Placed under the mouse.
-  -->
-  <policy>Smart</policy>
-  <!--
-    With <policy>Smart</policy> and on a multi-monitor system, try to place new windows on:
+    -->
+    <policy>Smart</policy>
+    <!--
+      With <policy>Smart</policy> and on a multi-monitor system, try to place new windows on:
       Any    = any monitor.
       Mouse  = where the mouse is.
       Active = where the active window is.
-  -->
+    -->
     <monitor>Mouse</monitor>
-  <!-- The monitor where Openbox should place popup dialogs such as the
-    focus cycling popup, or the desktop switch popup.  It can be an index
-    from 1, specifying a particular monitor.  Or it can be one of the
-    following: 'Mouse' - where the mouse is, or
-               'Active' - where the active window is -->
-  <primaryMonitor>Mouse</primaryMonitor>
-</placement>
+    <!--
+      The monitor where Openbox should place popup dialogs such as the focus cycling popup, or the desktop switch popup.  It can be an index from 1, specifying a particular monitor.  Or it can be one of the following:
+        - 'Mouse'  - where the mouse is
+        - 'Active' - where the active window is
+    -->
+    <primaryMonitor>Mouse</primaryMonitor>
+  </placement>
 
 
-
-<theme>
-  <name>minimal-spiralofhope</name>
-  <!--  2019-03-05 - Lubuntu 18.10
-  <name>Lubuntu Arc</name>
-  -->
-  <titleLayout>NLDIMC</titleLayout>
-
- <!--
+  <theme>
+    <name>minimal-spiralofhope</name>
+    <!--  2019-03-05 - Lubuntu 18.10
+    <name>Lubuntu Arc</name>
+    -->
+    <titleLayout>NLDIMC</titleLayout>
+    <!--
     Available characters are NDSLIMC, each can occur at most once.
       N = window icon
       L = window label (AKA title).
@@ -86,130 +90,205 @@ An example block which can have -- in it.
       C = close
       S = shade (roll up/down)
       D = omnipresent (on all desktops).
-  -->
-  <!-- Should windows keep the border drawn by Openbox when window decorations are turned off? -->
-  <keepBorder>no</keepBorder>
-  <!-- A little iconification animation if enabled. -->
-  <animateIconify>no</animateIconify>
+    -->
+    <!-- Should windows keep the border drawn by Openbox when window decorations are turned off? -->
+    <keepBorder>no</keepBorder>
+    <!-- A little iconification animation if enabled. -->
+    <animateIconify>no</animateIconify>
     <!-- name   = Font name -->
     <!-- size   = Font size, in points. -->
     <!-- weight = normal, bold -->
     <!-- slant  = normal, italic -->
-  <font place="ActiveWindow">    <name>Sans</name> <size>12</size> <weight>normal</weight> <slant>normal</slant> </font>
-  <font place="InactiveWindow">  <name>Sans</name> <size>12</size> <weight>normal</weight> <slant>normal</slant> </font>
-  <font place="MenuHeader">      <name>Sans</name> <size>12</size> <weight>normal</weight> <slant>normal</slant> </font>
-  <font place="MenuItem">        <name>Sans</name> <size>12</size> <weight>normal</weight> <slant>normal</slant> </font>
-<!--
-  I don't know if this is valid.  I thought it had merged ActiveOnScreenDisplay and InactiveOnScreenDisplay but as of 2014-05-09 the online documentation seems to be missing these.
-  <font place="OnScreenDisplay"> <name>Sans</name> <size>12</size> <weight>normal</weight> <slant>normal</slant> </font>
--->
-  <font place="ActiveOnScreenDisplay">   <name>Sans</name> <size>12</size> <weight>normal</weight> <slant>normal</slant> </font>
-  <font place="InactiveOnScreenDisplay"> <name>Sans</name> <size>12</size> <weight>normal</weight> <slant>normal</slant> </font>
-</theme>
+    <font place="ActiveWindow">             <name>Sans</name>  <size>12</size>  <weight>normal</weight>  <slant>normal</slant>  </font>
+    <font place="InactiveWindow">           <name>Sans</name>  <size>12</size>  <weight>normal</weight>  <slant>normal</slant>  </font>
+    <font place="MenuHeader">               <name>Sans</name>  <size>12</size>  <weight>normal</weight>  <slant>normal</slant>  </font>
+    <font place="MenuItem">                 <name>Sans</name>  <size>12</size>  <weight>normal</weight>  <slant>normal</slant>  </font>
+    <font place="ActiveOnScreenDisplay">    <name>Sans</name>  <size>12</size>  <weight>normal</weight>  <slant>normal</slant>  </font>
+    <font place="InactiveOnScreenDisplay">  <name>Sans</name>  <size>12</size>  <weight>normal</weight>  <slant>normal</slant>  </font>
+  </theme>
 
 
 
-<desktops>
-  <!--
+  <desktops>
+    <!--
     This stuff is only used at startup, pagers allow you to change them during a session.
     These are default values to use when other ones are not already set by other applications, or saved in your session.
     Use `obconf` if you want to change these without having to log out and back in.
- -->
-  <number>4</number>
-  <firstdesk>1</firstdesk>
-  <names>
-    <name>Desktop 1</name>
-    <name>Desktop 2</name>
-    <name>Desktop 3</name>
-    <name>Desktop 4</name>
-  </names>
-  <popupTime>0</popupTime>
-  <!-- The number of milliseconds to show the popup for when switching desktops.  Set this to 0 to disable the popup. -->
-</desktops>
+    -->
+    <firstdesk>1</firstdesk>
+    <number>4</number>
+    <names>
+      <name>Desktop 1</name>
+      <name>Desktop 2</name>
+      <name>Desktop 3</name>
+      <name>Desktop 4</name>
+    </names>
+    <!-- The number of milliseconds to show the popup for when switching desktops.  Set this to 0 to disable the popup. -->
+    <popupTime>0</popupTime>
+  </desktops>
 
 
 
-<resize>
-  <!--
-    When resizing a window
+  <resize>   <!--  When resizing a window  -->
+    <!--
       yes = Keep redrawing the window's contents while it is being resized.
       no  = Do nothing with the window's contents while it is being resized.
             Draw and redraw box to indicate the proposed resize.
             When the user completes their resize, redraw the window at its new size.
-  -->
-  <drawContents>yes</drawContents>
-  <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
-  <popupShow>Always</popupShow>
-  <!-- 'Center', 'Top', or 'Fixed' -->
-  <popupPosition>Center</popupPosition>
-  <!-- These are used if popupPosition is set to 'Fixed' -->
-  <popupFixedPosition>
-    <!-- Positive number for distance from left edge, negative number for distance from right edge, or 'Center' -->
-    <x>10</x>
-    <!-- Positive number for distance from top edge, negative number for distance from bottom edge, or 'Center' -->
-    <y>10</y>
-  </popupFixedPosition>
-</resize>
+    -->
+    <drawContents>yes</drawContents>
+    <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
+    <popupShow>Always</popupShow>
+    <!-- 'Center', 'Top', or 'Fixed' -->
+    <popupPosition>Center</popupPosition>
+    <!-- These are used if popupPosition is set to 'Fixed' -->
+    <popupFixedPosition>
+      <!-- Positive number for distance from left edge, negative number for distance from right edge, or 'Center' -->
+      <x>10</x>
+      <!-- Positive number for distance from top edge, negative number for distance from bottom edge, or 'Center' -->
+      <y>10</y>
+    </popupFixedPosition>
+  </resize>
 
 
 
-<!--
-  You can reserve a portion of your screen where windows will not cover when they are maximized, or when they are initially placed.
-  Many programs reserve space automatically, but you can use this in other cases.
--->
-<margins>
-  <top>0</top>        <!-- I tend to click here to switch to applications, so this is a bad idea. -->
-  <bottom>0</bottom>  <!-- The taskbar is here. -->
-<!--  I used to keep a space on the left so I can right-click the desktop, but I've never needed that.
-  <left>1</left>
--->
-  <left>0</left>
-  <right>0</right>    <!-- There is usually a scroll bar here. -->
-</margins>
+  <margins>   <!-- The border around a window. -->
+    <!--  You can reserve a portion of your screen where windows will not cover when they are maximized, or when they are initially placed.  Many programs reserve space automatically, but you can use this in other cases.  This isn't really a great idea since some windows will look odd if they cannot completely fullscreen.  This is most especially jarring with a distracting desktop image or color.  -->
+    <top>0</top>
+    <!-- I tend to click here to switch to applications, so a bottom margin a bad idea. -->
+    <!-- Remember that the taskbar is here. -->
+    <bottom>0</bottom>
+    <!-- There is usually a scroll bar here. -->
+    <right>0</right>
+    <!-- This isn't a bad idea, but I didn't end up using it and it just looked odd. -->
+    <left>0</left>
+  </margins>
 
 
 
-<dock>  <!--  This is for "dockapps", some ancient tray-like concept. -->
+  <dock>   <!-- This is for "dockapps", some ancient tray-like concept. -->
     <!-- Where to show the dock. -->
-  <!-- TopLeft, Top, TopRight, Right, BottomRight, Bottom, BottomLeft, Left, Floating -->
-  <position>TopLeft</position>
+    <!-- TopLeft, Top, TopRight, Right, BottomRight, Bottom, BottomLeft, Left, Floating -->
+    <position>TopLeft</position>
     <!-- When position is set to _Floating_, these two specify the pixel position of the dock. -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
-  <!-- Vertical, Horizontal -->
-  <!-- The layout direction for dockapps -->
-  <direction>Horizontal</direction>
-  <!-- The window layer to put the dock in. -->
-  <!-- The dock can be raised and lowered by left and middle clicking on it, among windows in the specified layer. -->
-  <!-- Above, Normal, Below -->
-  <stacking>Above</stacking>
-  <!-- If _yes_, it won't stop windows from being placed or maximized over it. -->
-  <!-- When position is set to Floating, this is always _yes_.  You can use margins to emulate _no_. -->
-  <noStrut>no</noStrut>
-  <!-- Hide the dock automatically when the mouse is not over it. -->
-  <autoHide>no</autoHide>
+    <!-- Vertical, Horizontal -->
+    <!-- The layout direction for dockapps -->
+    <direction>Horizontal</direction>
+    <!-- The window layer to put the dock in. -->
+    <!-- The dock can be raised and lowered by left and middle clicking on it, among windows in the specified layer. -->
+    <!-- Above, Normal, Below -->
+    <stacking>Above</stacking>
+    <!-- If _yes_, it won't stop windows from being placed or maximized over it. -->
+    <!-- When position is set to Floating, this is always _yes_.  You can use margins to emulate _no_. -->
+    <noStrut>no</noStrut>
+    <!-- Hide the dock automatically when the mouse is not over it. -->
+    <autoHide>no</autoHide>
     <!-- If autoHide is _yes_, these are the delay for hiding or showing the dock. -->
     <!-- In milliseconds. -->
     <hideDelay>300</hideDelay>
     <showDelay>300</showDelay>
-  <!-- Which button to use for moving individual dockapps around in the dock. -->
-  <!-- 'Left', 'Middle', 'Right' -->
-  <moveButton>Left</moveButton>
-</dock>
+    <!-- Which button to use for moving individual dockapps around in the dock. -->
+    <!-- 'Left', 'Middle', 'Right' -->
+    <moveButton>Left</moveButton>
+  </dock>
 
 
 
-<keyboard>
-  <!-- I don't use chains. -->
-  <!-- <chainQuitKey>C-g</chainQuitKey> -->
-  <!-- Keybindings for applications. -->
+  <keyboard>  <!-- Keybindings for applications. -->
+    <!-- I don't use chains. -->
+<!--
+     <chainQuitKey>C-g</chainQuitKey> 
+-->
+
+    <!-- Keybindings for desktops. -->
+    <keybind key="W-d">  <action name="ToggleShowDesktop"/>  </keybind>
+
+    <keybind key="S-W-1">  <action name="SendToDesktop">  <desktop>1</desktop>  <follow>no</follow>  </action>  </keybind>
+    <keybind key="S-W-2">  <action name="SendToDesktop">  <desktop>2</desktop>  <follow>no</follow>  </action>  </keybind>
+    <keybind key="S-W-3">  <action name="SendToDesktop">  <desktop>3</desktop>  <follow>no</follow>  </action>  </keybind>
+    <keybind key="S-W-4">  <action name="SendToDesktop">  <desktop>4</desktop>  <follow>no</follow>  </action>  </keybind>
+
+    <keybind key="W-1">  <action name="Desktop">  <desktop>1</desktop>  </action>  </keybind>
+    <keybind key="W-2">  <action name="Desktop">  <desktop>2</desktop>  </action>  </keybind>
+    <keybind key="W-3">  <action name="Desktop">  <desktop>3</desktop>  </action>  </keybind>
+    <keybind key="W-4">  <action name="Desktop">  <desktop>4</desktop>  </action>  </keybind>
+
+    <keybind key="W-Left">    <action name="DesktopLeft">  <wrap>no</wrap>  </action>  </keybind>
+    <keybind key="C-W-Left">  <action name="DesktopLeft">  <wrap>no</wrap>  </action>  </keybind>
+
+    <keybind key="W-Right">    <action name="DesktopRight">  <wrap>no</wrap>  </action>  </keybind>
+    <keybind key="C-W-Right">  <action name="DesktopRight">  <wrap>no</wrap>  </action>  </keybind>
+
+    <keybind key="S-W-Left">   <action name="SendToDesktopLeft">   <wrap>no</wrap>  </action>  </keybind>
+    <keybind key="S-W-Right">  <action name="SendToDesktopRight">  <wrap>no</wrap>  </action>  </keybind>
+
+    <keybind key="A-F4">  <action name="Close"/>  </keybind>
+    <keybind key="A-Escape">  <action name="Lower"/>  <action name="FocusToBottom"/>  <action name="Unfocus"/>  </keybind>
+    <!-- BUG? - "space" needs to be lowercase. -->
+    <keybind key="A-space">  <action name="ShowMenu">  <menu>client-menu</menu>  </action>  </keybind>
+    <keybind key="W-space">  <action name="ShowMenu">  <menu>root-menu  </menu>  </action>  </keybind>
+
+
   <!--
-    Multimedia keyboard features (hotkeys, dials or whatever)
+    NextWindow
+    Option 	        Default Value 	Description
+    <dialog> 	      list 	  Specifies the type of dialog to be shown on screen with icons for all the windows which can be focused. Choices are "list", "icons", or "none". If "none" is selected then no dialog will be shown.
+    <bar> 	        yes 	  A boolean (yes/no) which specifies if the focus indicator is shown which highlights the window that will be focused.
+    <raise> 	      no 	    A boolean (yes/no) which specifies if windows are temporarily raised to the front while cycling through them.
+    <allDesktops> 	no 	    A boolean (yes/no) which when enabled lets you cycle focus between windows on all desktops, instead of only on the current desktop.
+    <panels> 	      no 	    A boolean (yes/no) which when enabled lets you cycle focus to/between panel windows such as your taskbar. This can be combined with <desktop>.
+    <desktop> 	    no 	    A boolean (yes/no) which when enabled lets you cycle focus to the desktop window, if one exists (such as in GNOME or KDE). This can be combined with <panels>.
+    <linear> 	      no 	    A boolean (yes/no) which when enabled causes focus to cycle in a fixed ordering, rather than in the order which windows have been last focused.
+    <interactive> 	yes 	  A boolean (yes/no) which when disabled causes the action to immediately switch focus to the next target.
+    <finalactions> 	Focus, Raise, Unshade 	A list of actions to run on the window which the user finally selects using this action. 
+  -->
+
+    <!-- The alt-tab "popup pager" no longer appears on every monitor. -->
+    <!-- It used to, but was changed/removed in 3.4.9  -->
+    <!--   http://openbox.org/wiki/Openbox:Changelog#3.4.9 -->
+    <!-- I see no way to have the alt-tab only display the current monitor's programs.  I researched for a long while, to no avail. -->
+    <keybind key="A-Tab">    <action name="NextWindow">      <allDesktops>no </allDesktops>  </action>  </keybind>
+    <keybind key="A-S-Tab">  <action name="PreviousWindow">  <allDesktops>no </allDesktops>  </action>  </keybind>
+    <keybind key="W-Tab">    <action name="NextWindow">      <allDesktops>yes</allDesktops>  </action>  </keybind>
+    <keybind key="W-S-Tab">  <action name="PreviousWindow">  <allDesktops>yes</allDesktops>  </action>  </keybind>
+
+
+  <!--
+    <keybind key="F11">  <action name="ToggleFullscreen"/>  </keybind>
+  -->
+
+    <!-- Move applications between monitors. -->
+    <keybind key="C-S-A-Left">  <action name="MoveResizeTo">  <monitor>1</monitor>  </action>  </keybind>
+    <keybind key="C-S-A-Right">  <action name="MoveResizeTo">  <monitor>2</monitor>  </action>  </keybind>
+    <!-- I can't have it bounce between monitors, but at least this will work. -->
+    <keybind key="C-W-x">  <action name="MoveResizeTo">  <monitor>2</monitor>  </action>  </keybind>
+  <!--  Well.. no, not really:
+    <keybind key="C-W-x">  <action name="SendToDesktopRight">  <wrap>yes</wrap>  </action>  </keybind>
+  -->
+
+
+    <!-- FIXME:  The backtick doesn't work for a hotkey.  Lame. -->
+    <keybind key="W-`">  <action name="ToggleOmnipresent"/>  </keybind>
+
+    <!-- In Windows 10 ,this opens the start menu.  -->
+    <keybind key="W-x">         <action name="Execute">  <command>  \lxpanelctl menu                                              </command>  </action>  </keybind>
+    <!-- In Windows 10 ,this opens the application search dialog.  -->
+    <keybind key="W-s">         <action name="Execute">  <command>  ~/l/shell-random/live/sh/scripts/run.sh       </command>  </action>  </keybind>
+    <!-- Note that this hotkey combination won't work within VirtualBox. -->
+    <keybind key="C-A-Delete">  <action name="Execute">  <command>  \lxtask                                                        </command>  </action>  </keybind>
+    <keybind key="C-A-Escape">  <action name="Execute">  <command>  \xkill                                                         </command>  </action>  </keybind>
+
+
+  <?ignore <!--  Multimedia keyboard features (buttons, hotkeys, dials, etc.)
     Instead of using a particular application's hotkeys or global hotkeys, you can program OpenBox to see the keys.
     /usr/share/X11/XKeysymDB
     https://cgit.freedesktop.org/xorg/proto/x11proto/tree/XF86keysym.h
-    If you get a new multimedia keyboard and want to map its keys more easily, then use `xev`:
-      - With your mouse over its window (not the terminal)
+    If you get a new multimedia keyboard and want to map its keys more easily, then:
+      - Open a terminal
+      - Run `xev`
+      - With your mouse over the xev window (not the terminal)
       - Press your multimedia key
       - You will see text like the following, which shows 'XF86Tools':
         KeyRelease event, serial 47, synthetic NO, window 0x7600001,
@@ -217,908 +296,666 @@ An example block which can have -- in it.
             state 0x10, keycode 179 (keysym 0x1008ff81, XF86Tools), same_screen YES,
             XLookupString gives 0 bytes: 
             XFilterEvent returns: False
-  -->
-  <!-- Logitech K310 -->
-  <keybind key="XF86HomePage ">                                         <action name="Execute"> <command>
-    \x-www-browser
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86Search">                                            <action name="Execute"> <command>
-    \x-terminal-emulator
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86Mail">                                              <action name="Execute"> <command>
-    \x-terminal-emulator
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86Calculator">                                        <action name="Execute"> <command>
-    <!--
-    \galculator
-    \gnome-calc2
-    \kcalc
-    -->
-    \xcalc
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86Tools">                                             <action name="Execute"> <command>
-    \x-terminal-emulator
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86AudioPrev">                                         <action name="Execute"> <command>
-    \audacious  --rew
-                                                                        </command> </action> </keybind>
-  <!-- Play/Pause -->
-  <keybind key="XF86AudioPlay">                                         <action name="Execute"> <command>
-    \audacious  --play-pause
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86AudioNext">                                         <action name="Execute"> <command>
-    \audacious  --fwd
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86AudioMute">                                         <action name="Execute"> <command>
-    <!--
-    \python pvol.py -m
-    2017-12-09 - BUG:  `aumix` cannot toggle sound from mute back up again.
-    \amixer  -q  sset Master toggle
-    Learn the channel name with `amixer scontrols`, but -D pulse seems to work..
-    -->
-    \amixer -D pulse sset Master 1+ toggle
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86AudioLowerVolume">                                  <action name="Execute"> <command>
-    <!--
-    \python  pvol.py  -c  -5
-    \aumix  -v-10
-    \amixer  -q  sset Master 3%-
-    -->
-    \amixer  -D pulse  sset Master 3%-
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86AudioRaiseVolume">                                  <action name="Execute"> <command>
-    <!--
-    Warning:  pyvol has a noticeable delay..
-    python pvol.py -c 5
-    aumix -v+10
-    \amixer -q sset Master 3%+
-    -->
-    \amixer  -D pulse  sset Master 3%+
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86Sleep">                                             <action name="Execute"> <command>
-    \x-terminal-emulator
-                                                                        </command> </action> </keybind>
-  <!-- /Logitech K310 -->
-<?ignore  <!-- My earlier Dell multimedia keyboard - FIXME - model number -->
-  <keybind key="XF86AudioMedia">                                        <action name="Execute"> <command>
-    \audacious
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86WWW">                                               <action name="Execute"> <command>
-    \x-www-browser
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86Terminal">                                          <action name="Execute"> <command>
-    \x-terminal-emulator
-                                                                        </command> </action> </keybind>
-  <keybind key="XF86MyComputer">                                        <action name="Execute"> <command>
-    <!--
-    \pcmanfm
-    \pcmanfm-mod
-    \Thunar
-    -->
-    \spacefm  --new-window  --no-saved-tabs
-                                                                        </command> </action> </keybind>
-?>  <!-- /Dell -->
-<!--
-  Obsoleted...
--->
-  <!--     : I need another program which is aware of this and can do this for me. -->
-  <!-- idea: decrypt from the clipboard -->
-<!--
-  <keybind key="C-A-D">
-    <action name="Execute">
-      <command>~/bin/decrypt.sh</command>
-    </action>
-  </keybind>
--->
-  <keybind key="A-F5">  <action name="Reconfigure"/>  </keybind>
-  <keybind key="A-S-F5">                                                <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    \sh  -c "\
-      \geany \\
-        ~/.themes/minimal-spiralofhope/openbox-3/themerc \\
-        /l/live/OS/Linux/misc-configuration/git/live/openbox/rc.xml ;\
-      \waitpid  $! ;\
-      \ln  --force  --symbolic  /l/live/OS/Linux/misc-configuration/git/live/openbox/rc.xml  ~/.config/openbox/rc.xml  ;\
-      \waitpid  $! ;\
-      \openbox  --reconfigure ;\
-      \waitpid  $! ;\
-      \xrefresh \\
+    --> ?>
 
-    "
-                                                                        </command> </action> </keybind>
-  <keybind key="A-F6">                                                  <action name="Execute"> <command>
-    <?ignore <!--
-      FIXME - this is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
-      FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
-    --> ?>
-    <!-- Devuan -->
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \urxvtc \
-        -geometry 28x1 \
-        +sb                   ` # Remove the scroll bar ` \
-        -title synaptic \
-        -e /bin/su  --command \synaptic&amp;  root
-<?ignore <!-- from old setup
-    <!-- rxvt-unicode (urxvt, urxvtc is the client) -->
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \urxvtc \
-        -geometry 28x1 \
-        +sb                   ` # Remove the scroll bar ` \
-        -title synaptic \
-        -e \sudo  \synaptic
+    <!-- Begin keybinds for the Logitech K310 -->
+    <keybind key="XF86HomePage ">   <action name="Execute">  <command>  \x-www-browser        </command>  </action>  </keybind>
+    <keybind key="XF86Search">      <action name="Execute">  <command>  \x-terminal-emulator  </command>  </action>  </keybind>
+    <keybind key="XF86Mail">        <action name="Execute">  <command>  \x-terminal-emulator  </command>  </action>  </keybind>
+    <keybind key="XF86Calculator">  <action name="Execute">  <command>  \xcalc                </command>  </action>  </keybind>
+<?ignore <!--
+\galculator
+
+\gnome-calc2
+
+\kcalc
 --> ?>
-<?ignore <!-- lxterminal --
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \lxterminal \
-        --geometry=28x1 \
-        --title="synaptic" \
-        --command="\sudo  \synaptic"
+
+    <keybind key="XF86Tools">       <action name="Execute">  <command>  \x-terminal-emulator      </command>  </action>  </keybind>
+    <keybind key="XF86AudioPrev">   <action name="Execute">  <command>  \audacious  --rew         </command>  </action>  </keybind>
+    <!-- I like to toggle play/pause -->
+    <keybind key="XF86AudioPlay">   <action name="Execute">  <command>  \audacious  --play-pause  </command>  </action>  </keybind>
+    <keybind key="XF86AudioNext">   <action name="Execute">  <command>  \audacious  --fwd         </command>  </action>  </keybind>
+<?ignore <!--
+\python pvol.py -m
+
+# 2017-12-09 - BUG:  `aumix` cannot toggle sound from mute back up again.
+\amixer  -q  sset Master toggle
+
+# Learn the channel name with `amixer scontrols`, but -D pulse seems to work..
 --> ?>
-                                                                        </command> </action> </keybind>
-  <keybind key="W-i">                                                   <action name="Execute"> <command>
-    <?ignore <!--
-      FIXME - this is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
-      FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
-    --> ?>
-    <!-- rxvt-unicode (urxvt, urxvtc is the client) -->
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \urxvtc \
-        -geometry 239x64 \
-        +sb                   ` # Remove the scroll bar ` \
-        -e \weechat
-                                                                        </command> </action> </keybind>
-  <keybind key="C-S-Escape">                                            <action name="Execute"> <command>
-    <?ignore <!--
-      htop can hide things, but if you want to *force* it as a permissions thing, add something like this to your /etc/fstab:
+
+    <keybind key="XF86AudioMute">         <action name="Execute">  <command>  \amixer -D pulse sset Master 1+ toggle  </command>  </action>  </keybind>
+    <keybind key="XF86AudioLowerVolume">  <action name="Execute">  <command>  \amixer  -D pulse  sset Master 3%-      </command>  </action>  </keybind>
+    <keybind key="XF86AudioRaiseVolume">  <action name="Execute">  <command>  \amixer  -D pulse  sset Master 3%+      </command>  </action>  </keybind>
+<?ignore <!--
+# Warning:  pyvol has a noticeable delay..
+python pvol.py -c 5
+
+aumix -v+10
+
+\amixer -q sset Master 3%+
+--> ?>
+
+    <keybind key="XF86Sleep">  <action name="Execute">  <command>       \x-terminal-emulator  </command>  </action>  </keybind>
+    <!-- / End keybinds for the Logitech K310 -->
+
+<?ignore <!-- My earlier Dell multimedia keyboard - FIXME - model number
+    <keybind key="XF86AudioMedia">  <action name="Execute">  <command>  \audacious  </command>  </action>  </keybind>
+    <keybind key="XF86WWW">         <action name="Execute">  <command>  \x-www-browser  </command>  </action>  </keybind>
+    <keybind key="XF86Terminal">    <action name="Execute">  <command>  \x-terminal-emulator  </command>  </action>  </keybind>
+    <keybind key="XF86MyComputer">  <action name="Execute">  <command>  \spacefm  --new-window  --no-saved-tabs  </command>  </action>  </keybind>
+--> ?>
+
+
+    <keybind key="A-F5">  <action name="Reconfigure"/>  </keybind>
+    <keybind key="A-S-F5">  <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>
+      \sh  -c "\
+        \geany \\
+          ~/.themes/minimal-spiralofhope/openbox-3/themerc \\
+          /l/live/OS/Linux/misc-configuration/git/live/openbox/rc.xml ;\
+        \waitpid  $! ;\
+        \ln  --force  --symbolic  /l/live/OS/Linux/misc-configuration/git/live/openbox/rc.xml  ~/.config/openbox/rc.xml  ;\
+        \waitpid  $! ;\
+        \openbox  --reconfigure ;\
+        \waitpid  $! ;\
+        \xrefresh \\
+
+      "
+    </command>  </action>  </keybind>
+    <keybind key="A-F6">  <action name="Execute">  <command>
+      <!-- Devuan -->
+      ~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
+        \urxvtc \
+          -geometry 28x1 \
+          +sb                   ` # Remove the scroll bar ` \
+          -title synaptic \
+          -e /bin/su  --command \synaptic&amp;  root
+    </command>  </action>  </keybind>
+
+<?ignore <!--
+# rxvt-unicode (urxvt, urxvtc is the client)
+~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
+  \urxvtc \
+    -geometry 28x1 \
+    +sb                   ` # Remove the scroll bar ` \
+    -title synaptic \
+    -e \sudo  \synaptic
+
+~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
+  \lxterminal \
+    --geometry=28x1 \
+    --title="synaptic" \
+    --command="\sudo  \synaptic"
+--> ?>
+
+    <keybind key="C-S-Escape">  <action name="Execute">  <command>  \lxterminal  --geometry=239x64+0+0  --command="\htop --user=user"  </command>  </action>  </keybind>
+    <?ignore <!--  Notes
+      - Note that htop has a feature to  hide processes, but if you want to *force* it as a permissions thing, add something like this to your /etc/fstab:
       proc  /proc  proc  defaults,noatime,nodiratime,hidepid=2  0  0
     --> ?>
-    \urxvtc \
-      -geometry 239x64 \
-      -e \htop --user=user
-    <?ignore <!--
-      FIXME - this is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
-      FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
-    --> ?>
-    <!-- On a 1920x1080 screen, the vga font will fill everything but the default-height lxterminal with a size of 239x64+0+0 -->
-    <!-- Tested and works 2016-03-26, on openbox 3.5.2, Slackware 14.1, xterm from X.Org 7.6.0(297) -->
 <?ignore <!--
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \xterm \
-        -si \
-        +vb \
-        +sb \
-        -j \
-        -s \
-        -fn vga \
-        +fbx \
-        -bg black \
-        -fg gray \
-        -cr darkgreen \
-        -sl 10000 \
-        -geometry 239x64+0+0 \
-        -e \htop
---> ?>
-<?ignore <!-- Tested and works 2016-03-26, on openbox 3.5.2, Slackware 14.1, xterm from X.Org 7.6.0(297) --
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \rxvt \
-        -si \
-        +vb \
-        +sb \
-        -j \
-        -fn vga \
-        -bg black \
-        -fg gray \
-        -cr darkgreen \
-        -sl 10000 \
-        -geometry 239x64+0+0 \
-        -e \htop
---> ?>
-<?ignore <!-- Even with comments to the right of switches, this won't work 2016-03-26, on openbox 3.5.2, Slackware 14.1, xterm from X.Org 7.6.0(297) --
-      \xterm \
-          ` # Output to the window should not have it scroll to the bottom.` \
-        -si \
-          ` # No visual bell. ` \
-        +vb \
-          ` # No scrollbar. ` \
-        +sb \
-          ` # Jump scrolling.  Normally, text is scrolled one line at a time; this option allows xterm to move multiple lines at a time so that it does not fall as far behind. Its use is strongly recommended since it makes xterm much faster when scanning through large amounts of text. ` \
-        -j \
-          ` # Indicates that xterm may scroll asynchronously, meaning that the screen does not have to be kept completely up to date while scrolling. This allows xterm to run faster when network latencies are very high and is typically useful when running across a very large internet or many gateways. ` \
-        -s \
-          ` # My font addition ` \
-        -fn vga \
-          ` # xterm should assume that the normal and bold fonts have VT100 line-drawing characters.  It sets the forceBoxChars resource to "true". ` \
-        +fbx \
-        -bg black \
-        -fg gray \
-        -cr darkgreen \
-        -sl 10000 \
-        -geometry 80x24+0+0 \
-        -e \htop
---> ?>
-<?ignore <!-- rxvt-unicode (urxvt, urxvtc is the client) --
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \urxvtc \
-        -geometry 239x64 \
-        +sb                   ` # Remove the scroll bar ` \
-        -e \htop
---> ?>
-<?ignore <!-- lxterminal, monospace 10 --
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \lxterminal \
-        --geometry=239x59 \
-        --command="\htop"
---> ?>
-<?ignore <!-- WHAT THE FUCK evilvte, y u no work with geometreeeeeeeeeeeeeeeeeeeeeeeee --
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \evilvte \
-        -g +239+59 \
-        -e \htop
---> ?>
-<?ignore <!-- Sakura, font size 12.  geometry=+0+0 seems to be a hidden option. --
-      --geometry=+0+0 \
-      --columns=212 \
-      --rows=57 \
-      --execute="\htop"
---> ?>
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-s">                                                 <action name="Execute"> <command>
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh
-                                                                        </command> </action> </keybind>
-  <keybind key="W-S-s">                                                 <action name="Execute"> <command>
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  with_lines
-                                                                        </command> </action> </keybind>
-  <keybind key="W-m">                                                   <action name="Execute"> <command>
-    <!-- TODO - make this magical with terminal.sh -->
-    urxvt  -e  \alsamixer
-                                                                        </command> </action> </keybind>
-  <keybind key="W-S-m">                                                 <action name="Execute"> <command>
-    <!-- TODO - make this magical with terminal.sh -->
-    urxvt  -e  \mocp
-<?ignore <!--
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh \
-      with_lines \
-      --geometry=160x25+0+0 \
-      --execute="\alsamixer" 
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh \
-      with_lines \
-      --geometry=+0+0 \
-      --columns=191 \
-      --rows=54 \
-      --execute="\alsamixer"
---> ?>
-<?ignore <!-- Fuck off, pulseaudio --
-    \pavucontrol
---> ?>
-                                                                        </command> </action> </keybind>
-<?ignore <!--
-  <keybind key="C-A-b">                                                 <startupnotify> <enabled>yes</enabled> </startupnotify> <action name="Execute"> <command>
-    BOINC/run_manager
-                                                                        </command> </action> </keybind>
---> ?>
-  <keybind key="W-b">                                                   <action name="Execute"> <command>
-    <!-- I don't know how to pass a string with spaces to -T -->
-<?ignore <!--
-      /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh \
-        -geometry 103x70+0+0 \
-        -T BitTornado \
-        -e 'nice  -n 10  /usr/bin/perl  /x/btstatus.pl  /tmp/RAMDISK/bittornado.log'
-      \nice  -n 5  \deluge
-      \nice  -n 5  /usr/bin/transmission-gtk
---> ?>
-    transmission-qt
-                                                                        </command> </action> </keybind>
-<?ignore <!--
-  <keybind key="W-S-C-d">                                               <action name="Execute"> <command>
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh \
-      with_lines \
-      --execute='/l/bin/diablo3.sh  nomumble'
-                                                                        </command> </action> </keybind>
---> ?>
-<?ignore <!--
-  <keybind key="W-S-C-w">                                               <action name="Execute"> <command>
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh \
-      with_lines \
-      --execute='/l/bin/world_of_warcraft_launcher.sh  nomumble'
-                                                                        </command> </action> </keybind>
---> ?>
-  <keybind key="C-A-c">                                                   <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    chromium
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-<?ignore <!--
-    /l/live/OS/Linux/shell-random/git/dead/chromium_pick-profile.sh
-    \chromium-browser
-    \links -g
-    \midori
+\lxtask
 
+# FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
+\urxvtc \
+  -geometry 239x64 \
+  +sb                   ` # Remove the scroll bar ` \
+  -e \htop --user=user
 
-    \sh  -c "\
-      profile_name='default'  ;\
-      '/l/live/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
-      palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
-    "
+~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
+  \rxvt \
+    -si \
+    +vb \
+    +sb \
+    -j \
+    -fn vga \
+    -bg black \
+    -fg gray \
+    -cr darkgreen \
+    -sl 10000 \
+    -geometry 239x64+0+0 \
+    -e \htop
+
+~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
+  \xterm \
+    -si \
+    +vb \
+    +sb \
+    -j \
+    -s \
+    -fn vga \
+    +fbx \
+    -bg black \
+    -fg gray \
+    -cr darkgreen \
+    -sl 10000 \
+    -geometry 239x64+0+0 \
+    -e \htop
+
+\xterm \
+    ` # Output to the window should not have it scroll to the bottom.` \
+  -si \
+    ` # No visual bell. ` \
+  +vb \
+    ` # No scrollbar. ` \
+  +sb \
+    ` # Jump scrolling.  Normally, text is scrolled one line at a time; this option allows xterm to move multiple lines at a time so that it does not fall as far behind. Its use is strongly recommended since it makes xterm much faster when scanning through large amounts of text. ` \
+  -j \
+    ` # Indicates that xterm may scroll asynchronously, meaning that the screen does not have to be kept completely up to date while scrolling. This allows xterm to run faster when network latencies are very high and is typically useful when running across a very large internet or many gateways. ` \
+  -s \
+    ` # My font addition ` \
+  -fn vga \
+    ` # xterm should assume that the normal and bold fonts have VT100 line-drawing characters.  It sets the forceBoxChars resource to "true". ` \
+  +fbx \
+  -bg black \
+  -fg gray \
+  -cr darkgreen \
+  -sl 10000 \
+  -geometry 80x24+0+0 \
+  -e \htop
+
+# WHAT THE FUCK evilvte, y u no work with geometreeeeeeeeeeeeeeeeeeeeeeeee
+~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
+  \evilvte \
+    -g +239+59 \
+    -e \htop
+
+# Font size 12.
+\sakura  \
+  --columns=212 \
+  --rows=57 \
+  --execute="\htop"
+
 --> ?>
-    \sh  -c "\
-      profile_name='default'  ;\
-      \rm  --force  ~'/.moonchild productions/pale moon/profiles/'"$profile_name"*/.parentlock  ;\
-      \palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
-    "
-                                                                        </command> </action> </keybind>
-  <keybind key="W-S-w">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    \sh  -c "\
-      profile_name='writer'  ;\
-      \rm  --force  ~'/.moonchild productions/pale moon/profiles/'"$profile_name"*/.parentlock  ;\
-      \palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
-    "
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-S-w">                                               <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    \sh  -c "\
-      profile_name='writer'  ;\
-      \rm  --force  ~'/.moonchild productions/pale moon/profiles/'"$profile_name"*/.parentlock  ;\
-      \palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
-    "
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-e">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    \claws-mail
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-Escape">                                            <action name="Execute"> <command>
-    \xkill
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-l">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    /l/live/OS/Linux/shell-random/git/live/sh/scripts/screensaver-control.sh
-                                                                        </command> </action> </keybind>
+
+    <keybind key="C-A-s">  <action name="Execute">  <command>  ~/l/shell-random/live/zsh/scripts/terminal.sh              </command>  </action>  </keybind>
+    <keybind key="W-S-s">  <action name="Execute">  <command>  ~/l/shell-random/live/zsh/scripts/terminal.sh  with_lines  </command>  </action>  </keybind>
+    <keybind key="W-m">    <action name="Execute">  <command>  \pavucontrol                                                                </command>  </action>  </keybind>
+<?ignore <!--
+\lxterminal  --geometry=239x64+0+0  --command="\alsamixer"
+--> ?>
+
+    <keybind key="C-A-c">  <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  \chromium  </command>  </action>  </keybind>
+    <keybind key="C-A-w">  <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>
+      \sh  -c "\
+        profile_name='default'  ;\
+        \rm  --force  ~'/.moonchild productions/pale moon/profiles/'"$profile_name"*/.parentlock  ;\
+        \palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
+      "
+    </command>  </action>  </keybind>
+<?ignore <!--
+~/l/shell-random/live/dead/chromium_pick-profile.sh
+
+\chromium-browser
+
+\links -g
+
+\midori
+
+\sh  -c "\
+  profile_name='default'  ;\
+  '/l/live/OS/bin/Pale Moon/delete_parentlock.sh'       "$profile_name"  ;\
+  palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
+"
+--> ?>
+
+  <keybind key="C-A-l">  <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  ~/l/shell-random/git/live/sh/scripts/screensaver-control.sh  </command>  </action>  </keybind>
 <!--
-  <keybind key="W-l">                                                   <action name="Execute"> <command>
-    /l/live/OS/Linux/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow
-                                                                        </command> </action> </keybind>
+  <keybind key="W-l">    <action name="Execute">                                                             <command>  ~/l/shell-random/live/sh/scripts/screensaver-control.sh  locknow  </command>  </action>  </keybind>
 -->
-  <keybind key="C-A-W-l">                                               <action name="Execute"> <command>
-    <?ignore <!--
-      FIXME - this is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
-      FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
-    --> ?>
+
+
+  <keybind key="C-A-W-l">  <action name="Execute">  <command>
     <!-- 2016-12-07, on Devuan -->
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
+    ~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
       \urxvtc \
         -geometry 28x1 \
         +sb                   ` # Remove the scroll bar ` \
         -title 'hibernate' \
         -e  su  -c  '/usr/sbin/hibernate'
+
 <?ignore <!--
-    2016-04-19, on Slackware 14.1
-    2016-11-26, on Devuan
-    \sh  -c "\
-      /l/live/OS/Linux/shell-random/git/live/sh/scripts/screensaver-control.sh  locknow &amp; \
-      ` #  sudo  has been set up to not require a password.  See  /etc/sudoers ` \
-      \sudo  /usr/sbin/pm-suspend \
-    "
---> >?
-<?ignore <!-- 2016-03-29, on Slackware 14.1
-    \sh  -c "\
+~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
+  \lxterminal \
+    --geometry=28x1 \
+    --title="pm-suspend" \
+    --command="\sudo  \pm-suspend"
+
+# 2016-04-19, on Slackware 14.1
+# 2016-11-26, on Devuan
+\sh  -c "\
+  ~/l/shell-random/live/sh/scripts/screensaver-control.sh  locknow &amp; \
+  ` #  sudo  has been set up to not require a password.  See  /etc/sudoers ` \
+  \sudo  /usr/sbin/pm-suspend \
+"
+
+# 2016-03-29, on Slackware 14.1
+\sh  -c "\
+  \xset  dpms 0 0 5 \
+  \xautolock  -locknow \
+  \sudo  /usr/sbin/pm-suspend \
+  \xset  dpms 0 0 180 \
+"
+
+# 2016-03-28, on Slackware 14.1
+\sh  -c "\
+  \xset  dpms 0 0 5 \
+  \sudo  /usr/sbin/pm-suspend \
+  \slock \
+  xset  dpms 0 0 180 \
+"
+
+# 2016-03-26, on Lubuntu (version not recorded)
+# rxvt-unicode (urxvt, urxvtc is the client)
+~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
+  \urxvtc \
+    -geometry 28x1 \
+    +sb                   ` # Remove the scroll bar ` \
+    -title pm-suspend \
+    -e \sh  -c "\
+      \sudo  \echo "pm-suspend" \
+      \sudo  stop network-manager \
+      \sudo  \pm-suspend \
       \xset  dpms 0 0 5 \
-      \xautolock  -locknow \
-      \sudo  /usr/sbin/pm-suspend \
-      \xset  dpms 0 0 180 \
-    "
---> >?
-<?ignore <!-- 2016-03-28, on Slackware 14.1 --
-    \sh  -c "\
-      \xset  dpms 0 0 5 \
-      \sudo  /usr/sbin/pm-suspend \
+      ` # It doesn't seem like a good idea to just manually trigger slock like this, but I can think of no other way of having the screen locked when un-suspending. ` \
       \slock \
-      xset  dpms 0 0 180 \
+      \xset  dpms 0 0 180 \
+      \sudo  start network-manager \
+      slock-capital-punishment.sh  on \
     "
---> >?
-    <?ignore <!--
-      FIXME - this is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
-      FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
-    --> ?>
-<?ignore <!-- 2016-03-26, on Lubuntu (version not recorded) --
-         <!-- rxvt-unicode (urxvt, urxvtc is the client) --
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \urxvtc \
-        -geometry 28x1 \
-        +sb                   ` # Remove the scroll bar ` \
-        -title pm-suspend \
-        -e \sh  -c "\
-          \sudo  \echo "pm-suspend" \
-          \sudo  stop network-manager \
-          \sudo  \pm-suspend \
-          \xset  dpms 0 0 5 \
-          ` # It doesn't seem like a good idea to just manually trigger slock like this, but I can think of no other way of having the screen locked when un-suspending. ` \
-          \slock \
-          \xset  dpms 0 0 180 \
-          \sudo  start network-manager \
-          slock-capital-punishment.sh  on \
-        "
 --> ?>
-<?ignore <!-- lxterminal, previously --
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \lxterminal \
-        --geometry=28x1 \
-        --title="pm-suspend" \
-        --command="\sudo  \pm-suspend"
---> ?>
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-S-W-l">                                             <action name="Execute"> <command>
-    <?ignore <!--
-      FIXME - this is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
-      FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
-    --> ?>
-    <!-- 2016-03-28, on Slackware 14.1 -->
-    \sudo  /usr/sbin/poweroff
-<?ignore <!-- 2016-03-26, on Lubuntu (version not recorded) --
-         <!-- rxvt-unicode (urxvt, urxvtc is the client) --  
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \urxvtc \
-        -geometry 28x1 \
-        +sb                   ` # Remove the scroll bar ` \
-        -title poweroff \
-        -e \sudo  \poweroff
---> ?>
-<?ignore <!-- lxterminal --
-    /l/live/OS/Linux/shell-random/git/live/zsh/scripts/terminal.sh  FORCE \
-      \lxterminal \
-        --geometry=28x1 \
-        --title="poweroff" \
-        --command="\sudo  \poweroff"
---> ?>
-<!--
-    \gksudo  \poweroff
--->
-                                                                        </command> </action> </keybind>
-  <!-- TODO:  Revisit this concept -->
-  <!--    [Execute] (Mod1-Control-F) {xtoolwait sfm & wmpid=$! && wait $wmpid && wmctrl -F -r "sfm #1" -e 1,0,0,800,1148 && wmctrl -F -r "sfm #0" -e 1,800,0,800,1148}  -->
-  <keybind key="W-f">                                                   <action name="Execute"> <command>
-<!--
-    \pcmanfm
-    \pcmanfm-mod
-    \Thunar
--->
-    \spacefm  --new-window  --no-saved-tabs
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-e">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    /l/live/OS/Linux/shell-random/git/live/sh/scripts/projects.sh
-                                                                        </command> </action> </keybind>
-  <keybind key="W-e">                                                   <action name="Execute"> <command>
-<!--
-    \pcmanfm
-    \pcmanfm-mod
-    \Thunar
--->
-    \spacefm  --new-window  --no-saved-tabs  /l/live/__
-                                                                        </command> </action> </keybind>
-  <keybind key="W-k">                                                   <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-<!--
-    \mtpaint  ~/new.png
-    \kolourpaint ~/new.png
--->
-                                                                        </command> </action> </keybind>
-  <!-- run an arbitrary commandline -->
-  <!-- TODO: Figure out more about this window, so that I can properly control it! -->
-  <!-- update from future self:  It's doable, look down below for the solution for the run dialog. -->
-  <keybind key="C-A-r">                                                 <action name="Execute"> <command>
-    \gksu
-                                                                        </command> </action> </keybind>
-  <keybind key="W-r">                                                   <action name="Execute"> <command>
-    /l/live/OS/Linux/shell-random/git/live/sh/scripts/run.sh
-                                                                        </command> </action> </keybind>
-  <keybind key="W-p">                                                   <action name="Execute"> <command>
-    /l/live/OS/Linux/shell-random/git/live/sh/scripts/dual-monitors.sh
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-S-r">                                               <action name="Execute"> <command>
-    <!-- This MUST be exactly the same as another client if you wish to connect to that same session! -->
-<!-- FIXME: Have this ask for the IP, and automatically populate it with a decent guess. -->
-    \rdesktop  192.168.0.13  -a 16  -g800x420  -N  -P  -r clipboard:PRIMARYCLIPBOARD  -u linaro  -z
-                                                                        </command> </action> </keybind>
-  <keybind key="W-C-A-S-r">                                             <action name="Execute"> <command>
-    \rdesktop  192.168.0.13  -A  -N  -P  -r clipboard:PRIMARYCLIPBOARD  -u linaro  -z
-                                                                        </command> </action> </keybind>
-  <keybind key="Print">                                                 <action name="Execute"> <startupnotify> <enabled>yes</enabled> </startupnotify> <command>
-    \urxvtc \
-      -e /l/live/OS/Linux/shell-random/git/live/sh/scripts/screenshot.sh
+                                                                        </command>  </action>  </keybind>
+    <keybind key="C-A-S-W-l">  <action name="Execute">  <command>
+      <!-- 2016-03-28, on Slackware 14.1 -->
+      \sudo  /usr/sbin/poweroff
+    </command>  </action>  </keybind>
 <?ignore <!--
-    \sh  -c "\
-      \urxvt  -title 'screenshot'  -geometry 120x50+0+0  -e \\
-        \dialog  --no-shadow  --msgbox  'screenshot' 0 0 ;\\
-        \scrot  --select  'screenshot--%Y-%m-%d_%H:%M:%S--$wx$h.png' --exec  '\mv  $f  /l/live/__ ; \gpicview /l/live/__/$f' \\
-    "
+# 2016-03-26, on Lubuntu (version not recorded)
+# rxvt-unicode (urxvt, urxvtc is the client)
+~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
+  \urxvtc \
+    -geometry 28x1 \
+    +sb                   ` # Remove the scroll bar ` \
+    -title poweroff \
+    -e \sudo  \poweroff
 
-    \sh  -c "\
-      \urxvt  -title 'screenshot'  -geometry 14x5+0+0  -e \\
-        \dialog  --no-shadow  --msgbox  'screenshot' 0 0 ;\\
-        \scrot  --select  'screenshot--%Y-%m-%d_%H:%M:%S--$wx$h.png' --exec  '\mv  $f  /l/live/__ ; \gpicview /l/live/__/$f' \\
-    "
+~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
+  \lxterminal \
+    --geometry=28x1 \
+    --title="poweroff" \
+    --command="\sudo  \poweroff"
 
-    \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/live/__'
+\gksudo  \poweroff
+--> ?>
+
+
+  <keybind key="W-e">  <action name="Execute">  <command>  \spacefm  --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  </keybind>
+<!--
+\Thunar
+
+\pcmanfm
+-->
+
+  <keybind key="W-f">
+    <action name="Execute">  <command>  \spacefm   --find-files  --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  
+    <?ignore <!--  I can't do both, because the main window will always appear overtop of the find dialog.
+    <action name="Execute">  <command>  \spacefm                 --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  
+    --> ?>
+   </keybind>
+<?ignore <!--
+\Thunar
+
+\pcmanfm
+
+# For a file manager which doesn't support tabs, it's theoretically possible to do something like this:
+\xtoolwait \
+  \filemanager  &\
+  wmpid=$!  && \
+  wait $wmpid  && \
+  \wmctrl -F -r "filemanager #1"  -e 1,0,0,800,1148  && \
+  \wmctrl -F -r "filemanager #0"  -e 1,800,0,800,1148
+--> ?>
+
+  <keybind key="C-A-e">
+    <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  ~/l/shell-random/live/sh/scripts/projects.sh  </command>  </action>
+    <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  \claws-mail  </command>  </action>
+  </keybind>
+
+    <keybind key="W-k">  <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>
+      \mtpaint  ~/__/__.jpg
+    </command>  </action>  </keybind>
+<?ignore <!--
+\kolourpaint  ~/__/__.jpg
+--> ?>
+
+    <keybind key="C-A-r">    <action name="Execute">  <command>  \lxterminal  --geometry=24x1  -T 'hidden title centered'  --command="\sudo  \lxpanelctl  run"  </command>  </action>  </keybind>
+    <keybind key="C-A-S-r">  <action name="Execute">  <command>  \lxterminal  --geometry=24x1  -T 'hidden title centered'  --command="\sudo  ~/l/shell-random/live/sh/scripts/run.sh"  </command>  </action>  </keybind>
+    <keybind key="W-r">  <action name="Execute">  <command>    ~/l/shell-random/live/sh/scripts/run.sh </command>  </action>  </keybind>
+    <keybind key="Print">  <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>
+      \lxterminal  --geometry=239x64+0+0  --command="~/l/shell-random/live/sh/scripts/screenshot.sh" 
+    </command>  </action>  </keybind>
+<?ignore <!--
+\urxvtc \
+  -e ~/l/shell-random/live/sh/scripts/screenshot.sh
+
+\scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/live/__'
+
+\mtpaint -s
+
+\ddm-screenshot
+
+\ksnapshot
+
+\sh  -c "\
+  \urxvt  -title 'screenshot'  -geometry 120x50+0+0  -e \\
+    \dialog  --no-shadow  --msgbox  'screenshot' 0 0 ;\\
+    \scrot  --select  'screenshot--%Y-%m-%d_%H:%M:%S--$wx$h.png' --exec  '\mv  $f  /l/live/__ ; \gpicview /l/live/__/$f' \\
+"
+
+\sh  -c "\
+  \urxvt  -title 'screenshot'  -geometry 14x5+0+0  -e \\
+    \dialog  --no-shadow  --msgbox  'screenshot' 0 0 ;\\
+    \scrot  --select  'screenshot--%Y-%m-%d_%H:%M:%S--$wx$h.png' --exec  '\mv  $f  /l/live/__ ; \gpicview /l/live/__/$f' \\
+"
+
+
 sh -c "~/text.sh "this is a test" \
 scrot \
 "
-    \urxvt  --geometry 40x2+1+1  -title 'Screenshot'  -e  ;\
-      \echo  'Click to select a window' ;\
-      \echo  'Drag a rectangle for an area' ;\
-      \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/live/__'
-    \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/live/__'
-    \urxvt  --geometry 40x1+1+1 -e  \scrot  --count  --delay 5  --select  /l/live/__
+
+\urxvt  --geometry 40x2+1+1  -title 'Screenshot'  -e  ;\
+  \echo  'Click to select a window' ;\
+  \echo  'Drag a rectangle for an area' ;\
+  \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/live/__'
+
+\urxvt  --geometry 40x1+1+1 -e  \scrot  --count  --delay 5  --select  /l/live/__
 --> ?>
+
+
 <?ignore <!--
-    \mtpaint -s
-    \ddm-screenshot
-    \ksnapshot
+    <keybind key="Shift-Print">  <action name="Execute">  <command>  </command>  </action>  </keybind>
+    <keybind key="Alt-Print">    <action name="Execute">  <command>  </command>  </action>  </keybind>
 --> ?>
-                                                                        </command> </action> </keybind>
-<!--
-  <keybind key="Shift-Print">                                           <action name="Execute"> <command>
-                                                                        </command> </action> </keybind>
-  <keybind key="Alt-Print">                                             <action name="Execute"> <command>
-                                                                        </command> </action> </keybind>
--->
 
 
-  <keybind key="C-Escape">                                              <action name="Execute"> <command>
-    <!-- TODO:  Import the use of the Windows key for opening the menu?  It's located in the lubuntu default rc.xml (whatever it's been renamed to) -->
-    <!--
-        \lxpanelctl menu
-    -->
-                                                                        </command> </action> </keybind>
-  <keybind key="W-x">                                                   <action name="Execute"> <command>
-    <!-- Ugh, Windows 10 made me do this.  -->
-    <!--
-        \lxpanelctl menu
-    -->
-    /l/live/OS/Linux/shell-random/git/live/sh/scripts/run.sh
-                                                                        </command> </action> </keybind>
-  <keybind key="W-s">                                                   <action name="Execute"> <command>
-    <!-- Ugh, Windows 10 made me do this.  -->
-    /l/live/OS/Linux/shell-random/git/live/sh/scripts/run.sh
-                                                                        </command> </action> </keybind>
-  <keybind key="C-A-Delete">                                            <action name="Execute"> <command>
-    \lxtask
-                                                                         </command> </action> </keybind>
-  <!-- Keybindings for desktops. -->
-  <keybind key="W-d">       <action name="ToggleShowDesktop"/>  </keybind>
+<?ignore <!--
+# W-p
+~/l/shell-random/live/sh/scripts/dual-monitors.sh
 
-  <keybind key="S-W-1">     <action name="SendToDesktop">       <desktop>1</desktop> <follow>no</follow> </action> </keybind>
-  <keybind key="S-W-2">     <action name="SendToDesktop">       <desktop>2</desktop> <follow>no</follow> </action> </keybind>
-  <keybind key="S-W-3">     <action name="SendToDesktop">       <desktop>3</desktop> <follow>no</follow> </action> </keybind>
-  <keybind key="S-W-4">     <action name="SendToDesktop">       <desktop>4</desktop> <follow>no</follow> </action> </keybind>
-
-  <keybind key="W-1">       <action name="Desktop">             <desktop>1</desktop> </action> </keybind>
-  <keybind key="W-2">       <action name="Desktop">             <desktop>2</desktop> </action> </keybind>
-  <keybind key="W-3">       <action name="Desktop">             <desktop>3</desktop> </action> </keybind>
-  <keybind key="W-4">       <action name="Desktop">             <desktop>4</desktop> </action> </keybind>
-
-  <keybind key="W-Left">    <action name="DesktopLeft">         <wrap>no</wrap> </action> </keybind>
-  <keybind key="C-W-Left">  <action name="DesktopLeft">         <wrap>no</wrap> </action> </keybind>
-
-  <keybind key="W-Right">   <action name="DesktopRight">        <wrap>no</wrap> </action> </keybind>
-  <keybind key="C-W-Right"> <action name="DesktopRight">        <wrap>no</wrap> </action> </keybind>
-
-  <keybind key="S-W-Left">  <action name="SendToDesktopLeft">   <wrap>no</wrap> </action> </keybind>
-  <keybind key="S-W-Right"> <action name="SendToDesktopRight">  <wrap>no</wrap> </action> </keybind>
-
-  <!-- With a second monitor, applications can be easily moved between them. -->
-  <keybind key="C-S-A-Left">  <action name="MoveResizeTo"> <monitor>2</monitor> </action> </keybind>
-  <keybind key="C-S-A-Right"> <action name="MoveResizeTo"> <monitor>1</monitor> </action> </keybind>
-
-  <keybind key="A-F4">      <action name="Close"/>              </keybind>
-  <keybind key="A-Escape">  <action name="Lower"/>
-                            <action name="FocusToBottom"/>
-                            <action name="Unfocus"/>            </keybind>
-  <!-- BUG? - "space" needs to be lowercase. -->
-  <keybind key="A-space">   <action name="ShowMenu">            <menu>client-menu</menu> </action> </keybind>
-
-<!--
-  NextWindow
-  Option 	        Default Value 	Description
-  <dialog> 	      list 	  Specifies the type of dialog to be shown on screen with icons for all the windows which can be focused. Choices are "list", "icons", or "none". If "none" is selected then no dialog will be shown.
-  <bar> 	        yes 	  A boolean (yes/no) which specifies if the focus indicator is shown which highlights the window that will be focused.
-  <raise> 	      no 	    A boolean (yes/no) which specifies if windows are temporarily raised to the front while cycling through them.
-  <allDesktops> 	no 	    A boolean (yes/no) which when enabled lets you cycle focus between windows on all desktops, instead of only on the current desktop.
-  <panels> 	      no 	    A boolean (yes/no) which when enabled lets you cycle focus to/between panel windows such as your taskbar. This can be combined with <desktop>.
-  <desktop> 	    no 	    A boolean (yes/no) which when enabled lets you cycle focus to the desktop window, if one exists (such as in GNOME or KDE). This can be combined with <panels>.
-  <linear> 	      no 	    A boolean (yes/no) which when enabled causes focus to cycle in a fixed ordering, rather than in the order which windows have been last focused.
-  <interactive> 	yes 	  A boolean (yes/no) which when disabled causes the action to immediately switch focus to the next target.
-  <finalactions> 	Focus, Raise, Unshade 	A list of actions to run on the window which the user finally selects using this action. 
--->
-
-  <!-- The alt-tab "popup pager" no longer appears on every monitor. -->
-  <!-- It used to, but was changed/removed in 3.4.9  -->
-  <!--   http://openbox.org/wiki/Openbox:Changelog#3.4.9 -->
-  <!-- I see no way to have the alt-tab only display the current monitor's programs.  I researched for a long while, to no avail. -->
-  <keybind key="A-Tab">     <action name="NextWindow">      <allDesktops>no </allDesktops>  </action>  </keybind>
-  <keybind key="A-S-Tab">   <action name="PreviousWindow">  <allDesktops>no </allDesktops>  </action>  </keybind>
-  <keybind key="W-Tab">     <action name="NextWindow">      <allDesktops>yes</allDesktops>  </action>  </keybind>
-  <keybind key="W-S-Tab">   <action name="PreviousWindow">  <allDesktops>yes</allDesktops>  </action>  </keybind>
+\rdesktop  192.168.0.13  -a 16  -g800x420  -N  -P  -r clipboard:PRIMARYCLIPBOARD  -u linaro  -z
+\rdesktop  192.168.0.13                -A  -N  -P  -r clipboard:PRIMARYCLIPBOARD  -u linaro  -z
+--> ?>
 
 
-<!--
-  <keybind key="F11">
-    <action name="ToggleFullscreen"/>
-  </keybind>
--->
-  <!-- FIXME:  The backtick doesn't work for a hotkey.  Lame. -->
-  <keybind key="W-`">
-    <action name="ToggleOmnipresent"/>
-  </keybind>
 </keyboard>
 
 
 
-<mouse>
-  <!-- Number of pixels the mouse must move before a drag begins -->
-  <dragThreshold>8</dragThreshold>
-  <!-- In milliseconds (1000 = 1 second) -->
-  <doubleClickTime>300</doubleClickTime>
-  <!--
+  <mouse>
+    <!-- Number of pixels the mouse must move before a drag begins -->
+    <dragThreshold>8</dragThreshold>
+    <!-- In milliseconds (1000 = 1 second) -->
+    <doubleClickTime>300</doubleClickTime>
+    <!--
     Time before changing desktops when the pointer touches the edge of the screen while moving a window, in milliseconds (1000 = 1 second).
     Set this to 0 to disable warping.
   -->
-  <screenEdgeWarpTime>0</screenEdgeWarpTime>
+    <screenEdgeWarpTime>0</screenEdgeWarpTime>
+    <!-- The entire window frame for any window (except the desktop). This includes both the window decorations (if any) and the application window itself. -->
+    <!-- Clicks will NOT be passed through to the client! -->
 
-  <!-- The entire window frame for any window (except the desktop). This includes both the window decorations (if any) and the application window itself. -->
-  <!-- Clicks will NOT be passed through to the client! -->
-  <context name="Frame">
-    <mousebind button="A-Left"    action="Press">
-      <action name="Raise"/>
-      <action name="Focus"/>
-    </mousebind>
-    <mousebind button="A-Left"    action="Drag">
+
+    <context name="Frame">
+      <mousebind button="A-Left"  action="Drag">  <action name="Unmaximize"/>  <action name="Move"/>    </mousebind>
+      <mousebind button="A-Right" action="Drag">  <action name="Unmaximize"/>  <action name="Resize"/>  </mousebind>
+
+      <mousebind action="Press" button="A-Shift-Right">  <action name="ShowMenu">  <menu>root-menu</menu>  </action>  </mousebind>
+      <mousebind action="Press" button="W-Right">        <action name="ShowMenu">  <menu>root-menu</menu>  </action>  </mousebind>
+
+      <mousebind button="A-Left" action="Press">
+        <action name="Raise"/>
+        <action name="Focus"/>
+      </mousebind>
+
+      <mousebind action="DoubleClick" button="A-Left">
+        <action name="Focus"/>
+        <action name="Raise"/>
+        <action name="ToggleMaximizeFull"/>
+      </mousebind>
+
+      <!-- Interferes with alt-leftclick-drag -->
 <!--
-      <action name="Unmaximize"/>
+      <mousebind action="Press" button="A-Right">
+        <action name="Focus"/>
+        <action name="Raise"/>
+        <action name="ShowMenu">  <menu>client-menu</menu>  </action>
+      </mousebind>
 -->
-      <action name="Move"/>
-    </mousebind>
-    <mousebind button="A-Right"   action="Drag">
-      <action name="Resize"/>
-    </mousebind>
-  </context>
-
-  <context name="Client">
-    <mousebind button="Left"      action="Press">
-      <action name="Raise"/>
-      <action name="Focus"/>
-    </mousebind>
-    <mousebind button="Middle"    action="Press">
-      <action name="Raise"/>
-      <action name="Focus"/>
-    </mousebind>
-    <mousebind button="Right"     action="Press">
-      <action name="Raise"/>
-      <action name="Focus"/>
-    </mousebind>
-  </context>
+    </context>
 
 
-  <context name="Titlebar">
-    <mousebind button="Left"      action="Press">         <action name="Raise"/>
-                                                          <action name="Focus"/>                </mousebind>
-    <mousebind button="Left"      action="Drag">          <action name="Unmaximize"/>
-                                                          <action name="Move"/>                 </mousebind>
-    <mousebind button="Left"      action="DoubleClick">   <action name="ToggleMaximizeFull"/>   </mousebind>
-    <mousebind button="A-Left"    action="Drag">          <action name="Unmaximize"/>
-                                                          <action name="Move"/>                 </mousebind>
-    <mousebind button="A-Right"   action="Drag">
-                                                          <action name="Resize"/>               </mousebind>
-<!--
+    <context name="Client">
+      <mousebind button="Left"   action="Press">  <action name="Raise"/>  <action name="Focus"/>  </mousebind>
+      <mousebind button="Middle" action="Press">  <action name="Raise"/>  <action name="Focus"/>  </mousebind>
+      <mousebind button="Right"  action="Press">  <action name="Raise"/>  <action name="Focus"/>  </mousebind>
+    </context>
+
+
+    <context name="Titlebar">
+      <!-- Remember that there is no titlebar if the window is "maximized". -->
+      <mousebind button="Left" action="Press">
+        <action name="Raise"/>
+        <action name="Focus"/>
+      </mousebind>
+
+      <mousebind button="Left"    action="Drag">         <action name="Move"/>                </mousebind>
+      <mousebind button="Left"    action="DoubleClick">  <action name="ToggleMaximizeFull"/>  </mousebind>
+      <mousebind button="Middle"  action="Click">        <action name="ToggleMaximizeFull"/>  </mousebind>
+      <mousebind button="A-Right" action="Drag">         <action name="Resize"/>              </mousebind>
+      <!--
     <mousebind button="Middle"    action="DoubleClick">   <action name="ToggleMaximizeVert"/>   </mousebind>
 -->
-<!-- A nice idea, but this doesn't work because of the menu. -->
-<!--
+      <!-- A nice idea, but this doesn't work because of the menu. -->
+      <!--
     <mousebind button="Right"     action="DoubleClick">   <action name="ToggleMaximizeHorz"/>   </mousebind>
 -->
-    <mousebind button="Right"     action="Click">         <action name="ShowMenu">
-                                                            <menu>client-menu</menu>            </action> </mousebind>
-  </context>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu">
+          <menu>client-menu</menu>
+        </action>
+      </mousebind>
+    </context>
 
-  <!-- The different sides of the frame -->
-  <!-- FIXME - I don't think this works as-expected.  I ended up putting a margin around everything so that maximized windows don't fully cover the desktop. -->
-  <context name="Left">   <mousebind button="Right" action="Click"> <action name="ShowMenu"> <menu>root-menu</menu> </action> </mousebind> </context>
-  <context name="Top">    <mousebind button="Right" action="Click"> <action name="ShowMenu"> <menu>root-menu</menu> </action> </mousebind> </context>
-  <context name="Right">  <mousebind button="Right" action="Click"> <action name="ShowMenu"> <menu>root-menu</menu> </action> </mousebind> </context>
-  <context name="Bottom"> <mousebind button="Right" action="Click"> <action name="ShowMenu"> <menu>root-menu</menu> </action> </mousebind> </context>
 
-  <!-- The different sides of the frame -->
-  <context name="Left">   <mousebind button="Left" action="Drag"> <action name="Resize"/> </mousebind> </context>
-  <context name="Top">    <mousebind button="Left" action="Drag"> <action name="Resize"/> </mousebind> </context>
-  <context name="Right">  <mousebind button="Left" action="Drag"> <action name="Resize"/> </mousebind> </context>
-  <context name="Bottom"> <mousebind button="Left" action="Drag"> <action name="Resize"/> </mousebind> </context>
+    <!-- The different sides of the frame -->
+    <!-- FIXME - I don't think this works as-expected.  I ended up putting a margin around everything so that maximized windows don't fully cover the desktop. -->
+    <context name="Left">    <mousebind button="Right" action="Click">  <action name="ShowMenu">  <menu>root-menu</menu>  </action>  </mousebind>  </context>
+    <context name="Top">     <mousebind button="Right" action="Click">  <action name="ShowMenu">  <menu>root-menu</menu>  </action>  </mousebind>  </context>
+    <context name="Right">   <mousebind button="Right" action="Click">  <action name="ShowMenu">  <menu>root-menu</menu>  </action>  </mousebind>  </context>
+    <context name="Bottom">  <mousebind button="Right" action="Click">  <action name="ShowMenu">  <menu>root-menu</menu>  </action>  </mousebind>  </context>
+    <context name="Left">    <mousebind button="Left" action="Drag">    <action name="Resize"/>   </mousebind>  </context>
+    <context name="Top">     <mousebind button="Left" action="Drag">    <action name="Resize"/>   </mousebind>  </context>
+    <context name="Right">   <mousebind button="Left" action="Drag">    <action name="Resize"/>   </mousebind>  </context>
+    <context name="Bottom">  <mousebind button="Left" action="Drag">    <action name="Resize"/>   </mousebind>  </context>
 
-  <!-- The top-left application icon -->
-  <context name="Icon">
-    <mousebind button="Left"      action="Click">         <action name="ShowMenu">
-                                                          <menu>client-menu</menu>            </action> </mousebind>
-    <mousebind button="Right"     action="Click">         <action name="ShowMenu">
-                                                          <menu>client-menu</menu>            </action> </mousebind>
-    <!-- Double-click a title bar to switch between windowed and maximized -->
-    <mousebind action="DoubleClick" button="Left">
-      <action name="Focus"/>
-      <action name="Close"/>
-    </mousebind>
-  </context>
+    <context name="Icon">   <!-- The top-left application icon -->
+      <mousebind button="Left"  action="Click">  <action name="ShowMenu">  <menu>client-menu</menu>  </action>  </mousebind>
+      <mousebind button="Right" action="Click">  <action name="ShowMenu">  <menu>client-menu</menu>  </action>  </mousebind>
+      <!-- Double-click a title bar to switch between windowed and maximized -->
+      <mousebind action="DoubleClick" button="Left">
+        <action name="Focus"/>
+        <action name="Close"/>
+      </mousebind>
+    </context>
 
-  <!-- The "pin" -->
-  <context name="AllDesktops">
-    <mousebind button="Left"      action="Click">         <action name="ToggleOmnipresent"/>    </mousebind>
-    <mousebind button="Right"     action="Click">         <action name="ToggleOmnipresent"/>    </mousebind>
-  </context>
+    <context name="AllDesktops">   <!-- The "pin" icon in the taskbar -->
+      <mousebind button="Left"  action="Click">  <action name="ToggleOmnipresent"/>  </mousebind>
+      <mousebind button="Right" action="Click">  <action name="ToggleOmnipresent"/>  </mousebind>
+    </context>
 
-  <!-- "Minimize" -->
-  <context name="Iconify">
-    <mousebind button="Left"      action="Click">         <action name="Iconify"/>              </mousebind>
-    <mousebind button="Right"     action="Click">         <action name="Iconify"/>              </mousebind>
-  </context>
+    <context name="Iconify">   <!-- "Iconify" means to minimize -->
+      <mousebind button="Left"  action="Click">  <action name="Iconify"/>  </mousebind>
+      <mousebind button="Right" action="Click">  <action name="Iconify"/>  </mousebind>
+    </context>
 
-  <context name="Maximize">
-    <mousebind button="Left"      action="Click">         <action name="ToggleMaximizeFull"/>   </mousebind>
-    <mousebind button="Middle"    action="Click">         <action name="ToggleMaximizeVert"/>   </mousebind>
-    <mousebind button="Right"     action="Click">         <action name="ToggleMaximizeHorz"/>   </mousebind>
-  </context>
+    <context name="Maximize">
+      <mousebind button="Left"   action="Click">  <action name="ToggleMaximizeFull"/>  </mousebind>
+      <mousebind button="Middle" action="Click">  <action name="ToggleMaximizeVert"/>  </mousebind>
+      <mousebind button="Right"  action="Click">  <action name="ToggleMaximizeHorz"/>  </mousebind>
+    </context>
 
-  <context name="Close">
-    <mousebind button="Left"      action="Click">         <action name="Close"/>                </mousebind>
-  </context>
+    <context name="Close">
+      <mousebind button="Left" action="Click">  <action name="Close"/>  </mousebind>
+    </context>
 
-  <context name="Root">
-    <!-- Menus -->
+    <context name="Root">  <!-- The "desktop" -->
+      <mousebind button="Right"  action="Click">  <action name="ShowMenu">  <menu>root-menu</menu>                   </action>  </mousebind>
 <!--
-    <mousebind button="Middle"    action="Press">         <action name="ShowMenu">
-                                                            <menu>client-list-combined-menu</menu>   </action> </mousebind>
+      <mousebind button="Middle" action="Press">  <action name="ShowMenu">  <menu>client-list-combined-menu</menu>   </action>  </mousebind>
 -->
-    <mousebind button="Right"     action="Click">         <action name="ShowMenu">
-                                                            <menu>root-menu</menu>              </action> </mousebind>
-  </context>
-</mouse>
+    </context>
+
+  </mouse>
 
 
 
-<menu>
-  <!-- TODO - make my own custom menu, with my common applications? -->
-  <!-- You can specify more than one menu file in here and they are all loaded, just don't make menu ids clash or, well, it'll be kind of pointless -->
-  <!-- Default menu file (or custom one in $HOME/.config/openbox/) -->
-  <file>menu.xml</file>
-  <!-- If a press-release lasts longer than this setting (in milliseconds), the menu is hidden again. -->
-  <!-- FIXME - what in the fuck is this for? -->
-  <hideDelay>200</hideDelay>
-  <!-- Center submenus vertically about the parent entry. -->
-  <middle>no</middle>
-  <!-- Delay before showing a submenu. -->
-  <submenuShowDelay>0</submenuShowDelay>
-  <!-- Icons appearing in the Desktop menu (client-list-menu) and Windows menu (client-list-combined-menu). -->
-  <applicationIcons>yes</applicationIcons>
-  <!-- Whether to show the Add new desktop and Remove last desktop entries in the Desktop and Windows menus. -->
-  <manageDesktops>no</manageDesktops>
-</menu>
+  <menu>
+    <!-- TODO - make my own custom menu, with my common applications? -->
+    <!-- You can specify more than one menu file in here and they are all loaded, just don't make menu ids clash or, well, it'll be kind of pointless -->
+    <!-- Default menu file (or custom one in $HOME/.config/openbox/) -->
+    <file>menu.xml</file>
+    <!-- If a press-release lasts longer than this setting (in milliseconds), the menu is hidden again. -->
+    <!-- FIXME - what in the fuck is this for? -->
+    <hideDelay>200</hideDelay>
+    <!-- Center submenus vertically about the parent entry. -->
+    <middle>no</middle>
+    <!-- Delay before showing a submenu. -->
+    <submenuShowDelay>0</submenuShowDelay>
+    <!-- Icons appearing in the Desktop menu (client-list-menu) and Windows menu (client-list-combined-menu). -->
+    <applicationIcons>yes</applicationIcons>
+    <!-- Whether to show the Add new desktop and Remove last desktop entries in the Desktop and Windows menus. -->
+    <manageDesktops>no</manageDesktops>
+  </menu>
 
 
 
-<applications>
-<!--
-  <applications> notes:
-  # You may use one or more of the name/class/role/title/type rules to specify windows to match
-  # You may set only one of name/class/role/title/type, or you may use more than one together to restrict your matches.
-  # The name, class, role, and title use simple wildcard matching such as those used by a shell. you can use * to match any characters and ? to match any single character.
-  # The type is one of: normal, dialog, splash, utility, menu, toolbar, dock, desktop
-  # When multiple rules match a window, they will all be applied, in the order that they appear in this list
-  <application name="the window's _OB_APP_NAME property (see obxprop)"
-              class="the window's _OB_APP_CLASS property (see obxprop)"
-               role="the window's _OB_APP_ROLE property (see obxprop)"
-              title="the window's _OB_APP_TITLE property (see obxprop)"
-               type="the window's _OB_APP_TYPE property (see obxprob)..
-                      (if unspecified, then it is 'dialog' for child windows)">
-  #
-  # Each rule element can be left out or set to 'default' to specify to not change that attribute of the window
-  #
-  # Enable or disable window decorations
-  <decor>yes</decor>
-  #
-  # Make the window shaded when it appears, or not
-  <shade>no</shade>
-  #
-  # When force is "yes", then the window will be placed here even if wants to be placed elsewhere.  This is to override buggy applications who refuse to behave.
-  <position force="no">
-    # A number like 50
-    # Or 'center' to center on screen
-    # Use a negative number to start from the right (or bottom for <y>), ie -50 is 50 pixels from the right edge (or bottom).
-    # Both x and y must be provided and not set to 'default'.  Otherwise, this won't work.
-    <x>center</x>
-    <y>200</y>
+  <applications>
+    <?ignore <!--
+    # You may use one or more of the name/class/role/title/type rules to specify windows to match
+    # You may set only one of name/class/role/title/type, or you may use more than one together to restrict your matches.
+    # The name, class, role, and title use simple wildcard matching such as those used by a shell. you can use * to match any characters and ? to match any single character.
+    # The type is one of: normal, dialog, splash, utility, menu, toolbar, dock, desktop
+    # When multiple rules match a window, they will all be applied, in the order that they appear in this list
+    <application name="the window's _OB_APP_NAME property (see obxprop)"
+                class="the window's _OB_APP_CLASS property (see obxprop)"
+                 role="the window's _OB_APP_ROLE property (see obxprop)"
+                title="the window's _OB_APP_TITLE property (see obxprop)"
+                 type="the window's _OB_APP_TYPE property (see obxprob)..
+                        (if unspecified, then it is 'dialog' for child windows)">
     #
-    # Specifies the monitor in a xinerama setup.
-    #   1 is the first head, or 'mouse' for wherever the mouse is
-    <monitor>1</monitor>
-  </position>
-  #
-  # If the window should try be given focus when it appears. if this is set to yes it doesn't guarantee the window will be given focus. Some restrictions may apply, but Openbox will try to
-  <focus>yes</focus>
-  #
-  # 1 is the first desktop, 'all' for all desktops
-  <desktop>1</desktop>
-  #
-  # above, normal, below
-  <layer>normal</layer>
-  #
-  # Make the window iconified when it appears, or not
-  <iconic>no</iconic>
-  #
-  # Asks to not be shown in pagers
-  <skip_pager>no</skip_pager>
-  #
-  # Asks to not be shown in taskbars. window cycling actions will also skip past such windows
-  <skip_taskbar>no</skip_taskbar>
-  #
-  # Make the window in fullscreen mode when it appears
-  <fullscreen>yes</fullscreen>
-  #
-  # 'Horizontal', 'Vertical' or boolean (yes/no)
-  <maximized>true</maximized>
-  </application>
--->
-  <!-- I'd love to have this just happen when opening lxterminal in some circumstances, but I don't know if that's possible. -->
-  <application name="lxterminal">
-    <focus>yes</focus>
-    <position force="yes">
-      <x>0</x>
-      <y>0</y>
+    # Each rule element can be left out or set to 'default' to specify to not change that attribute of the window
+    #
+    # Enable or disable window decorations
+    <decor>yes</decor>
+    #
+    # Make the window shaded when it appears, or not
+    <shade>no</shade>
+    #
+    # When force is "yes", then the window will be placed here even if wants to be placed elsewhere.  This is to override buggy applications who refuse to behave.
+    <position force="no">
+      # A number like 50
+      # Or 'center' to center on screen
+      # Use a negative number to start from the right (or bottom for <y>), ie -50 is 50 pixels from the right edge (or bottom).
+      # Both x and y must be provided and not set to 'default'.  Otherwise, this won't work.
+      <x>center</x>
+      <y>200</y>
+      #
+      # Specifies the monitor in a xinerama setup.
+      #   1 is the first head, or 'mouse' for wherever the mouse is
+      <monitor>1</monitor>
     </position>
-  </application>
-
-  <application name="gpicview">
-    <fullscreen>true</fullscreen>
-  </application>
-
-<?ignore
-  <!--
-  If this is full screening on the wrong monitor, then:
-    -  comment this out
-    -  save this rc.xml
-    -  openbox --reconfigure
-    -  run geeqie
-    -  un-fullscreen
-    -  move it to the correct monitor
-    -  fullscreen it
-    -  quit it
-    -  undo the commenting in this rc.xml
-    -  save this rc.xml
-    -  openbox --reconfigure
-  -->
-?>
-  <application name="geeqie">
-    <fullscreen>true</fullscreen>
-    <!-- maybe this is the solution -->
-    <monitor>mouse</monitor>
+    #
+    # If the window should try be given focus when it appears. if this is set to yes it doesn't guarantee the window will be given focus. Some restrictions may apply, but Openbox will try to
     <focus>yes</focus>
-  </application>
+    #
+    # 1 is the first desktop, 'all' for all desktops
+    <desktop>1</desktop>
+    #
+    # above, normal, below
+    <layer>normal</layer>
+    #
+    # Make the window iconified when it appears, or not
+    <iconic>no</iconic>
+    #
+    # Asks to not be shown in pagers
+    <skip_pager>no</skip_pager>
+    #
+    # Asks to not be shown in taskbars. window cycling actions will also skip past such windows
+    <skip_taskbar>no</skip_taskbar>
+    #
+    # Make the window in fullscreen mode when it appears
+    <fullscreen>yes</fullscreen>
+    #
+    # 'Horizontal', 'Vertical' or boolean (yes/no)
+    <maximized>true</maximized>
+    --> ?>
 
-  <application name="evilvte">
-    <focus>yes</focus>
-    <position force="yes">
-      <x>0</x>
-      <y>0</y>
-    </position>
-  </application>
+    <!-- I'd love to have this just happen when opening lxterminal in some circumstances, but I don't know if that's possible. -->
+    <application name="lxterminal">
+      <focus>yes</focus>
+      <position force="yes">
+        <x>0</x>
+        <y>0</y>
+      </position>
+    </application>
 
-<!--
-This doesn't do anything!
-If an existing lxterminal window is already running and is somewhere behind a window, then trying to call additional lxterminal instances will not work..
-  <application name="lxterminal">
-    <focus>yes</focus>
-  </application>
--->
+    <!-- Don't forget application priority.  This is here so that it overrides the above lxterminal preference. -->
+    <application title="hidden title centered">
+      <focus>yes</focus>
+      <position force="yes">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <layer>above</layer>
+      <decor>no</decor>
+    </application>
 
-  <!-- Probably not necessary anymore, as it solved an old problem elsewhere.. -->
-<!--
-  <application name="lxpanel">
-    <decor>no</decor>
-    <focus>yes</focus>
-    <skip_pager>yes</skip_pager>
-    <layer>above</layer>
-    <desktop>all</desktop>
-  </application>
--->
+    <application name="gpicview">
+      <fullscreen>true</fullscreen>
+    </application>
 
-</applications>
+    <application name="geeqie">
+      <?ignore <!--
+        If this is full screening on the wrong monitor, then:
+          -  comment this out
+          -  save this rc.xml
+          -  openbox --reconfigure
+          -  run geeqie
+          -  un-fullscreen
+          -  move it to the correct monitor
+          -  fullscreen it
+          -  quit it
+          -  undo the commenting in this rc.xml
+          -  save this rc.xml
+          -  openbox --reconfigure
+      --> ?>
+      <fullscreen>true</fullscreen>
+      <!-- maybe this is the solution -->
+      <monitor>mouse</monitor>
+      <focus>yes</focus>
+    </application>
 
+    <application name="evilvte">
+      <focus>yes</focus>
+      <position force="yes">
+        <x>0</x>
+        <y>0</y>
+      </position>
+    </application>
+
+
+  </applications>
 
 
 </openbox_config>
