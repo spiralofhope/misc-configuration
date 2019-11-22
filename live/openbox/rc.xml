@@ -202,7 +202,6 @@ Now a double-dash ( -- ) can be used (and ignored).
      <chainQuitKey>C-g</chainQuitKey> 
 -->
 
-    <!-- Keybindings for desktops. -->
     <keybind key="W-d">  <action name="ToggleShowDesktop"/>  </keybind>
 
     <keybind key="S-W-1">  <action name="SendToDesktop">  <desktop>1</desktop>  <follow>no</follow>  </action>  </keybind>
@@ -254,13 +253,20 @@ Now a double-dash ( -- ) can be used (and ignored).
     <keybind key="W-Tab">    <action name="NextWindow">      <allDesktops>yes</allDesktops>  </action>  </keybind>
     <keybind key="W-S-Tab">  <action name="PreviousWindow">  <allDesktops>yes</allDesktops>  </action>  </keybind>
 
+    <keybind key="F11">      <action name="ToggleFullscreen"/>  </keybind>
 
-  <!--
-    <keybind key="F11">  <action name="ToggleFullscreen"/>  </keybind>
-  -->
+    <keybind key="W-KP_1">   <action name="MoveResizeTo">  <x>     1</x>  <y>    -1</y>  </action>  </keybind>
+    <keybind key="W-KP_2">   <action name="MoveResizeTo">                 <y>    -1</y>  </action>  </keybind>
+    <keybind key="W-KP_3">   <action name="MoveResizeTo">  <x>    -1</x>  <y>    -1</y>  </action>  </keybind>
+    <keybind key="W-KP_4">   <action name="MoveResizeTo">  <x>     0</x>                 </action>  </keybind>
+    <keybind key="W-KP_5">   <action name="MoveResizeTo">  <x>center</x>  <y>center</y>  </action>  </keybind>
+    <keybind key="W-KP_6">   <action name="MoveResizeTo">  <x>    -1</x>                 </action>  </keybind>
+    <keybind key="W-KP_7">   <action name="MoveResizeTo">  <x>     0</x>  <y>     0</y>  </action>  </keybind>
+    <keybind key="W-KP_8">   <action name="MoveResizeTo">                 <y>     0</y>  </action>  </keybind>
+    <keybind key="W-KP_9">   <action name="MoveResizeTo">  <x>    -1</x>  <y>     0</y>  </action>  </keybind>
 
     <!-- Move applications between monitors. -->
-    <keybind key="C-S-A-Left">  <action name="MoveResizeTo">  <monitor>1</monitor>  </action>  </keybind>
+    <keybind key="C-S-A-Left">   <action name="MoveResizeTo">  <monitor>1</monitor>  </action>  </keybind>
     <keybind key="C-S-A-Right">  <action name="MoveResizeTo">  <monitor>2</monitor>  </action>  </keybind>
     <!-- I can't have it bounce between monitors, but at least this will work. -->
     <keybind key="C-W-x">  <action name="MoveResizeTo">  <monitor>2</monitor>  </action>  </keybind>
@@ -268,17 +274,16 @@ Now a double-dash ( -- ) can be used (and ignored).
     <keybind key="C-W-x">  <action name="SendToDesktopRight">  <wrap>yes</wrap>  </action>  </keybind>
   -->
 
-
     <!-- FIXME:  The backtick doesn't work for a hotkey.  Lame. -->
     <keybind key="W-`">  <action name="ToggleOmnipresent"/>  </keybind>
 
     <!-- In Windows 10 ,this opens the start menu.  -->
-    <keybind key="W-x">         <action name="Execute">  <command>  \lxpanelctl menu                                              </command>  </action>  </keybind>
+    <keybind key="W-x">         <action name="Execute">  <command>  \lxpanelctl menu                         </command>  </action>  </keybind>
     <!-- In Windows 10 ,this opens the application search dialog.  -->
-    <keybind key="W-s">         <action name="Execute">  <command>  ~/l/shell-random/live/sh/scripts/run.sh       </command>  </action>  </keybind>
+    <keybind key="W-s">         <action name="Execute">  <command>  ~/l/shell-random/live/sh/scripts/run.sh  </command>  </action>  </keybind>
     <!-- Note that this hotkey combination won't work within VirtualBox. -->
-    <keybind key="C-A-Delete">  <action name="Execute">  <command>  \lxtask                                                        </command>  </action>  </keybind>
-    <keybind key="C-A-Escape">  <action name="Execute">  <command>  \xkill                                                         </command>  </action>  </keybind>
+    <keybind key="C-A-Delete">  <action name="Execute">  <command>  \lxtask                                  </command>  </action>  </keybind>
+    <keybind key="C-A-Escape">  <action name="Execute">  <command>  \xkill                                   </command>  </action>  </keybind>
 
 
   <?ignore <!--  Multimedia keyboard features (buttons, hotkeys, dials, etc.)
@@ -303,7 +308,7 @@ Now a double-dash ( -- ) can be used (and ignored).
     <keybind key="XF86Search">      <action name="Execute">  <command>  \x-terminal-emulator  </command>  </action>  </keybind>
     <keybind key="XF86Mail">        <action name="Execute">  <command>  \x-terminal-emulator  </command>  </action>  </keybind>
     <keybind key="XF86Calculator">  <action name="Execute">  <command>  \xcalc                </command>  </action>  </keybind>
-<?ignore <!--
+<?ignore <!--  Alternatives
 \galculator
 
 \gnome-calc2
@@ -312,11 +317,14 @@ Now a double-dash ( -- ) can be used (and ignored).
 --> ?>
 
     <keybind key="XF86Tools">       <action name="Execute">  <command>  \x-terminal-emulator      </command>  </action>  </keybind>
+<!--
+TODO - also simultaneously support deadbeef?
+-->
     <keybind key="XF86AudioPrev">   <action name="Execute">  <command>  \audacious  --rew         </command>  </action>  </keybind>
     <!-- I like to toggle play/pause -->
     <keybind key="XF86AudioPlay">   <action name="Execute">  <command>  \audacious  --play-pause  </command>  </action>  </keybind>
     <keybind key="XF86AudioNext">   <action name="Execute">  <command>  \audacious  --fwd         </command>  </action>  </keybind>
-<?ignore <!--
+<?ignore <!--  Alternatives
 \python pvol.py -m
 
 # 2017-12-09 - BUG:  `aumix` cannot toggle sound from mute back up again.
@@ -328,7 +336,7 @@ Now a double-dash ( -- ) can be used (and ignored).
     <keybind key="XF86AudioMute">         <action name="Execute">  <command>  \amixer -D pulse sset Master 1+ toggle  </command>  </action>  </keybind>
     <keybind key="XF86AudioLowerVolume">  <action name="Execute">  <command>  \amixer  -D pulse  sset Master 3%-      </command>  </action>  </keybind>
     <keybind key="XF86AudioRaiseVolume">  <action name="Execute">  <command>  \amixer  -D pulse  sset Master 3%+      </command>  </action>  </keybind>
-<?ignore <!--
+<?ignore <!--  Alternatives
 # Warning:  pyvol has a noticeable delay..
 python pvol.py -c 5
 
@@ -341,9 +349,9 @@ aumix -v+10
     <!-- / End keybinds for the Logitech K310 -->
 
 <?ignore <!-- My earlier Dell multimedia keyboard - FIXME - model number
-    <keybind key="XF86AudioMedia">  <action name="Execute">  <command>  \audacious  </command>  </action>  </keybind>
-    <keybind key="XF86WWW">         <action name="Execute">  <command>  \x-www-browser  </command>  </action>  </keybind>
-    <keybind key="XF86Terminal">    <action name="Execute">  <command>  \x-terminal-emulator  </command>  </action>  </keybind>
+    <keybind key="XF86AudioMedia">  <action name="Execute">  <command>  \audacious                               </command>  </action>  </keybind>
+    <keybind key="XF86WWW">         <action name="Execute">  <command>  \x-www-browser                           </command>  </action>  </keybind>
+    <keybind key="XF86Terminal">    <action name="Execute">  <command>  \x-terminal-emulator                     </command>  </action>  </keybind>
     <keybind key="XF86MyComputer">  <action name="Execute">  <command>  \spacefm  --new-window  --no-saved-tabs  </command>  </action>  </keybind>
 --> ?>
 
@@ -371,7 +379,7 @@ aumix -v+10
           -e /bin/su  --command \synaptic&amp;  root
     </command>  </action>  </keybind>
 
-<?ignore <!--
+<?ignore <!--  Alternatives
 # rxvt-unicode (urxvt, urxvtc is the client)
 ~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
   \urxvtc \
@@ -392,7 +400,7 @@ aumix -v+10
       - Note that htop has a feature to  hide processes, but if you want to *force* it as a permissions thing, add something like this to your /etc/fstab:
       proc  /proc  proc  defaults,noatime,nodiratime,hidepid=2  0  0
     --> ?>
-<?ignore <!--
+<?ignore <!--  Alternatives
 \lxtask
 
 # FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
@@ -469,8 +477,8 @@ aumix -v+10
 
     <keybind key="C-A-s">  <action name="Execute">  <command>  ~/l/shell-random/live/zsh/scripts/terminal.sh              </command>  </action>  </keybind>
     <keybind key="W-S-s">  <action name="Execute">  <command>  ~/l/shell-random/live/zsh/scripts/terminal.sh  with_lines  </command>  </action>  </keybind>
-    <keybind key="W-m">    <action name="Execute">  <command>  \pavucontrol                                                                </command>  </action>  </keybind>
-<?ignore <!--
+    <keybind key="W-m">    <action name="Execute">  <command>  \pavucontrol                                               </command>  </action>  </keybind>
+<?ignore <!--  Alternatives
 \lxterminal  --geometry=239x64+0+0  --command="\alsamixer"
 --> ?>
 
@@ -482,7 +490,7 @@ aumix -v+10
         \palemoon  -P "$profile_name"  -new-tab "about:blank"  ;\
       "
     </command>  </action>  </keybind>
-<?ignore <!--
+<?ignore <!--  Alternatives
 ~/l/shell-random/live/dead/chromium_pick-profile.sh
 
 \chromium-browser
@@ -498,22 +506,22 @@ aumix -v+10
 "
 --> ?>
 
-  <keybind key="C-A-l">  <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  ~/l/shell-random/git/live/sh/scripts/screensaver-control.sh  </command>  </action>  </keybind>
+    <keybind key="C-A-l">  <action name="Execute">  <command>  ~/l/shell-random/git/live/sh/scripts/screensaver-control.sh       </command>  </action>  </keybind>
 <!--
-  <keybind key="W-l">    <action name="Execute">                                                             <command>  ~/l/shell-random/live/sh/scripts/screensaver-control.sh  locknow  </command>  </action>  </keybind>
+  <keybind key="W-l">    <action name="Execute">  <command>  ~/l/shell-random/live/sh/scripts/screensaver-control.sh  locknow  </command>  </action>  </keybind>
 -->
 
 
-  <keybind key="C-A-W-l">  <action name="Execute">  <command>
-    <!-- 2016-12-07, on Devuan -->
-    ~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
-      \urxvtc \
-        -geometry 28x1 \
-        +sb                   ` # Remove the scroll bar ` \
-        -title 'hibernate' \
-        -e  su  -c  '/usr/sbin/hibernate'
-
-<?ignore <!--
+    <keybind key="C-A-W-l">  <action name="Execute">  <command>
+      <!-- 2016-12-07, on Devuan -->
+      ~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
+        \urxvtc \
+          -geometry 28x1 \
+          +sb                   ` # Remove the scroll bar ` \
+          -title 'hibernate' \
+          -e  su  -c  '/usr/sbin/hibernate'
+    </command>  </action>  </keybind>
+<?ignore <!--  Alternatives
 ~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
   \lxterminal \
     --geometry=28x1 \
@@ -563,12 +571,12 @@ aumix -v+10
       slock-capital-punishment.sh  on \
     "
 --> ?>
-                                                                        </command>  </action>  </keybind>
+
     <keybind key="C-A-S-W-l">  <action name="Execute">  <command>
       <!-- 2016-03-28, on Slackware 14.1 -->
       \sudo  /usr/sbin/poweroff
     </command>  </action>  </keybind>
-<?ignore <!--
+<?ignore <!--  Alternatives
 # 2016-03-26, on Lubuntu (version not recorded)
 # rxvt-unicode (urxvt, urxvtc is the client)
 ~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
@@ -588,20 +596,20 @@ aumix -v+10
 --> ?>
 
 
-  <keybind key="W-e">  <action name="Execute">  <command>  \spacefm  --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  </keybind>
+    <keybind key="W-e">  <action name="Execute">  <command>  \spacefm  --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  </keybind>
 <!--
 \Thunar
 
 \pcmanfm
 -->
 
-  <keybind key="W-f">
-    <action name="Execute">  <command>  \spacefm   --find-files  --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  
-    <?ignore <!--  I can't do both, because the main window will always appear overtop of the find dialog.
-    <action name="Execute">  <command>  \spacefm                 --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  
-    --> ?>
-   </keybind>
-<?ignore <!--
+    <keybind key="W-f">
+      <action name="Execute">  <command>  \spacefm   --find-files  --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  
+      <?ignore <!--  I can't do both, because the main window will always appear overtop of the find dialog.
+      <action name="Execute">  <command>  \spacefm                 --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  
+      --> ?>
+     </keybind>
+<?ignore <!--  Alternatives
 \Thunar
 
 \pcmanfm
@@ -615,25 +623,23 @@ aumix -v+10
   \wmctrl -F -r "filemanager #0"  -e 1,800,0,800,1148
 --> ?>
 
-  <keybind key="C-A-e">
-    <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  ~/l/shell-random/live/sh/scripts/projects.sh  </command>  </action>
-    <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  \claws-mail  </command>  </action>
-  </keybind>
+    <keybind key="C-A-e">
+      <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  ~/l/shell-random/live/sh/scripts/projects.sh  </command>  </action>
+      <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  \claws-mail  </command>  </action>
+    </keybind>
 
     <keybind key="W-k">  <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>
       \mtpaint  ~/__/__.jpg
     </command>  </action>  </keybind>
-<?ignore <!--
+<?ignore <!--  Alternatives
 \kolourpaint  ~/__/__.jpg
 --> ?>
 
-    <keybind key="C-A-r">    <action name="Execute">  <command>  \lxterminal  --geometry=24x1  -T 'hidden title centered'  --command="\sudo  \lxpanelctl  run"  </command>  </action>  </keybind>
+    <keybind key="C-A-r">    <action name="Execute">  <command>  \lxterminal  --geometry=24x1  -T 'hidden title centered'  --command="\sudo  \lxpanelctl  run"                         </command>  </action>  </keybind>
     <keybind key="C-A-S-r">  <action name="Execute">  <command>  \lxterminal  --geometry=24x1  -T 'hidden title centered'  --command="\sudo  ~/l/shell-random/live/sh/scripts/run.sh"  </command>  </action>  </keybind>
-    <keybind key="W-r">  <action name="Execute">  <command>    ~/l/shell-random/live/sh/scripts/run.sh </command>  </action>  </keybind>
-    <keybind key="Print">  <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>
-      \lxterminal  --geometry=239x64+0+0  --command="~/l/shell-random/live/sh/scripts/screenshot.sh" 
-    </command>  </action>  </keybind>
-<?ignore <!--
+    <keybind key="W-r">      <action name="Execute">  <command>  ~/l/shell-random/live/sh/scripts/run.sh                                                                               </command>  </action>  </keybind>
+    <keybind key="Print">    <action name="Execute">  <command>   \lxterminal  --geometry=239x64+0+0  --command="~/l/shell-random/live/sh/scripts/screenshot.sh"                       </command>  </action>  </keybind>
+<?ignore <!--  Alternatives
 \urxvtc \
   -e ~/l/shell-random/live/sh/scripts/screenshot.sh
 
@@ -839,7 +845,7 @@ scrot \
 
 
   <applications>
-    <?ignore <!--
+    <?ignore <!--  Notes
     # You may use one or more of the name/class/role/title/type rules to specify windows to match
     # You may set only one of name/class/role/title/type, or you may use more than one together to restrict your matches.
     # The name, class, role, and title use simple wildcard matching such as those used by a shell. you can use * to match any characters and ? to match any single character.
@@ -924,7 +930,7 @@ scrot \
     </application>
 
     <application name="geeqie">
-      <?ignore <!--
+      <?ignore <!--  Notes
         If this is full screening on the wrong monitor, then:
           -  comment this out
           -  save this rc.xml
