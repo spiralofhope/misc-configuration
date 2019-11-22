@@ -352,10 +352,8 @@ aumix -v+10
     <keybind key="A-S-F5">  <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>
       \sh  -c "\
         \geany \\
-          ~/.themes/minimal-spiralofhope/openbox-3/themerc \\
-          /l/live/OS/Linux/misc-configuration/git/live/openbox/rc.xml ;\
-        \waitpid  $! ;\
-        \ln  --force  --symbolic  /l/live/OS/Linux/misc-configuration/git/live/openbox/rc.xml  ~/.config/openbox/rc.xml  ;\
+          $( \realpath  ~/.themes/minimal-spiralofhope/openbox-3/themerc ) \\
+          $( \realpath  ~/.config/openbox/rc.xml ) ;\
         \waitpid  $! ;\
         \openbox  --reconfigure ;\
         \waitpid  $! ;\
