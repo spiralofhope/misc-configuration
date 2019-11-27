@@ -91,3 +91,8 @@ aterm*color12:     #6666ff
 ! DOSEmu`s vga font.
 ! Note that aterm does not support unicode.
 aterm*font:         vga
+
+! So that nano in xterm can use alt
+*metaSendsEscape: true
+
+
