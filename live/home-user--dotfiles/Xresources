@@ -4,6 +4,12 @@
 ! Test changes with:
 !   \xrdb  -load ~/.Xresources ; \urxvt
 
+! I also have an old note that said:
+! After reconfiguring things, run:
+!   \xrdb  -merge  ~/.Xdefaults
+
+
+
 ! What fucking idiot thought white would be a good default background colour?  This was a revolting first impression.
 URxvt*background:  black
 URxvt*foreground:  grey
@@ -91,3 +97,8 @@ aterm*color12:     #6666ff
 ! DOSEmu`s vga font.
 ! Note that aterm does not support unicode.
 aterm*font:         vga
+
+! So that nano in xterm can use alt
+*metaSendsEscape: true
+
+
