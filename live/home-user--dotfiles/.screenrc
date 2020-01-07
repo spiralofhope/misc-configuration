@@ -1,11 +1,14 @@
-startup_message   off
-term   screen-256color
-scrollback 1000
-
-#shell -$SHELL
+# Set the default login shell
+# This is useful for ssh
+# Note that if this is wrong, then screen will not fall back to the default shell.
 #shell -/bin/zsh
 
-#hardstatus   alwayslastline "%{= dd}%-w%{+b}%n %t%{-}%+w %=%{= dW}%h%{-}%20`%10`"
+startup_message   off
+term   screen-256color
 
+# Implement scrollback
 termcapinfo xterm* ti@:te@
+scrollback 1000
 
+# A status line
+#hardstatus   alwayslastline "%{= dd}%-w%{+b}%n %t%{-}%+w %=%{= dW}%h%{-}%20`%10`"
