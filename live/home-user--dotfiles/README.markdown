@@ -1,1 +1,2 @@
-Use  `shell-random/live/dotfiles/home-user--dotfiles/go.sh`
+Use  `shell-random/live/dotfiles/dotfiles.sh`
+
