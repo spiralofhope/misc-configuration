@@ -1,0 +1,11 @@
+startup_message   off
+term   screen-256color
+scrollback 1000
+
+#shell -$SHELL
+#shell -/bin/zsh
+
+#hardstatus   alwayslastline "%{= dd}%-w%{+b}%n %t%{-}%+w %=%{= dW}%h%{-}%20`%10`"
+
+termcapinfo xterm* ti@:te@
+
