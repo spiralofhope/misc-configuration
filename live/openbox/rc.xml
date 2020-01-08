@@ -641,7 +641,7 @@ aumix -v+10
     <keybind key="C-A-r">    <action name="Execute">  <command>  \lxterminal  --geometry=24x1  -T 'hidden title centered'  --command="\sudo  \lxpanelctl  run"                         </command>  </action>  </keybind>
     <keybind key="C-A-S-r">  <action name="Execute">  <command>  \lxterminal  --geometry=24x1  -T 'hidden title centered'  --command="\sudo  ~/l/shell-random/live/sh/scripts/run.sh"  </command>  </action>  </keybind>
     <keybind key="W-r">      <action name="Execute">  <command>  ~/l/shell-random/live/sh/scripts/run.sh                                                                               </command>  </action>  </keybind>
-    <keybind key="Print">    <action name="Execute">  <command>   \lxterminal  --geometry=239x64+0+0  --command="~/l/shell-random/live/sh/scripts/screenshot.sh"                       </command>  </action>  </keybind>
+    <keybind key="Print">    <action name="Execute">  <command>   \lxterminal  --geometry=40x11+0+0  --command="~/l/shell-random/live/sh/scripts/screenshot.sh"                       </command>  </action>  </keybind>
 <?ignore <!--  Alternatives
 \urxvtc \
   -e ~/l/shell-random/live/sh/scripts/screenshot.sh
