@@ -277,8 +277,12 @@ Now a double-dash ( -- ) can be used (and ignored).
     <keybind key="C-W-x">  <action name="SendToDesktopRight">  <wrap>yes</wrap>  </action>  </keybind>
   -->
 
-    <!-- FIXME:  The backtick doesn't work for a hotkey.  Lame. -->
+    <!-- FIXME:  The backtick doesn't work for a hotkey.
+    Openbox-Message: Invalid key name "`" in key binding
+    -->
+<!--
     <keybind key="W-`">  <action name="ToggleOmnipresent"/>  </keybind>
+-->
 
     <!-- In Windows 10 ,this opens the start menu.  -->
     <keybind key="W-x">         <action name="Execute">  <command>  \lxpanelctl menu                         </command>  </action>  </keybind>
@@ -369,7 +373,6 @@ aumix -v+10
         \openbox  --reconfigure ;\
         \waitpid  $! ;\
         \xrefresh \\
-
       "
     </command>  </action>  </keybind>
     <keybind key="A-F6">  <action name="Execute">  <command>
