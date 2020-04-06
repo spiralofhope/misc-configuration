@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?ignore <!--
+The global default configuration file is found at:
+/etc/xdg/openbox/rc.xml
+--> ?>
+
+
+<?ignore <!--
 - FIXME - my forcing terminals (e.g. directly using lxterminal is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
 - FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
 - On a 1920x1080 screen, the font "vga"          for \lxterminal is --geometry=239x64+0+0
