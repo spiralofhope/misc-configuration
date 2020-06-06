@@ -610,7 +610,7 @@ aumix -v+10
 --> ?>
 
 
-    <keybind key="W-e">  <action name="Execute">  <command>  \spacefm  --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  </keybind>
+    <keybind key="W-e">  <action name="Execute">  <command>  \spacefm  --new-window  --no-saved-tabs  /live/__  </command>  </action>  </keybind>
 <!--
 \Thunar
 
@@ -618,9 +618,9 @@ aumix -v+10
 -->
 
     <keybind key="W-f">
-      <action name="Execute">  <command>  \spacefm   --find-files  --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  
+      <action name="Execute">  <command>  \spacefm   --find-files  --new-window  --no-saved-tabs  /live/__  </command>  </action>  
       <?ignore <!--  I can't do both, because the main window will always appear overtop of the find dialog.
-      <action name="Execute">  <command>  \spacefm                 --new-window  --no-saved-tabs  /l/live/__  </command>  </action>  
+      <action name="Execute">  <command>  \spacefm                 --new-window  --no-saved-tabs  /live/__  </command>  </action>  
       --> ?>
      </keybind>
 <?ignore <!--  Alternatives
@@ -659,7 +659,7 @@ aumix -v+10
 \urxvtc \
   -e ~/l/shell-random/live/sh/scripts/screenshot.sh
 
-\scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/live/__'
+\scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /live/__'
 
 \mtpaint -s
 
@@ -670,13 +670,13 @@ aumix -v+10
 \sh  -c "\
   \urxvt  -title 'screenshot'  -geometry 120x50+0+0  -e \\
     \dialog  --no-shadow  --msgbox  'screenshot' 0 0 ;\\
-    \scrot  --select  'screenshot--%Y-%m-%d_%H:%M:%S--$wx$h.png' --exec  '\mv  $f  /l/live/__ ; \gpicview /l/live/__/$f' \\
+    \scrot  --select  'screenshot--%Y-%m-%d_%H:%M:%S--$wx$h.png' --exec  '\mv  $f  /live/__ ; \gpicview /live/__/$f' \\
 "
 
 \sh  -c "\
   \urxvt  -title 'screenshot'  -geometry 14x5+0+0  -e \\
     \dialog  --no-shadow  --msgbox  'screenshot' 0 0 ;\\
-    \scrot  --select  'screenshot--%Y-%m-%d_%H:%M:%S--$wx$h.png' --exec  '\mv  $f  /l/live/__ ; \gpicview /l/live/__/$f' \\
+    \scrot  --select  'screenshot--%Y-%m-%d_%H:%M:%S--$wx$h.png' --exec  '\mv  $f  /live/__ ; \gpicview /live/__/$f' \\
 "
 
 
@@ -687,9 +687,9 @@ scrot \
 \urxvt  --geometry 40x2+1+1  -title 'Screenshot'  -e  ;\
   \echo  'Click to select a window' ;\
   \echo  'Drag a rectangle for an area' ;\
-  \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /l/live/__'
+  \scrot  --select  %Y-%m-%d_$wx$h.png  --exec  '\mv  $f  /live/__'
 
-\urxvt  --geometry 40x1+1+1 -e  \scrot  --count  --delay 5  --select  /l/live/__
+\urxvt  --geometry 40x1+1+1 -e  \scrot  --count  --delay 5  --select  /live/__
 --> ?>
 
 
