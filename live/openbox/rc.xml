@@ -491,9 +491,11 @@ aumix -v+10
 <?ignore <!--  
     <keybind key="W-S-s">  <action name="Execute">  <command>  ~/l/shell-random/live/zsh/scripts/terminal.sh  with_lines  </command>  </action>  </keybind>
 --> ?>
-    <keybind key="W-m">    <action name="Execute">  <command>  \pavucontrol                                               </command>  </action>  </keybind>
+    <keybind key="W-m">    <action name="Execute">  <command>
+      \lxterminal  --geometry=239x64+0+0  --command="\alsamixer"
+    </command>  </action>  </keybind>
 <?ignore <!--  Alternatives
-\lxterminal  --geometry=239x64+0+0  --command="\alsamixer"
+      \pavucontrol                                               
 --> ?>
 
     <keybind key="C-A-c">  <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  \chromium  </command>  </action>  </keybind>
