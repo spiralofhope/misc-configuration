@@ -12,3 +12,11 @@ scrollback 1000
 
 # A status line
 #hardstatus   alwayslastline "%{= dd}%-w%{+b}%n %t%{-}%+w %=%{= dW}%h%{-}%20`%10`"
+
+
+hardstatus on
+hardstatus string "[%?%h%:%t%?]"
+defhstatus ""
+
+hardstatus alwayslastline "%{= bR}[%{= bY}%H%{= bR}]%{= bY} %n%{= bR}:%{= bY}%t  %{= bw}%W %=%{= br}[%{= bY}%h%{= bR}]"
+
