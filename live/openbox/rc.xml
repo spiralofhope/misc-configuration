@@ -414,6 +414,7 @@ aumix -v+10
     --> ?>
 <?ignore <!--  Alternatives
 \lxtask
+\xfce4-taskmanager
 
 # FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
 \urxvtc \
