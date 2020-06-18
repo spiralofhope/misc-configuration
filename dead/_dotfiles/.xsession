@@ -14,7 +14,7 @@ exec openbox-session
 
 
 
-:<<'}'   #  Old notes
+:<<'}'   #  Old notes from before 2006-04-23
 {
 #!/bin/sh
 
