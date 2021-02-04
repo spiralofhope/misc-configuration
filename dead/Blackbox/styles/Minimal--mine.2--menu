@@ -1,0 +1,32 @@
+# appended to .blackbox/menu or inserted into ~/.fluxbox/usermenu
+
+
+
+# (AfterStep)
+
+# My appended menu, adapted from the default Blackbox menu, because Fluxbox's menu generator doesn't have some functions
+[begin]
+#[separator]
+[submenu]
+
+  [exec] (IRC #pclinuxos) {pclinuxos-irc.sh}
+
+  [submenu] (Styles) {Choose a style...}
+    [stylesdir] (@pkgdatadir@/styles)
+  [end]
+
+  [config] (Configuration)
+  [reconfig] (Reconfigure)
+  [restart] (Restart)
+  [submenu] (Switch WM)              {Other Window Managers}
+    [restart] (Start FVWM)              {fvwm}
+    [restart] (Start WindowMaker)       {wmaker}
+    [restart] (Start Afterstep)         {afterstep}
+    [restart] (Start Enlightenment)     {enlightenment}
+    [restart] (Start TWM)               {twm}
+    [restart] (Start KWM {KDE})         {kwm}
+#    [restart] (kde) {startkde}
+  [end]
+
+  [exit] (Exit)
+[end]

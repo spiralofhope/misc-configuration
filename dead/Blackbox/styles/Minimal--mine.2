@@ -1,0 +1,148 @@
+# I was just playing around with this version.
+
+
+
+# These options are not case sensitive, so  SteelBlue = steelblue
+
+# Note, that if you are using bbkeys, make sure you have a line like:
+#  [option] (stylefile) {~/.blackbox/style}
+# which points to your proper stylefile, in order to make "Switch To..."
+# appear with the proper theme (and not the ugly black and white default)
+
+
+menu.active.appearance: flat solid
+menu.active.backgroundColor: steelblue
+menu.active.foregroundColor: white
+menu.active.textColor: white
+
+menu.frame.alignment: left
+menu.frame.appearance: flat solid
+menu.frame.backgroundColor: midnightblue
+#menu.frame.borderColor: black
+#menu.frame.borderWidth: 1
+menu.frame.disabledColor: black
+#menu.frame.font: fixed
+menu.frame.foregroundColor: white
+menu.frame.marginWidth: 3
+menu.frame.textColor: white
+
+menu.title.alignment: left
+menu.title.appearance: flat solid
+menu.title.backgroundColor: steelblue
+#menu.title.borderColor: steelblue
+#menu.title.borderWidth: 1
+#menu.title.font: fixed
+menu.title.foregroundColor: steelblue
+menu.title.marginWidth: 3
+menu.title.textColor: white
+
+slit.appearance: flat solid
+slit.backgroundColor: steelblue
+#slit.borderColor: steelblue
+#slit.borderWidth: 1
+slit.marginWidth: 3
+
+toolbar.alignment: left
+toolbar.appearance: flat solid
+toolbar.backgroundColor: midnightblue
+#toolbar.borderColor: midnightblue
+#toolbar.borderWidth: 1
+
+toolbar.button.appearance: parentrelative
+#toolbar.button.backgroundColor: white
+#toolbar.button.foregroundColor: white
+#toolbar.button.marginWidth: 3
+#toolbar.button.pressed.appearance: ParentRelative
+#toolbar.button.pressed.backgroundColor: black
+
+toolbar.clock.appearance: ParentRelative
+toolbar.clock.backgroundColor: black
+toolbar.clock.textColor: white
+
+#toolbar.font: fixed
+#toolbar.marginWidth: 3
+
+toolbar.label.appearance: ParentRelative
+#toolbar.label.backgroundColor: black
+#toolbar.label.marginWidth: 3
+#toolbar.label.textColor: white
+
+toolbar.windowLabel.appearance: ParentRelative
+#toolbar.windowLabel.backgroundColor: black
+#toolbar.windowLabel.textColor: white
+#window.alignment: left
+
+# The current window, button display.
+window.button.focus.appearance: parentrelative
+window.button.focus.backgroundColor: parentrelative
+window.button.focus.foregroundColor: parentrelative
+window.button.marginWidth: 0
+
+# When clicking the buttons
+window.button.pressed.appearance: flat solid
+# Why isn't there a: window.button.pressed.foregroundColor ?
+window.button.pressed.backgroundColor: midnightblue
+
+# The unfocused window buttons
+window.button.unfocus.appearance: ParentRelative
+window.button.unfocus.backgroundColor: white
+window.button.unfocus.foregroundColor: white
+
+#window.font: fixed
+
+# keeping window frames with a border of 1 is good, since right-clicking
+# on them gives the root menu (like right-clicking the desktop) and so
+# when your windows are completely maximized, you can still float over
+# to the far edge of the screen and right-click to get the menu.
+window.frame.borderWidth: 1
+window.frame.focus.borderColor: black
+window.frame.unfocus.borderColor: black
+
+# I squeeze every last pixel out of my setup by removing the nonessential
+# grips and handles.  Use alt-left+drag or alt-right+drag to do stuff.
+
+# We don't need grips
+window.grip.focus.appearance: flat solid
+window.grip.focus.backgroundColor: slategrey
+window.grip.focus.borderColor: black
+window.grip.focus.borderWidth: 0
+window.grip.unfocus.appearance: flat solid border
+window.grip.unfocus.backgroundColor: black
+window.grip.unfocus.borderColor: black
+window.grip.unfocus.borderWidth: 0
+
+# we don't need handles.
+window.handle.focus.appearance: flat solid border
+window.handle.focus.backgroundColor: white
+window.handle.focus.borderColor: black
+window.handle.focus.borderWidth: 0
+window.handle.unfocus.appearance: flat solid border
+window.handle.unfocus.backgroundColor: black
+window.handle.unfocus.borderColor: black
+window.handle.unfocus.borderWidth: 0
+# This must be greater than 0, or blackbox fails to start.
+window.handleHeight: 1
+
+window.label.focus.appearance: ParentRelative
+window.label.focus.backgroundColor: white
+window.label.focus.textColor: white
+window.label.marginWidth: 3
+window.label.unfocus.appearance: ParentRelative
+window.label.unfocus.backgroundColor: black
+window.label.unfocus.textColor: white
+
+window.title.focus.appearance: flat solid border
+window.title.focus.backgroundColor: steelblue
+window.title.focus.borderColor: steelblue
+window.title.focus.borderWidth: 0
+window.title.marginWidth: 0
+window.title.unfocus.appearance: flat solid border
+window.title.unfocus.backgroundColor: midnightblue
+window.title.unfocus.borderColor: midnightblue
+window.title.unfocus.borderWidth: 0
+
+# Set all fonts:
+*Font:                          -*-helvetica-*-r-*-*-12-*-*-*-*-*-*-*
+
+# This will clear an existing wallpaper
+rootCommand:                    bsetroot -solid SlateGrey

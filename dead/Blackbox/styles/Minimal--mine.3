@@ -1,0 +1,136 @@
+! raised gradient crossdiagonal
+! raised diagonal gradient bevel1
+! flat diagonal interlaced gradient
+! sunken diagonal gradient bevel1
+
+
+! I don't know how the heck the title border got there or how to customize it.
+
+
+! I don't use a slit, so that stuff is absent.
+
+! ***** Menu *****
+!menu.frame.font:				-*-helvetica-*-r-*-*-12-*-*-*-*-*-*-*
+
+
+menu.title:					flat solid
+!	menu.title.font:			-*-helvetica-*-r-*-*-12-*-*-*-*-*-*-*
+	menu.title.alignment:			center
+	menu.title.color:			MidnightBlue
+	menu.title.colorTo:			
+	menu.title.borderWidth:			1
+	menu.title.borderColor:			MidnightBlue
+	menu.title.textColor:			White
+	menu.title.marginWidth:			0
+
+menu.frame.appearance:				flat solid border
+	menu.frame.alignment:			left
+	menu.frame.color:			SteelBlue
+	menu.frame.colorTo:			
+	menu.frame.borderWidth:			1
+	menu.frame.borderColor:			White
+	menu.frame.textColor:			White
+	menu.frame.foregroundColor:		White
+	menu.frame.disabledColor:		White
+
+menu.active:					flat solid
+	menu.active.color:			White
+	menu.active.colorTo:			
+	menu.active.borderWidth:		1
+	menu.active.borderColor:		White
+	menu.active.textColor:			Black
+
+! This is the icon which shows that there's more stuff in a sub-menu:
+menu.bullet:					Triangle
+	menu.bullet.position:			Right
+
+! unsure
+menu.hilite:					
+
+! ***** Window *****
+
+! ya know, I like the default a lot.
+! window.font:                            	-*-helvetica-*-r-*-*-12-*-*-*-*-*-*-*
+
+window.alignment:				center
+
+window.title.marginWidth:			0
+! This border also enables window.frame.*.bordercolor
+window.title.focus.appearance:			flat solid border
+	window.title.focus.backgroundColor:	SteelBlue
+	window.title.focus.borderColor:		Grey
+	window.title.focus.borderWidth:		1
+window.title.unfocus:				flat solid
+	window.title.unfocus.color:		MidnightBlue
+	window.title.unfocus.colorTo:		
+	window.title.unfocus.borderColor	Grey
+	window.title.unfocus.borderWidth:	1
+
+window.label.focus:				parentrelative
+	window.label.focus.textColor:		White
+window.label.unfocus:				parentrelative
+	window.label.unfocus.textColor:		Grey
+
+window.handleHeight:				0
+window.handle.focus:				flat solid
+	window.handle.focus.color:		SteelBlue
+	window.handle.focus.colorTo:		
+window.handle.unfocus:				flat solid
+	window.handle.unfocus.color:		MidnightBlue
+	window.handle.unfocus.colorTo:		
+
+! I'm not sure what a 'grip' is
+window.grip.focus.appearance:			flat solid
+	window.grip.focus.backgroundColor:	Grey
+	window.grip.focus.borderColor:		Grey
+	window.grip.focus.borderWidth:		0
+window.grip.unfocus.appearance:			flat solid
+	window.grip.unfocus.backgroundColor:	Grey
+	window.grip.unfocus.borderColor:	Grey
+	window.grip.unfocus.borderWidth:	0
+
+! window.frame - this is the left/right sides.
+	window.frame.borderWidth:		1
+	window.frame.focus.borderColor:		Grey
+	window.frame.unfocus.borderColor:	Grey
+
+window.button.focus.appearance:			parentrelative
+	window.button.focus.backgroundColor:	SteelBlue
+	window.button.focus.foregroundColor:	White
+	window.button.focus.borderColor:	SteelBlue
+	window.button.focus.borderWidth:	0
+window.button.unfocus.appearance:		parentrelative
+	window.button.unfocus.foregroundColor:	Grey
+window.button.pressed.appearance:		parentrelative
+	window.button.pressed.backgroundColor:	White
+	window.button.pressed.borderColor:	Black
+	window.button.pressed.borderWidth:	1
+
+! ***** toolbar *****
+!toolbar.font:					-*-helvetica-*-r-*-*-12-*-*-*-*-*-*-*
+toolbar:					flat solid
+	toolbar.color:				MidnightBlue
+	toolbar.colorTo:			
+
+toolbar.label:					parentrelative
+toolbar.label.textColor:			White
+
+toolbar.windowLabel:				parentrelative
+toolbar.windowLabel.textColor:			white
+
+toolbar.clock:					parentrelative
+toolbar.clock.textColor:			white
+
+toolbar.button:					parentrelative
+
+toolbar.button.pressed:				flat solid
+	toolbar.button.pressed.color:		SteelBlue
+	toolbar.button.pressed.colorTo:		
+
+toolbar.button.picColor:			White
+
+toolbar.alignment:				center
+
+! ***** the rest *****
+rootCommand:					bsetroot -solid SteelBlue
+
