@@ -641,7 +641,7 @@ aumix -v+10
 --> ?>
 
     <keybind key="C-A-e">
-      <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  ~/l/shell-random/live/sh/scripts/projects.sh  </command>  </action>
+      <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  ~/l/shell-random/live/sh/scripts/projects-open.sh  </command>  </action>
       <action name="Execute">  <startupnotify>  <enabled>yes</enabled>  </startupnotify>  <command>  \claws-mail  </command>  </action>
     </keybind>
 
