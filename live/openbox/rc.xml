@@ -613,7 +613,9 @@ aumix -v+10
 --> ?>
 
 
-    <keybind key="W-e">  <action name="Execute">  <command>  \spacefm  --new-window  --no-saved-tabs  /live/__  </command>  </action>  </keybind>
+    <keybind key="W-e">  <action name="Execute">  <command>
+      ~/l/shell-random/live/zsh/scripts/file-manager.sh
+    </command>  </action>  </keybind>
 <!--
 \Thunar
 
