@@ -328,7 +328,12 @@ aumix -v+10
     --command="\sudo  \synaptic"
 --> ?>
 
-    <keybind key="C-S-Escape"><action name="Execute"><command>  \lxterminal  --geometry=239x64+0+0  --command="\htop --user=user"  </command></action></keybind>
+    <keybind key="C-S-Escape"><action name="Execute"><command>
+      \qterminal  --execute="htop --user=user"  
+      <?ignore <!--  Alternatives
+        \lxterminal  --geometry=239x64+0+0  --command="\htop --user=user"  
+      --> ?>
+    </command></action></keybind>
     <?ignore <!--  Notes
       - Note that htop has a feature to  hide processes, but if you want to *force* it as a permissions thing, add something like this to your /etc/fstab:
       proc  /proc  proc  defaults,noatime,nodiratime,hidepid=2  0  0
