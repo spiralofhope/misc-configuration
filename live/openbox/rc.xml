@@ -217,13 +217,50 @@ Now a double-dash ( -- ) can be used (and ignored).
     <linear> 	      no 	    A boolean (yes/no) which when enabled causes focus to cycle in a fixed ordering, rather than in the order which windows have been last focused.
     <interactive> 	yes 	  A boolean (yes/no) which when disabled causes the action to immediately switch focus to the next target.
     <finalactions> 	Focus, Raise, Unshade 	A list of actions to run on the window which the user finally selects using this action. 
-  --><!-- The alt-tab "popup pager" no longer appears on every monitor. --><!-- It used to, but was changed/removed in 3.4.9  --><!--   http://openbox.org/wiki/Openbox:Changelog#3.4.9 --><!-- I see no way to have the alt-tab only display the current monitor's programs.  I researched for a long while, to no avail. --><keybind key="A-Tab"><action name="NextWindow"><allDesktops>no </allDesktops></action></keybind><keybind key="A-S-Tab"><action name="PreviousWindow"><allDesktops>no </allDesktops></action></keybind><keybind key="W-Tab"><action name="NextWindow"><allDesktops>yes</allDesktops></action></keybind><keybind key="W-S-Tab"><action name="PreviousWindow"><allDesktops>yes</allDesktops></action></keybind><keybind key="F11"><action name="ToggleFullscreen"/></keybind><keybind key="A-Return"><action name="ToggleMaximize"/></keybind><keybind key="W-Return"><action name="ToggleMaximizeVert"/></keybind><keybind key="W-S-Return"><action name="ToggleMaximizeHorz"/></keybind><keybind key="W-KP_1"><action name="MoveResizeTo"><x>     1</x><y>    -1</y></action></keybind><keybind key="W-KP_2"><action name="MoveResizeTo"><y>    -1</y></action></keybind><keybind key="W-KP_3"><action name="MoveResizeTo"><x>    -1</x><y>    -1</y></action></keybind><keybind key="W-KP_4"><action name="MoveResizeTo"><x>     0</x></action></keybind><keybind key="W-KP_5"><action name="MoveResizeTo"><x>center</x><y>center</y></action></keybind><keybind key="W-KP_6"><action name="MoveResizeTo"><x>    -1</x></action></keybind><keybind key="W-KP_7"><action name="MoveResizeTo"><x>     0</x><y>     0</y></action></keybind><keybind key="W-KP_8"><action name="MoveResizeTo"><y>     0</y></action></keybind><keybind key="W-KP_9"><action name="MoveResizeTo"><x>    -1</x><y>     0</y></action></keybind><!-- Move applications between monitors. --><keybind key="C-S-A-Left"><action name="MoveResizeTo"><monitor>1</monitor></action></keybind><keybind key="C-S-A-Right"><action name="MoveResizeTo"><monitor>2</monitor></action></keybind><!-- I can't have it bounce between monitors, but at least this will work. --><keybind key="C-W-x"><action name="MoveResizeTo"><monitor>2</monitor></action></keybind><!--  Well.. no, not really:
+  --><!-- The alt-tab "popup pager" no longer appears on every monitor. --><!-- It used to, but was changed/removed in 3.4.9  -->
+  <!--   http://openbox.org/wiki/Openbox:Changelog#3.4.9 -->
+  <!-- I see no way to have the alt-tab only display the current monitor's programs.  I researched for a long while, to no avail. -->
+  <keybind key="A-Tab">   <action name="NextWindow">    <allDesktops>no </allDesktops></action></keybind>
+  <keybind key="A-S-Tab"> <action name="PreviousWindow"><allDesktops>no </allDesktops></action></keybind>
+  <keybind key="W-Tab">   <action name="NextWindow">    <allDesktops>yes</allDesktops></action></keybind>
+  <keybind key="W-S-Tab"> <action name="PreviousWindow"><allDesktops>yes</allDesktops></action></keybind>
+  <keybind key="F11">     <action name="ToggleFullscreen"/></keybind>
+<!--
+  <keybind key="A-Return">  <action name="ToggleMaximize"/></keybind>
+-->
+  <keybind key="W-Return">  <action name="ToggleMaximizeVert"/></keybind>
+  <keybind key="W-S-Return"><action name="ToggleMaximizeHorz"/></keybind>
+  <keybind key="W-KP_1"><action name="MoveResizeTo"><x>     1</x><y>    -1</y></action></keybind>
+  <keybind key="W-KP_2"><action name="MoveResizeTo"><y>    -1</y></action></keybind>
+  <keybind key="W-KP_3"><action name="MoveResizeTo"><x>    -1</x><y>    -1</y></action></keybind>
+  <keybind key="W-KP_4"><action name="MoveResizeTo"><x>     0</x></action></keybind>
+  <keybind key="W-KP_5"><action name="MoveResizeTo"><x>center</x><y>center</y></action></keybind>
+  <keybind key="W-KP_6"><action name="MoveResizeTo"><x>    -1</x></action></keybind>
+  <keybind key="W-KP_7"><action name="MoveResizeTo"><x>     0</x><y>     0</y></action></keybind>
+  <keybind key="W-KP_8"><action name="MoveResizeTo"><y>     0</y></action></keybind>
+  <keybind key="W-KP_9"><action name="MoveResizeTo"><x>    -1</x><y>     0</y></action></keybind>
+  <!-- Move applications between monitors. -->
+  <keybind key="C-S-A-Left"> <action name="MoveResizeTo"><monitor>1</monitor></action></keybind>
+  <keybind key="C-S-A-Right"><action name="MoveResizeTo"><monitor>2</monitor></action></keybind>
+  <!-- I can't have it bounce between monitors, but at least this will work. -->
+  <keybind key="C-W-x"><action name="MoveResizeTo"><monitor>2</monitor></action></keybind>
+  <!--  Well.. no, not really:
     <keybind key="C-W-x">  <action name="SendToDesktopRight">  <wrap>yes</wrap>  </action>  </keybind>
-  --><!-- FIXME:  The backtick doesn't work for a hotkey.
+  -->
+  <!-- FIXME:  The backtick doesn't work for a hotkey.
     Openbox-Message: Invalid key name "`" in key binding
-    --><!--
+  -->
+  <!--
     <keybind key="W-`">  <action name="ToggleOmnipresent"/>  </keybind>
---><!-- In Windows 10 ,this opens the start menu.  --><keybind key="W-x"><action name="Execute"><command>  \lxpanelctl menu                         </command></action></keybind><!-- In Windows 10 ,this opens the application search dialog.  --><keybind key="W-s"><action name="Execute"><command>  ~/l/shell-random/live/sh/scripts/run.sh  </command></action></keybind><!-- Note that this hotkey combination won't work within VirtualBox. --><keybind key="C-A-Delete"><action name="Execute"><command>  \lxtask                                  </command></action></keybind><keybind key="C-A-Escape"><action name="Execute"><command>  \xkill                                   </command></action></keybind><?ignore <!--  Multimedia keyboard features (buttons, hotkeys, dials, etc.)
+  -->
+  <!-- In Windows 10 ,this opens the start menu.  -->
+  <keybind key="W-x">       <action name="Execute"><command>  \lxpanelctl menu                         </command></action></keybind>
+  <!-- In Windows 10 ,this opens the application search dialog.  -->
+  <keybind key="W-s">       <action name="Execute"><command>  ~/l/shell-random/live/sh/scripts/run.sh  </command></action></keybind>
+  <!-- Note that this hotkey combination won't work within VirtualBox. -->
+  <keybind key="C-A-Delete"><action name="Execute"><command>  \lxtask                                  </command></action></keybind>
+  <keybind key="C-A-Escape"><action name="Execute"><command>  \xkill                                   </command></action></keybind>
+  <?ignore <!--  Multimedia keyboard features (buttons, hotkeys, dials, etc.)
     Instead of using a particular application's hotkeys or global hotkeys, you can program OpenBox to see the keys.
     /usr/share/X11/XKeysymDB
     https://cgit.freedesktop.org/xorg/proto/x11proto/tree/XF86keysym.h
@@ -238,20 +275,20 @@ Now a double-dash ( -- ) can be used (and ignored).
             state 0x10, keycode 179 (keysym 0x1008ff81, XF86Tools), same_screen YES,
             XLookupString gives 0 bytes: 
             XFilterEvent returns: False
-    --> ?><!-- Begin keybinds for the Logitech K310 -->
-    <keybind key="XF86HomePage "><action name="Execute"><command>  \x-www-browser        </command></action></keybind>
-    <keybind key="XF86Search"><action name="Execute"><command>  \x-terminal-emulator  </command></action></keybind>
-    <keybind key="XF86Mail"><action name="Execute"><command>  \x-terminal-emulator  </command></action></keybind>
+    --> ?>
+    <!-- Begin keybinds for the Logitech K310 -->
+    <keybind key="XF86HomePage">  <action name="Execute"><command>  \x-www-browser        </command></action></keybind>
+    <keybind key="XF86Search">    <action name="Execute"><command>  \x-terminal-emulator  </command></action></keybind>
+    <keybind key="XF86Mail">      <action name="Execute"><command>  \x-terminal-emulator  </command></action></keybind>
     <keybind key="XF86Calculator"><action name="Execute"><command>  \xcalc                </command></action></keybind>
-<?ignore <!--  Alternatives
-\galculator
+    <?ignore <!--  Alternatives
+    \galculator
 
-\gnome-calc2
+    \gnome-calc2
 
-\kcalc
---> ?>
-
-    <keybind key="XF86Tools"><action name="Execute"><command>  \x-terminal-emulator      </command></action></keybind>
+    \kcalc
+    --> ?>
+    <keybind key="XF86Tools">    <action name="Execute"><command>  \x-terminal-emulator      </command></action></keybind>
 <!--
 TODO - also simultaneously support deadbeef?
 -->
@@ -268,7 +305,7 @@ TODO - also simultaneously support deadbeef?
 # Learn the channel name with `amixer scontrols`, but -D pulse seems to work..
 --> ?>
 
-    <keybind key="XF86AudioMute"><action name="Execute"><command>  \amixer -D pulse sset Master 1+ toggle  </command></action></keybind>
+    <keybind key="XF86AudioMute">       <action name="Execute"><command>  \amixer -D pulse sset Master 1+ toggle  </command></action></keybind>
     <keybind key="XF86AudioLowerVolume"><action name="Execute"><command>  \amixer  -D pulse  sset Master 3%-      </command></action></keybind>
     <keybind key="XF86AudioRaiseVolume"><action name="Execute"><command>  \amixer  -D pulse  sset Master 3%+      </command></action></keybind>
 <?ignore <!--  Alternatives
@@ -546,38 +583,58 @@ aumix -v+10
 \pcmanfm
 -->
 
-    <keybind key="W-f"><action name="Execute"><command>  \spacefm   --find-files  --new-window  --no-saved-tabs  /live/__  </command></action><?ignore <!--  I can't do both, because the main window will always appear overtop of the find dialog.
-      <action name="Execute">  <command>  \spacefm                 --new-window  --no-saved-tabs  /live/__  </command>  </action>  
-      --> ?></keybind>
-<?ignore <!--  Alternatives
-\Thunar
+    <keybind key="W-f">
+      <action name="Execute"><command>  \spacefm   --find-files  --new-window  --no-saved-tabs  /live/__  </command></action>
+      <?ignore <!--  I can't run spacefm twice like this, because the main window will always appear overtop of the find dialog:
+      <action name="Execute"><command>  \spacefm                 --new-window  --no-saved-tabs  /live/__  </command></action>  
+      --> ?>
+    </keybind>
+    <?ignore <!--  Alternatives
+    \Thunar
 
-\pcmanfm
+    \pcmanfm
 
-# For a file manager which doesn't support tabs, it's theoretically possible to do something like this:
-\xtoolwait \
-  \filemanager  &\
-  wmpid=$!  && \
-  wait $wmpid  && \
-  \wmctrl -F -r "filemanager #1"  -e 1,0,0,800,1148  && \
-  \wmctrl -F -r "filemanager #0"  -e 1,800,0,800,1148
---> ?>
+    # For a file manager which doesn't support tabs, it's theoretically possible to do something like this:
+    \xtoolwait \
+      \filemanager  &\
+      wmpid=$!  && \
+      wait $wmpid  && \
+      \wmctrl -F -r "filemanager #1"  -e 1,0,0,800,1148  && \
+      \wmctrl -F -r "filemanager #0"  -e 1,800,0,800,1148
+    --> ?>
 
-    <keybind key="C-A-e"><action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>  ~/l/shell-random/live/sh/scripts/projects-open.sh  </command></action><action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>  \claws-mail  </command></action></keybind>
+    <keybind key="C-A-e">
+      <action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>
+        ~/l/shell-random/live/sh/scripts/projects-open.sh
+      </command></action>
+      <action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>
+        \claws-mail
+      </command></action>
+    </keybind>
 
     <keybind key="W-k"><action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>
       \mtpaint  ~/__/__.jpg
     </command></action></keybind>
-<?ignore <!--  Alternatives
-\kolourpaint  ~/__/__.jpg
---> ?>
+    <?ignore <!--  Alternatives
+    \kolourpaint  ~/__/__.jpg
+    --> ?>
 
-    <keybind key="C-A-r"><action name="Execute"><command>  \lxterminal  --geometry=24x1  -T 'hidden title centered'  --command="\sudo  \lxpanelctl  run"                         </command></action></keybind>
-    <keybind key="C-A-S-r"><action name="Execute"><command>  \lxterminal  --geometry=24x1  -T 'hidden title centered'  --command="\sudo  ~/l/shell-random/live/sh/scripts/run.sh"  </command></action></keybind>
-    <keybind key="W-r"><action name="Execute"><command>  ~/l/shell-random/live/sh/scripts/run.sh                                                                               </command></action></keybind>
-    <keybind key="Print"><action name="Execute"><command>   \lxterminal  --geometry=40x11+0+0  --command="~/l/shell-random/live/sh/scripts/screenshot.sh"                       </command></action></keybind>
+    <keybind key="C-A-r"><action name="Execute"><command>
+      \lxterminal  --geometry=24x1  -T 'hidden title centered'  --command="\sudo  \lxpanelctl  run"
+    </command></action></keybind>
+    <keybind key="C-A-S-r"><action name="Execute"><command>
+      \lxterminal  --geometry=24x1  -T 'hidden title centered'  --command="\sudo  ~/l/shell-random/live/sh/scripts/run.sh"
+    </command></action></keybind>
+    <keybind key="W-r"><action name="Execute"><command>
+      ~/l/shell-random/live/sh/scripts/run.sh
+    </command></action></keybind>
+    <keybind key="Print"><action name="Execute"><command>
+      \lxterminal  --geometry=40x11+0+0  --command="~/l/shell-random/live/sh/scripts/screenshot.sh"
+    </command></action></keybind>
     <!-- As with Windows 10 -->
-    <keybind key="W-S-s"><action name="Execute"><command>   \lxterminal  --geometry=40x11+0+0  --command="~/l/shell-random/live/sh/scripts/screenshot.sh"                       </command></action></keybind>
+    <keybind key="W-S-s"><action name="Execute"><command>
+      \lxterminal  --geometry=40x11+0+0  --command="~/l/shell-random/live/sh/scripts/screenshot.sh"
+    </command></action></keybind>
 <?ignore <!--  Alternatives
 \urxvtc \
   -e ~/l/shell-random/live/sh/scripts/screenshot.sh
@@ -796,48 +853,28 @@ scrot \
     </context>
     <context name="AllDesktops">
       <!-- The "pin" icon in the taskbar -->
-      <mousebind button="Left" action="Click">
-        <action name="ToggleOmnipresent"/>
-      </mousebind>
-      <mousebind button="Right" action="Click">
-        <action name="ToggleOmnipresent"/>
-      </mousebind>
+      <mousebind button="Left"   action="Click">  <action name="ToggleOmnipresent"/>  </mousebind>
+      <mousebind button="Right"  action="Click">  <action name="ToggleOmnipresent"/>  </mousebind>
     </context>
     <context name="Iconify">
       <!-- "Iconify" means to minimize -->
-      <mousebind button="Left" action="Click">
-        <action name="Iconify"/>
-      </mousebind>
-      <mousebind button="Right" action="Click">
-        <action name="Iconify"/>
-      </mousebind>
+      <mousebind button="Left"   action="Click">  <action name="Iconify"/>  </mousebind>
+      <mousebind button="Right"  action="Click">  <action name="Iconify"/>  </mousebind>
     </context>
     <context name="Maximize">
-      <mousebind button="Left" action="Click">
-        <action name="ToggleMaximizeFull"/>
-      </mousebind>
-      <mousebind button="Middle" action="Click">
-        <action name="ToggleMaximizeVert"/>
-      </mousebind>
-      <mousebind button="Right" action="Click">
-        <action name="ToggleMaximizeHorz"/>
-      </mousebind>
+      <mousebind button="Left"   action="Click">  <action name="ToggleMaximizeFull"/>  </mousebind>
+      <mousebind button="Middle" action="Click">  <action name="ToggleMaximizeVert"/>  </mousebind>
+      <mousebind button="Right"  action="Click">  <action name="ToggleMaximizeHorz"/>  </mousebind>
     </context>
     <context name="Close">
-      <mousebind button="Left" action="Click">
-        <action name="Close"/>
-      </mousebind>
+      <mousebind button="Left"   action="Click">  <action name="Close"/>  </mousebind>
     </context>
+    <!-- The "desktop" -->
     <context name="Root">
-      <!-- The "desktop" -->
-      <mousebind button="Right" action="Click">
-        <action name="ShowMenu">
-          <menu>root-menu</menu>
-        </action>
-      </mousebind>
+      <mousebind button="Right"  action="Click">  <action name="ShowMenu">  <menu>root-menu</menu>  </action>  </mousebind>
       <!--
       <mousebind button="Middle" action="Press">  <action name="ShowMenu">  <menu>client-list-combined-menu</menu>   </action>  </mousebind>
--->
+      -->
     </context>
   </mouse>
   <menu>
@@ -917,6 +954,8 @@ scrot \
     # 'Horizontal', 'Vertical' or boolean (yes/no)
     <maximized>true</maximized>
     --> ?>
+
+
     <!-- I'd love to have this just happen when opening lxterminal in some circumstances, but I don't know if that's possible. -->
     <application name="lxterminal">
       <focus>yes</focus>
@@ -935,9 +974,13 @@ scrot \
       <layer>above</layer>
       <decor>no</decor>
     </application>
+
+
     <application name="gpicview">
       <fullscreen>true</fullscreen>
     </application>
+
+
     <application name="geeqie">
       <?ignore <!--  Notes
         If this is full screening on the wrong monitor, then:
@@ -958,6 +1001,8 @@ scrot \
       <monitor>mouse</monitor>
       <focus>yes</focus>
     </application>
+
+
     <application name="evilvte">
       <focus>yes</focus>
       <position force="yes">
@@ -965,5 +1010,7 @@ scrot \
         <y>0</y>
       </position>
     </application>
+
+
   </applications>
 </openbox_config>
