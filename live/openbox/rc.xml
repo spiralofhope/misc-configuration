@@ -2,33 +2,64 @@
 <?ignore <!--
 The global default configuration file is found at:
 /etc/xdg/openbox/rc.xml
+Also /etc/xdg/openbox/rc.xml
+
+The default configuration is online at:
+http://git.icculus.org/?p=mikachu/openbox.git;a=blob_plain;f=data/rc.xml;hb=master
+
+Documentation:
+http://openbox.org/wiki/Help:Configuration
+http://openbox.org/wiki/Help:Bindings
+http://openbox.org/wiki/Help:Actions
 --> ?>
+
+
+
 <?ignore <!--
 - FIXME - my forcing terminals (e.g. directly using lxterminal is just a quick hack until I revise terminal.sh to have a generic --command type syntax which is translated to the appropriate thing for each terminal.
 - FIXME - I have no idea how to close the command prompt after launching the program.  Sigh.
 - On a 1920x1080 screen, the font "vga"          for \lxterminal is --geometry=239x64+0+0
 - On a 1920x1080 screen, the font "monospace 10" for \lxterminal is --geometry=239x59
 --> ?>
+
+
+
 <!-- This is a comment -->
 <!-- Comments cannot normally include a double-hyphen.  The solution is to enclose a comment block with an otherwise-unused (invalid) XML tag, like so: -->
-<?ignore Now a double-dash ( -- ) can be used (and ignored).
+<?ignore
+  Now a double-dash ( -- ) can be used (and ignored).
 ?>
+
+
 <!-- I like to also wrap things with the everyday tag so that it will look obviously-commented with syntax highlighting, like so: -->
 <?ignore <!--
 Now a double-dash ( -- ) can be used (and ignored).
 --> ?>
-<!-- Also /etc/xdg/openbox/rc.xml -->
-<!-- http://openbox.org/wiki/Help:Configuration -->
-<!-- http://openbox.org/wiki/Help:Bindings -->
-<!-- http://openbox.org/wiki/Help:Actions -->
-<!-- The default configuration is online at:  http://git.icculus.org/?p=mikachu/openbox.git;a=blob_plain;f=data/rc.xml;hb=master -->
+
+
+
+<?ignore <!--
+While this XML code:
+
+<tag/>text
+
+.. will be accepted without error, this style of XML will not work under some cases.  It's best to just never use />
+--> ?>
+
+
+
+<!-- The actual Openbox configuration begins: -->
 <openbox_config xmlns="http://openbox.org/3.4/rc">
+
+
   <resistance>
     <!-- Resistance (in pixels) between two windows, before they can overlap. -->
     <strength>10</strength>
     <!-- Resistance (in pixels) between the window and the screen edge, before overlap. -->
     <screen_edge_strength>20</screen_edge_strength>
   </resistance>
+
+
   <focus>
     <!-- Always try to focus new windows when they appear.  Other rules do apply. -->
     <focusNew>yes</focusNew>
@@ -43,6 +74,8 @@ Now a double-dash ( -- ) can be used (and ignored).
     <!-- When followMouse is enabled, move the focus under the mouse, even when the mouse is not moving. -->
     <underMouse>no</underMouse>
   </focus>
+
+
   <placement>
     <!--
       New window placement.
@@ -64,6 +97,8 @@ Now a double-dash ( -- ) can be used (and ignored).
     -->
     <primaryMonitor>Mouse</primaryMonitor>
   </placement>
+
+
   <theme>
     <name>minimal-spiralofhope</name>
     <!--  2019-03-05 - Lubuntu 18.10
@@ -88,43 +123,15 @@ Now a double-dash ( -- ) can be used (and ignored).
     <!-- size   = Font size, in points. -->
     <!-- weight = normal, bold -->
     <!-- slant  = normal, italic -->
-    <font place="ActiveWindow">
-      <name>Sans</name>
-      <size>12</size>
-      <weight>normal</weight>
-      <slant>normal</slant>
-    </font>
-    <font place="InactiveWindow">
-      <name>Sans</name>
-      <size>12</size>
-      <weight>normal</weight>
-      <slant>normal</slant>
-    </font>
-    <font place="MenuHeader">
-      <name>Sans</name>
-      <size>12</size>
-      <weight>normal</weight>
-      <slant>normal</slant>
-    </font>
-    <font place="MenuItem">
-      <name>Sans</name>
-      <size>12</size>
-      <weight>normal</weight>
-      <slant>normal</slant>
-    </font>
-    <font place="ActiveOnScreenDisplay">
-      <name>Sans</name>
-      <size>12</size>
-      <weight>normal</weight>
-      <slant>normal</slant>
-    </font>
-    <font place="InactiveOnScreenDisplay">
-      <name>Sans</name>
-      <size>12</size>
-      <weight>normal</weight>
-      <slant>normal</slant>
-    </font>
+    <font place="ActiveWindow">           <name>Sans</name><size>12</size><weight>normal</weight><slant>normal</slant></font>
+    <font place="InactiveWindow">         <name>Sans</name><size>12</size><weight>normal</weight><slant>normal</slant></font>
+    <font place="MenuHeader">             <name>Sans</name><size>12</size><weight>normal</weight><slant>normal</slant></font>
+    <font place="MenuItem">               <name>Sans</name><size>12</size><weight>normal</weight><slant>normal</slant></font>
+    <font place="ActiveOnScreenDisplay">  <name>Sans</name><size>12</size><weight>normal</weight><slant>normal</slant></font>
+    <font place="InactiveOnScreenDisplay"><name>Sans</name><size>12</size><weight>normal</weight><slant>normal</slant></font>
   </theme>
+
+
   <desktops>
     <!--
     This stuff is only used at startup, pagers allow you to change them during a session.
@@ -142,6 +149,8 @@ Now a double-dash ( -- ) can be used (and ignored).
     <!-- The number of milliseconds to show the popup for when switching desktops.  Set this to 0 to disable the popup. -->
     <popupTime>0</popupTime>
   </desktops>
+
+
   <resize>
     <!--  When resizing a window  -->
     <!--
@@ -163,6 +172,8 @@ Now a double-dash ( -- ) can be used (and ignored).
       <y>10</y>
     </popupFixedPosition>
   </resize>
+
+
   <margins>
     <!-- The border around a window. -->
     <!--  You can reserve a portion of your screen where windows will not cover when they are maximized, or when they are initially placed.  Many programs reserve space automatically, but you can use this in other cases.  This isn't really a great idea since some windows will look odd if they cannot completely fullscreen.  This is most especially jarring with a distracting desktop image or color.  -->
@@ -175,37 +186,74 @@ Now a double-dash ( -- ) can be used (and ignored).
     <!-- This isn't a bad idea, but I didn't end up using it and it just looked odd. -->
     <left>0</left>
   </margins>
+
+
+  <!-- This is for "dockapps", some ancient tray-like concept that I don't understand or use: -->
   <dock>
-    <!-- This is for "dockapps", some ancient tray-like concept. -->
-    <!-- Where to show the dock. -->
-    <!-- TopLeft, Top, TopRight, Right, BottomRight, Bottom, BottomLeft, Left, Floating -->
-    <position>TopLeft</position>
+    <!-- Where to show the dock.
+         TopLeft, Top, TopRight, Right, BottomRight, Bottom, BottomLeft, Left, Floating
+    -->
+    <position>BottomRight</position>
     <!-- When position is set to _Floating_, these two specify the pixel position of the dock. -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
-    <!-- Vertical, Horizontal -->
-    <!-- The layout direction for dockapps -->
+    <!-- The layout direction for dockapps
+         Vertical, Horizontal
+    -->
     <direction>Horizontal</direction>
-    <!-- The window layer to put the dock in. -->
-    <!-- The dock can be raised and lowered by left and middle clicking on it, among windows in the specified layer. -->
-    <!-- Above, Normal, Below -->
+    <!-- The window layer to put the dock in.
+         The dock can be raised and lowered by left and middle clicking on it, among windows in the specified layer.
+         Above, Normal, Below
+    -->
     <stacking>Above</stacking>
-    <!-- If _yes_, it won't stop windows from being placed or maximized over it. -->
-    <!-- When position is set to Floating, this is always _yes_.  You can use margins to emulate _no_. -->
+    <!-- When position is set to Floating, this is always _yes_.  You can use margins to emulate _no_.
+         If _yes_, it won't stop windows from being placed or maximized over it.
+    -->
     <noStrut>no</noStrut>
     <!-- Hide the dock automatically when the mouse is not over it. -->
     <autoHide>no</autoHide>
-    <!-- If autoHide is _yes_, these are the delay for hiding or showing the dock. -->
-    <!-- In milliseconds. -->
+    <!-- If autoHide is _yes_, these are the delay for hiding or showing the dock.
+         In milliseconds.
+    -->
     <hideDelay>300</hideDelay>
     <showDelay>300</showDelay>
-    <!-- Which button to use for moving individual dockapps around in the dock. -->
-    <!-- 'Left', 'Middle', 'Right' -->
+    <!-- Which button to use for moving individual dockapps around in the dock.
+         'Left', 'Middle', 'Right'
+    -->
     <moveButton>Left</moveButton>
   </dock>
-  <keyboard><!-- Keybindings for applications. --><!-- I don't use chains. --><!--
+
+
+  <!-- Keybindings for applications: -->
+  <keyboard>
+  <!-- Note that I don't use chains. -->
+  <!--
      <chainQuitKey>C-g</chainQuitKey> 
---><keybind key="W-d"><action name="ToggleShowDesktop"/></keybind><keybind key="S-W-1"><action name="SendToDesktop"><desktop>1</desktop><follow>no</follow></action></keybind><keybind key="S-W-2"><action name="SendToDesktop"><desktop>2</desktop><follow>no</follow></action></keybind><keybind key="S-W-3"><action name="SendToDesktop"><desktop>3</desktop><follow>no</follow></action></keybind><keybind key="S-W-4"><action name="SendToDesktop"><desktop>4</desktop><follow>no</follow></action></keybind><keybind key="W-1"><action name="Desktop"><desktop>1</desktop></action></keybind><keybind key="W-2"><action name="Desktop"><desktop>2</desktop></action></keybind><keybind key="W-3"><action name="Desktop"><desktop>3</desktop></action></keybind><keybind key="W-4"><action name="Desktop"><desktop>4</desktop></action></keybind><keybind key="W-Left"><action name="DesktopLeft"><wrap>no</wrap></action></keybind><keybind key="C-W-Left"><action name="DesktopLeft"><wrap>no</wrap></action></keybind><keybind key="W-Right"><action name="DesktopRight"><wrap>no</wrap></action></keybind><keybind key="C-W-Right"><action name="DesktopRight"><wrap>no</wrap></action></keybind><keybind key="S-W-Left"><action name="SendToDesktopLeft"><wrap>no</wrap></action></keybind><keybind key="S-W-Right"><action name="SendToDesktopRight"><wrap>no</wrap></action></keybind><keybind key="A-F4"><action name="Close"/></keybind><keybind key="A-Escape"><action name="Lower"/><action name="FocusToBottom"/><action name="Unfocus"/></keybind><!-- BUG? - "space" needs to be lowercase. --><keybind key="A-space"><action name="ShowMenu"><menu>client-menu</menu></action></keybind><keybind key="W-space"><action name="ShowMenu"><menu>root-menu  </menu></action></keybind><!--
+  -->
+  <keybind key="W-d">      <action name="ToggleShowDesktop"></action></keybind>
+  <keybind key="S-W-1">    <action name="SendToDesktop"><desktop>1</desktop><follow>no</follow></action></keybind>
+  <keybind key="S-W-2">    <action name="SendToDesktop"><desktop>2</desktop><follow>no</follow></action></keybind>
+  <keybind key="S-W-3">    <action name="SendToDesktop"><desktop>3</desktop><follow>no</follow></action></keybind>
+  <keybind key="S-W-4">    <action name="SendToDesktop"><desktop>4</desktop><follow>no</follow></action></keybind>
+  <keybind key="W-1">      <action name="Desktop"><desktop>1</desktop></action></keybind>
+  <keybind key="W-2">      <action name="Desktop"><desktop>2</desktop></action></keybind>
+  <keybind key="W-3">      <action name="Desktop"><desktop>3</desktop></action></keybind>
+  <keybind key="W-4">      <action name="Desktop"><desktop>4</desktop></action></keybind>
+  <keybind key="W-Left">   <action name="DesktopLeft">       <wrap>no</wrap></action></keybind>
+  <keybind key="C-W-Left"> <action name="DesktopLeft">       <wrap>no</wrap></action></keybind>
+  <keybind key="W-Right">  <action name="DesktopRight">      <wrap>no</wrap></action></keybind>
+  <keybind key="C-W-Right"><action name="DesktopRight">      <wrap>no</wrap></action></keybind>
+  <keybind key="S-W-Left"> <action name="SendToDesktopLeft"> <wrap>no</wrap></action></keybind>
+  <keybind key="S-W-Right"><action name="SendToDesktopRight"><wrap>no</wrap></action></keybind>
+  <keybind key="A-F4">     <action name="Close">        </action></keybind>
+  <keybind key="A-Escape"> <action name="Lower">        </action>
+                           <action name="FocusToBottom"></action>
+                           <action name="Unfocus">      </action>
+  </keybind>
+  <!-- BUG? - "space" needs to be lowercase. -->
+  <keybind key="A-space">  <action name="ShowMenu"><menu>client-menu</menu></action></keybind>
+  <keybind key="W-space">  <action name="ShowMenu"><menu>root-menu  </menu></action></keybind>
+  <!--
     NextWindow
     Option 	        Default Value 	Description
     <dialog> 	      list 	  Specifies the type of dialog to be shown on screen with icons for all the windows which can be focused. Choices are "list", "icons", or "none". If "none" is selected then no dialog will be shown.
@@ -217,49 +265,54 @@ Now a double-dash ( -- ) can be used (and ignored).
     <linear> 	      no 	    A boolean (yes/no) which when enabled causes focus to cycle in a fixed ordering, rather than in the order which windows have been last focused.
     <interactive> 	yes 	  A boolean (yes/no) which when disabled causes the action to immediately switch focus to the next target.
     <finalactions> 	Focus, Raise, Unshade 	A list of actions to run on the window which the user finally selects using this action. 
-  --><!-- The alt-tab "popup pager" no longer appears on every monitor. --><!-- It used to, but was changed/removed in 3.4.9  -->
+  -->
+  <!-- The alt-tab "popup pager" no longer appears on every monitor. -->
+  <!-- It used to, but was changed/removed in 3.4.9  -->
   <!--   http://openbox.org/wiki/Openbox:Changelog#3.4.9 -->
   <!-- I see no way to have the alt-tab only display the current monitor's programs.  I researched for a long while, to no avail. -->
-  <keybind key="A-Tab">   <action name="NextWindow">    <allDesktops>no </allDesktops></action></keybind>
-  <keybind key="A-S-Tab"> <action name="PreviousWindow"><allDesktops>no </allDesktops></action></keybind>
-  <keybind key="W-Tab">   <action name="NextWindow">    <allDesktops>yes</allDesktops></action></keybind>
-  <keybind key="W-S-Tab"> <action name="PreviousWindow"><allDesktops>yes</allDesktops></action></keybind>
-  <keybind key="F11">     <action name="ToggleFullscreen"/></keybind>
-<!--
-  <keybind key="A-Return">  <action name="ToggleMaximize"/></keybind>
--->
-  <keybind key="W-Return">  <action name="ToggleMaximizeVert"/></keybind>
-  <keybind key="W-S-Return"><action name="ToggleMaximizeHorz"/></keybind>
+  <keybind key="A-Tab"><action name="NextWindow"><allDesktops>no </allDesktops></action></keybind>
+  <keybind key="W-Tab"><action name="NextWindow"><allDesktops>yes</allDesktops></action></keybind>
+  <keybind key="A-S-Tab"><action name="PreviousWindow"><allDesktops>no </allDesktops></action></keybind>
+  <keybind key="W-S-Tab"><action name="PreviousWindow"><allDesktops>yes</allDesktops></action></keybind>
+  <keybind key="F11"><action name="ToggleFullscreen"></action></keybind>
+  <!--
+  <keybind key="A-Return">  <action name="ToggleMaximize"></action></keybind>
+  -->
+  <keybind key="W-Return">  <action name="ToggleMaximizeVert"></action></keybind>
+  <keybind key="W-S-Return"><action name="ToggleMaximizeHorz"></action></keybind>
   <keybind key="W-KP_1"><action name="MoveResizeTo"><x>     1</x><y>    -1</y></action></keybind>
-  <keybind key="W-KP_2"><action name="MoveResizeTo"><y>    -1</y></action></keybind>
+  <keybind key="W-KP_2"><action name="MoveResizeTo">             <y>    -1</y></action></keybind>
   <keybind key="W-KP_3"><action name="MoveResizeTo"><x>    -1</x><y>    -1</y></action></keybind>
-  <keybind key="W-KP_4"><action name="MoveResizeTo"><x>     0</x></action></keybind>
+  <keybind key="W-KP_4"><action name="MoveResizeTo"><x>     0</x>             </action></keybind>
   <keybind key="W-KP_5"><action name="MoveResizeTo"><x>center</x><y>center</y></action></keybind>
-  <keybind key="W-KP_6"><action name="MoveResizeTo"><x>    -1</x></action></keybind>
+  <keybind key="W-KP_6"><action name="MoveResizeTo"><x>    -1</x>             </action></keybind>
   <keybind key="W-KP_7"><action name="MoveResizeTo"><x>     0</x><y>     0</y></action></keybind>
-  <keybind key="W-KP_8"><action name="MoveResizeTo"><y>     0</y></action></keybind>
+  <keybind key="W-KP_8"><action name="MoveResizeTo">             <y>     0</y></action></keybind>
   <keybind key="W-KP_9"><action name="MoveResizeTo"><x>    -1</x><y>     0</y></action></keybind>
   <!-- Move applications between monitors. -->
   <keybind key="C-S-A-Left"> <action name="MoveResizeTo"><monitor>1</monitor></action></keybind>
   <keybind key="C-S-A-Right"><action name="MoveResizeTo"><monitor>2</monitor></action></keybind>
   <!-- I can't have it bounce between monitors, but at least this will work. -->
-  <keybind key="C-W-x"><action name="MoveResizeTo"><monitor>2</monitor></action></keybind>
+  <keybind key="C-W-x">      <action name="MoveResizeTo"><monitor>2</monitor></action></keybind>
   <!--  Well.. no, not really:
-    <keybind key="C-W-x">  <action name="SendToDesktopRight">  <wrap>yes</wrap>  </action>  </keybind>
+    <keybind key="C-W-x"><action name="SendToDesktopRight"><wrap>yes</wrap></action></keybind>
   -->
-  <!-- FIXME:  The backtick doesn't work for a hotkey.
-    Openbox-Message: Invalid key name "`" in key binding
-  -->
-  <!--
-    <keybind key="W-`">  <action name="ToggleOmnipresent"/>  </keybind>
-  -->
-  <!-- In Windows 10 ,this opens the start menu.  -->
-  <keybind key="W-x">       <action name="Execute"><command>  \lxpanelctl menu                         </command></action></keybind>
+  <keybind key="W-`"><action name="ToggleOmnipresent"></action></keybind>
+  <!-- In Windows 10, this opens the start menu.  -->
+  <keybind key="W-x"><action name="Execute"><command>
+    \lxpanelctl menu
+  </command></action></keybind>
   <!-- In Windows 10 ,this opens the application search dialog.  -->
-  <keybind key="W-s">       <action name="Execute"><command>  ~/l/shell-random/live/sh/scripts/run.sh  </command></action></keybind>
+  <keybind key="W-s"><action name="Execute"><command>
+    ~/l/shell-random/live/sh/scripts/run.sh
+  </command></action></keybind>
   <!-- Note that this hotkey combination won't work within VirtualBox. -->
-  <keybind key="C-A-Delete"><action name="Execute"><command>  \lxtask                                  </command></action></keybind>
-  <keybind key="C-A-Escape"><action name="Execute"><command>  \xkill                                   </command></action></keybind>
+  <keybind key="C-A-Delete"><action name="Execute"><command>
+    \lxtask
+  </command></action></keybind>
+  <keybind key="C-A-Escape"><action name="Execute"><command>
+    \xkill
+  </command></action></keybind>
   <?ignore <!--  Multimedia keyboard features (buttons, hotkeys, dials, etc.)
     Instead of using a particular application's hotkeys or global hotkeys, you can program OpenBox to see the keys.
     /usr/share/X11/XKeysymDB
@@ -277,10 +330,18 @@ Now a double-dash ( -- ) can be used (and ignored).
             XFilterEvent returns: False
     --> ?>
     <!-- Begin keybinds for the Logitech K310 -->
-    <keybind key="XF86HomePage">  <action name="Execute"><command>  \x-www-browser        </command></action></keybind>
-    <keybind key="XF86Search">    <action name="Execute"><command>  \x-terminal-emulator  </command></action></keybind>
-    <keybind key="XF86Mail">      <action name="Execute"><command>  \x-terminal-emulator  </command></action></keybind>
-    <keybind key="XF86Calculator"><action name="Execute"><command>  \xcalc                </command></action></keybind>
+    <keybind key="XF86HomePage">        <action name="Execute"><command>
+      \x-www-browser
+    </command></action></keybind>
+    <keybind key="XF86Search">          <action name="Execute"><command>
+      \x-terminal-emulator
+    </command></action></keybind>
+    <keybind key="XF86Mail">            <action name="Execute"><command>
+      \x-terminal-emulator
+    </command></action></keybind>
+    <keybind key="XF86Calculator">      <action name="Execute"><command>
+      \xcalc
+    </command></action></keybind>
     <?ignore <!--  Alternatives
     \galculator
 
@@ -288,14 +349,16 @@ Now a double-dash ( -- ) can be used (and ignored).
 
     \kcalc
     --> ?>
-    <keybind key="XF86Tools">    <action name="Execute"><command>  \x-terminal-emulator      </command></action></keybind>
+    <keybind key="XF86Tools">           <action name="Execute"><command>
+      \x-terminal-emulator
+    </command></action></keybind>
 <!--
 TODO - also simultaneously support deadbeef?
 -->
-    <keybind key="XF86AudioPrev"><action name="Execute"><command>  \audacious  --rew         </command></action></keybind>
+    <keybind key="XF86AudioPrev">       <action name="Execute"><command>  \audacious  --rew         </command></action></keybind>
     <!-- I like to toggle play/pause -->
-    <keybind key="XF86AudioPlay"><action name="Execute"><command>  \audacious  --play-pause  </command></action></keybind>
-    <keybind key="XF86AudioNext"><action name="Execute"><command>  \audacious  --fwd         </command></action></keybind>
+    <keybind key="XF86AudioPlay">       <action name="Execute"><command>  \audacious  --play-pause  </command></action></keybind>
+    <keybind key="XF86AudioNext">       <action name="Execute"><command>  \audacious  --fwd         </command></action></keybind>
 <?ignore <!--  Alternatives
 \python pvol.py -m
 
@@ -305,9 +368,9 @@ TODO - also simultaneously support deadbeef?
 # Learn the channel name with `amixer scontrols`, but -D pulse seems to work..
 --> ?>
 
-    <keybind key="XF86AudioMute">       <action name="Execute"><command>  \amixer -D pulse sset Master 1+ toggle  </command></action></keybind>
-    <keybind key="XF86AudioLowerVolume"><action name="Execute"><command>  \amixer  -D pulse  sset Master 3%-      </command></action></keybind>
-    <keybind key="XF86AudioRaiseVolume"><action name="Execute"><command>  \amixer  -D pulse  sset Master 3%+      </command></action></keybind>
+    <keybind key="XF86AudioMute">       <action name="Execute"><command>  \amixer  -D pulse sset Master 1+ toggle  </command></action></keybind>
+    <keybind key="XF86AudioLowerVolume"><action name="Execute"><command>  \amixer  -D pulse sset Master 3%-        </command></action></keybind>
+    <keybind key="XF86AudioRaiseVolume"><action name="Execute"><command>  \amixer  -D pulse sset Master 3%+        </command></action></keybind>
 <?ignore <!--  Alternatives
 # Warning:  pyvol has a noticeable delay..
 python pvol.py -c 5
@@ -328,7 +391,7 @@ aumix -v+10
 --> ?>
 
 
-    <keybind key="A-F5"><action name="Reconfigure"/></keybind>
+    <keybind key="A-F5"><action name="Reconfigure"></action></keybind>
     <keybind key="A-S-F5"><action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>
       \sh  -c "\
         \geany \\
@@ -340,7 +403,8 @@ aumix -v+10
         \xrefresh \\
       "
     </command></action></keybind>
-    <keybind key="A-F6"><action name="Execute"><command><!-- Devuan -->
+    <keybind key="A-F6"><action name="Execute"><command>
+      <!-- Devuan -->
       ~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
         \urxvtc \
           -geometry 28x1 \
@@ -451,18 +515,24 @@ aumix -v+10
 
 --> ?>
 
-    <keybind key="C-A-s"><action name="Execute"><command>  ~/l/shell-random/live/zsh/scripts/terminal.sh              </command></action></keybind>
-<?ignore <!--  
-    <keybind key="W-S-s">  <action name="Execute">  <command>  ~/l/shell-random/live/zsh/scripts/terminal.sh  with_lines  </command>  </action>  </keybind>
---> ?>
+    <keybind key="C-A-s"><action name="Execute"><command>
+      ~/l/shell-random/live/zsh/scripts/terminal.sh
+    </command></action></keybind>
+    <?ignore <!--  
+    <keybind key="W-S-s"><action name="Execute"><command>
+      ~/l/shell-random/live/zsh/scripts/terminal.sh  with_lines
+    </command></action></keybind>
+    --> ?>
     <keybind key="W-m"><action name="Execute"><command>
       \lxterminal  --geometry=239x64+0+0  --command="\alsamixer"
     </command></action></keybind>
-<?ignore <!--  Alternatives
+    <?ignore <!--  Alternatives:
       \pavucontrol                                               
---> ?>
+    --> ?>
 
-    <keybind key="C-A-c"><action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>  \chromium  </command></action></keybind>
+    <keybind key="C-A-c"><action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>
+      \chromium
+    </command></action></keybind>
     <keybind key="C-A-w"><action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>
       \sh  -c "\
         profile_name='default'  ;\
@@ -486,13 +556,18 @@ aumix -v+10
 "
 --> ?>
 
-    <keybind key="C-A-l"><action name="Execute"><command>  ~/l/shell-random/git/live/sh/scripts/screensaver-control.sh       </command></action></keybind>
-<!--
-  <keybind key="W-l">    <action name="Execute">  <command>  ~/l/shell-random/live/sh/scripts/screensaver-control.sh  locknow  </command>  </action>  </keybind>
--->
+    <keybind key="C-A-l"><action name="Execute"><command>
+      ~/l/shell-random/live/sh/scripts/screensaver-control.sh
+    </command></action></keybind>
+    <!--
+    <keybind key="W-l">    <action name="Execute">  <command>
+      ~/l/shell-random/live/sh/scripts/screensaver-control.sh  locknow
+    </command>  </action>  </keybind>
+    -->
 
 
-    <keybind key="C-A-W-l"><action name="Execute"><command><!-- 2016-12-07, on Devuan -->
+    <keybind key="C-A-W-l"><action name="Execute"><command>
+      <!-- 2016-12-07, on Devuan -->
       ~/l/shell-random/live/zsh/scripts/terminal.sh  FORCE \
         \urxvtc \
           -geometry 28x1 \
@@ -551,7 +626,8 @@ aumix -v+10
     "
 --> ?>
 
-    <keybind key="C-A-S-W-l"><action name="Execute"><command><!-- 2016-03-28, on Slackware 14.1 -->
+    <keybind key="C-A-S-W-l"><action name="Execute"><command>
+      <!-- 2016-03-28, on Slackware 14.1 -->
       \sudo  /usr/sbin/poweroff
     </command></action></keybind>
 <?ignore <!--  Alternatives
@@ -583,12 +659,13 @@ aumix -v+10
 \pcmanfm
 -->
 
-    <keybind key="W-f">
-      <action name="Execute"><command>  \spacefm   --find-files  --new-window  --no-saved-tabs  /live/__  </command></action>
-      <?ignore <!--  I can't run spacefm twice like this, because the main window will always appear overtop of the find dialog:
-      <action name="Execute"><command>  \spacefm                 --new-window  --no-saved-tabs  /live/__  </command></action>  
-      --> ?>
-    </keybind>
+    <keybind key="W-f"><action name="Execute"><command>
+      \spacefm   --find-files  --new-window  --no-saved-tabs  /live/__  </command></action><?ignore
+      <!--  I can't run spacefm twice like this, because the main window will always appear overtop of the find dialog:
+      <action name="Execute"><command>
+        \spacefm                 --new-window  --no-saved-tabs  /live/__
+      </command></action>
+      --> ?></keybind>
     <?ignore <!--  Alternatives
     \Thunar
 
@@ -603,19 +680,16 @@ aumix -v+10
       \wmctrl -F -r "filemanager #0"  -e 1,800,0,800,1148
     --> ?>
 
-    <keybind key="C-A-e">
-      <action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>
+    <keybind key="C-A-e"><action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>
         ~/l/shell-random/live/sh/scripts/projects-open.sh
-      </command></action>
-      <action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>
+      </command></action><action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>
         \claws-mail
-      </command></action>
-    </keybind>
+      </command></action></keybind>
 
     <keybind key="W-k"><action name="Execute"><startupnotify><enabled>yes</enabled></startupnotify><command>
       \mtpaint  ~/__/__.jpg
     </command></action></keybind>
-    <?ignore <!--  Alternatives
+    <?ignore <!--  Alternatives:
     \kolourpaint  ~/__/__.jpg
     --> ?>
 
@@ -688,7 +762,10 @@ scrot \
 --> ?>
 
 
-</keyboard>
+  </keyboard>
+
+
+
   <mouse>
     <!-- Number of pixels the mouse must move before a drag begins -->
     <dragThreshold>8</dragThreshold>
@@ -699,83 +776,62 @@ scrot \
     Set this to 0 to disable warping.
   -->
     <screenEdgeWarpTime>0</screenEdgeWarpTime>
+
+
     <!-- The entire window frame for any window (except the desktop). This includes both the window decorations (if any) and the application window itself. -->
     <!-- Clicks will NOT be passed through to the client! -->
     <context name="Frame">
-      <mousebind button="A-Left" action="Drag">
-        <action name="Unmaximize"/>
-        <action name="Move"/>
-      </mousebind>
-      <mousebind button="A-Right" action="Drag">
-        <action name="Unmaximize"/>
-        <action name="Resize"/>
-      </mousebind>
-      <mousebind action="Press" button="A-Shift-Right">
-        <action name="ShowMenu">
-          <menu>root-menu</menu>
-        </action>
-      </mousebind>
-      <mousebind action="Press" button="W-Right">
-        <action name="ShowMenu">
-          <menu>root-menu</menu>
-        </action>
-      </mousebind>
+      <mousebind button="A-Left"  action="Drag"><action name="Move">  </action><action name="Unmaximize"></action></mousebind>
+      <mousebind button="A-Right" action="Drag"><action name="Resize"></action><action name="Unmaximize"></action></mousebind>
+      <mousebind action="Press" button="A-Shift-Right"><action name="ShowMenu"><menu>root-menu</menu></action></mousebind>
+      <mousebind action="Press" button="W-Right">      <action name="ShowMenu"><menu>root-menu</menu></action></mousebind>
       <mousebind button="A-Left" action="Press">
-        <action name="Raise"/>
-        <action name="Focus"/>
+        <action name="Raise"></action>
+        <action name="Focus"></action>
       </mousebind>
       <mousebind action="DoubleClick" button="A-Left">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="ToggleMaximizeFull"/>
+        <action name="Focus"></action>
+        <action name="Raise"></action>
+        <action name="ToggleMaximizeFull"></action>
       </mousebind>
       <!-- Interferes with alt-leftclick-drag -->
       <!--
       <mousebind action="Press" button="A-Right">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="ShowMenu">  <menu>client-menu</menu>  </action>
+        <action name="Focus"></action>
+        <action name="Raise"></action>
+        <action name="ShowMenu"><menu>client-menu</menu></action>
       </mousebind>
 -->
     </context>
+
+
     <context name="Client">
-      <mousebind button="Left" action="Press">
-        <action name="Raise"/>
-        <action name="Focus"/>
-      </mousebind>
-      <mousebind button="Middle" action="Press">
-        <action name="Raise"/>
-        <action name="Focus"/>
-      </mousebind>
-      <mousebind button="Right" action="Press">
-        <action name="Raise"/>
-        <action name="Focus"/>
-      </mousebind>
+      <mousebind button="Left"   action="Press"><action name="Raise"></action><action name="Focus"></action></mousebind>
+      <mousebind button="Middle" action="Press"><action name="Raise"></action><action name="Focus"></action></mousebind>
+      <mousebind button="Right"  action="Press"><action name="Raise"></action><action name="Focus"></action></mousebind>
     </context>
+
+
     <context name="Titlebar">
       <!-- Remember that there is no titlebar if the window is "maximized". -->
       <mousebind button="Left" action="Press">
-        <action name="Raise"/>
-        <action name="Focus"/>
+        <action name="Raise"></action>
+        <action name="Focus"></action>
       </mousebind>
       <mousebind button="Left" action="Drag">
-        <action name="Move"/>
+        <action name="Move"></action>
       </mousebind>
-      <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximizeFull"/>
-      </mousebind>
-      <mousebind button="Middle" action="Click">
-        <action name="ToggleMaximizeFull"/>
-      </mousebind>
+      <mousebind button="Left"   action="DoubleClick"><action name="ToggleMaximizeFull"></action></mousebind>
+      <mousebind button="Middle" action="Click">      <action name="ToggleMaximizeFull"></action></mousebind>
       <mousebind button="A-Right" action="Drag">
-        <action name="Resize"/>
+        <action name="Resize"></action>
       </mousebind>
       <!--
-    <mousebind button="Middle"    action="DoubleClick">   <action name="ToggleMaximizeVert"/>   </mousebind>
+    <mousebind button="Middle"    action="DoubleClick">   <action name="ToggleMaximizeVert"></action>   </mousebind>
 -->
       <!-- A nice idea, but this doesn't work because of the menu. -->
       <!--
-    <mousebind button="Right"     action="DoubleClick">   <action name="ToggleMaximizeHorz"/>   </mousebind>
+    <mousebind button="Right"     action="DoubleClick">   <action name="ToggleMaximizeHorz"></action>   </mousebind>
 -->
       <mousebind button="Right" action="Click">
         <action name="ShowMenu">
@@ -783,100 +839,66 @@ scrot \
         </action>
       </mousebind>
     </context>
+
     <!-- The different sides of the frame -->
-    <!-- FIXME - I don't think this works as-expected.  I ended up putting a margin around everything so that maximized windows don't fully cover the desktop. -->
-    <context name="Left">
-      <mousebind button="Right" action="Click">
-        <action name="ShowMenu">
-          <menu>root-menu</menu>
-        </action>
-      </mousebind>
-    </context>
-    <context name="Top">
-      <mousebind button="Right" action="Click">
-        <action name="ShowMenu">
-          <menu>root-menu</menu>
-        </action>
-      </mousebind>
-    </context>
-    <context name="Right">
-      <mousebind button="Right" action="Click">
-        <action name="ShowMenu">
-          <menu>root-menu</menu>
-        </action>
-      </mousebind>
-    </context>
-    <context name="Bottom">
-      <mousebind button="Right" action="Click">
-        <action name="ShowMenu">
-          <menu>root-menu</menu>
-        </action>
-      </mousebind>
-    </context>
-    <context name="Left">
-      <mousebind button="Left" action="Drag">
-        <action name="Resize"/>
-      </mousebind>
-    </context>
-    <context name="Top">
-      <mousebind button="Left" action="Drag">
-        <action name="Resize"/>
-      </mousebind>
-    </context>
-    <context name="Right">
-      <mousebind button="Left" action="Drag">
-        <action name="Resize"/>
-      </mousebind>
-    </context>
-    <context name="Bottom">
-      <mousebind button="Left" action="Drag">
-        <action name="Resize"/>
-      </mousebind>
-    </context>
+    <context name="Left">  <mousebind button="Right" action="Click"><action name="ShowMenu"><menu>root-menu</menu></action></mousebind></context>
+    <context name="Top">   <mousebind button="Right" action="Click"><action name="ShowMenu"><menu>root-menu</menu></action></mousebind></context>
+    <context name="Right"> <mousebind button="Right" action="Click"><action name="ShowMenu"><menu>root-menu</menu></action></mousebind></context>
+    <context name="Bottom"><mousebind button="Right" action="Click"><action name="ShowMenu"><menu>root-menu</menu></action></mousebind></context>
+    <context name="Left">  <mousebind button="Left" action="Drag"><action name="Resize"></action></mousebind></context>
+    <context name="Top">   <mousebind button="Left" action="Drag"><action name="Resize"></action></mousebind></context>
+    <context name="Right"> <mousebind button="Left" action="Drag"><action name="Resize"></action></mousebind></context>
+    <context name="Bottom"><mousebind button="Left" action="Drag"><action name="Resize"></action></mousebind></context>
+
+
+    <!-- The top-left application icon -->
     <context name="Icon">
-      <!-- The top-left application icon -->
-      <mousebind button="Left" action="Click">
-        <action name="ShowMenu">
-          <menu>client-menu</menu>
-        </action>
-      </mousebind>
-      <mousebind button="Right" action="Click">
-        <action name="ShowMenu">
-          <menu>client-menu</menu>
-        </action>
-      </mousebind>
+      <mousebind button="Left"  action="Click"><action name="ShowMenu"><menu>client-menu</menu></action></mousebind>
+      <mousebind button="Right" action="Click"><action name="ShowMenu"><menu>client-menu</menu></action></mousebind>
       <!-- Double-click a title bar to switch between windowed and maximized -->
       <mousebind action="DoubleClick" button="Left">
-        <action name="Focus"/>
-        <action name="Close"/>
+        <action name="Focus"></action>
+        <action name="Close"></action>
       </mousebind>
     </context>
+
+
+    <!-- The "pin" icon in the taskbar -->
     <context name="AllDesktops">
-      <!-- The "pin" icon in the taskbar -->
-      <mousebind button="Left"   action="Click">  <action name="ToggleOmnipresent"/>  </mousebind>
-      <mousebind button="Right"  action="Click">  <action name="ToggleOmnipresent"/>  </mousebind>
+      <mousebind button="Left"  action="Click"><action name="ToggleOmnipresent"></action></mousebind>
+      <mousebind button="Right" action="Click"><action name="ToggleOmnipresent"></action></mousebind>
     </context>
+
+
+    <!-- "Iconify" means to minimize -->
     <context name="Iconify">
-      <!-- "Iconify" means to minimize -->
-      <mousebind button="Left"   action="Click">  <action name="Iconify"/>  </mousebind>
-      <mousebind button="Right"  action="Click">  <action name="Iconify"/>  </mousebind>
+      <mousebind button="Left"  action="Click"><action name="Iconify"></action></mousebind>
+      <mousebind button="Right" action="Click"><action name="Iconify"></action></mousebind>
     </context>
+
+
     <context name="Maximize">
-      <mousebind button="Left"   action="Click">  <action name="ToggleMaximizeFull"/>  </mousebind>
-      <mousebind button="Middle" action="Click">  <action name="ToggleMaximizeVert"/>  </mousebind>
-      <mousebind button="Right"  action="Click">  <action name="ToggleMaximizeHorz"/>  </mousebind>
+      <mousebind button="Left"   action="Click"><action name="ToggleMaximizeFull"></action></mousebind>
+      <mousebind button="Middle" action="Click"><action name="ToggleMaximizeVert"></action></mousebind>
+      <mousebind button="Right"  action="Click"><action name="ToggleMaximizeHorz"></action></mousebind>
     </context>
+
+
     <context name="Close">
-      <mousebind button="Left"   action="Click">  <action name="Close"/>  </mousebind>
+      <mousebind button="Left" action="Click"><action name="Close"></action></mousebind>
     </context>
+
     <!-- The "desktop" -->
     <context name="Root">
-      <mousebind button="Right"  action="Click">  <action name="ShowMenu">  <menu>root-menu</menu>  </action>  </mousebind>
+      <mousebind button="Right" action="Click"><action name="ShowMenu"><menu>root-menu</menu></action></mousebind>
       <!--
       <mousebind button="Middle" action="Press">  <action name="ShowMenu">  <menu>client-list-combined-menu</menu>   </action>  </mousebind>
       -->
     </context>
   </mouse>
+
+
+
   <menu>
     <!-- TODO - make my own custom menu, with my common applications? -->
     <!-- You can specify more than one menu file in here and they are all loaded, just don't make menu ids clash or, well, it'll be kind of pointless -->
@@ -894,6 +916,9 @@ scrot \
     <!-- Whether to show the Add new desktop and Remove last desktop entries in the Desktop and Windows menus. -->
     <manageDesktops>no</manageDesktops>
   </menu>
+
+
+
   <applications>
     <?ignore <!--  Notes
     # You may use one or more of the name/class/role/title/type rules to specify windows to match
@@ -955,7 +980,6 @@ scrot \
     <maximized>true</maximized>
     --> ?>
 
-
     <!-- I'd love to have this just happen when opening lxterminal in some circumstances, but I don't know if that's possible. -->
     <application name="lxterminal">
       <focus>yes</focus>
@@ -975,11 +999,9 @@ scrot \
       <decor>no</decor>
     </application>
 
-
     <application name="gpicview">
       <fullscreen>true</fullscreen>
     </application>
-
 
     <application name="geeqie">
       <?ignore <!--  Notes
@@ -1002,7 +1024,6 @@ scrot \
       <focus>yes</focus>
     </application>
 
-
     <application name="evilvte">
       <focus>yes</focus>
       <position force="yes">
@@ -1013,4 +1034,7 @@ scrot \
 
 
   </applications>
+
+
+
 </openbox_config>
